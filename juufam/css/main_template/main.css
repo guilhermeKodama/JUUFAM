@@ -1,0 +1,72 @@
+body {
+	background-color: rgb(246,248,247);
+}
+
+
+.art-header {
+	clear: both;
+	height: 150px;
+	background-color: rgb(165,198,222);
+	border: 1px solid rgb(92,90,90);
+	border-radius: 15px 15px 0 0;
+}
+
+.art-header .art-header-img {
+	width: 18%;
+	float: left;
+	margin: 5px 0 0 15px;
+}
+
+.art-header .art-header-img img { 
+	width: 90%;
+}
+
+.art-header .art-header-presentation {
+	width: 70%;
+	float: left;
+	line-height: 100px;
+}
+
+.container {
+	clear: both;
+	position: relative;
+	display: table;
+	padding: 20px 0;
+    margin: 20px auto 0;
+    max-width: 1728px;
+    min-width: 700px;
+    position: relative;
+    width: 90%;
+    z-index: -5;
+    border: 2px solid rgb(207,208,208);	
+}
+
+.container .container-side {
+	width: 20%; 
+	float: left;
+	height: 100%;
+	padding: 20px;
+}
+
+.container .container-side .menu {
+	
+}
+.container .container-side .menu ul {
+	}
+
+.container .container-side .menu ul li {
+	line-height: 20px;
+	color: #000;
+	background-color: #bbb;
+	border: 1px solid #ccc;
+}
+.container .container-main {
+	width: 75%; 
+	float: left;
+}
+
+
+.art-footer {
+	clear: both;
+	height: 200px;
+}
