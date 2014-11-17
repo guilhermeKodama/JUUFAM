@@ -59,51 +59,59 @@ label.error {
 				<div class="menu">
 					<h4>Menu</h4>
 				<?php
+				$items = array();
 				
-				$this->widget ( 'zii.widgets.CMenu', array (
-						'items' => array (
-								array (
-										'label' => 'Página Inicial',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
-										'label' => 'Sobre',
-										'url' => array (
-												'/site/page',
-												'view' => 'about' 
-										) 
-								),
-								array (
-										'label' => 'Contato',
-										'url' => array (
-												'/site/contact' 
-										) 
-								),
-								array (
-										'label' => 'Login',
-										'url' => array (
-												'/site/login' 
-										),
-										'visible' => Yii::app ()->user->isGuest 
-								),
-								array (
-										'label' => 'Logout (' . Yii::app ()->user->name . ')',
-										'url' => array (
-												'/site/logout' 
-										),
-										'visible' => ! Yii::app ()->user->isGuest 
-								),
-								array (
-										'label' => 'Criar Evento',
-										'url' => array (
-												'/Evento' 
-										),
-										'visible' => ! Yii::app ()->user->isGuest  
-								) 
-						) 
-				) );
+				$mEventoController = new EventoController('evento');
+				
+				$itemsEventClosed = $mEventoController->getMenuClosedEvents();
+				
+				$itemsEventOn = array ('items' => array (
+						array ('label' => 'Principal','url' => array ('/site/index')),
+						array ('label' => 'Cadastro','url' => array ('/site/index')),
+						array ('label' => 'Relatorios','url' => array ('/site/index')),
+						array ('label' => 'Certificados','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Regulamento','url' => array ('/site/index')),
+						array ('label' => 'Descricão','url' => array ('/site/index')),
+						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
+								'url' => array ('/site/logout' ),
+								'visible' => ! Yii::app ()->user->isGuest )));
+				
+				$itemsEventOff = array ('items' => array_merge($itemsEventClosed,array (
+						array ('label' => 'Criar Evento','url' => array ('/Evento')),
+						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
+								'url' => array ('/site/logout' ),
+								'visible' => ! Yii::app ()->user->isGuest ))));
+				
+				$itemsLogOff = array ('items' => array (
+						array ('label' => 'Página Inicial','url' => array ('/site/index' ) ),
+						array ('label' => 'Sobre','url' => array ('/site/page','view' => 'about' ) ),
+						array ('label' => 'Contato','url' => array ('/site/contact' ) ),
+						array ('label' => 'Login','url' => array ('/site/login' ),'visible' => Yii::app ()->user->isGuest ),
+						array ('label' => 'Logout (' . Yii::app ()->user->name . ')','url' => array ('/site/logout' ),'visible' => ! Yii::app ()->user->isGuest )));
+				
+				
+				
+				if (! Yii::app ()->user->isGuest) {//está logado
+					if($mEventoController->hasEventOpen()){//tem um evento ocorrendo
+				
+						$items = $itemsEventOn;
+				
+					}else{
+				
+						$items = $itemsEventOff;
+				
+					}
+				
+				}else{//não está logado
+				
+					$items = $itemsLogOff;
+				
+				}
+				
+				
+				$this->widget('zii.widgets.CMenu',$items);
+				
 				?>
 				</div>
 			</div>

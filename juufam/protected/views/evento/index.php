@@ -18,8 +18,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 
 <h1>Criar nova Edicão</h1>
 
-<form method="post"
-	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Evento/Create'?>">
+<form enctype="multipart/form-data" method="post" action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Evento/Create'?>">
 	<div>
 		<input type="text" name="nameEvent" placeholder="Nome da edicão">
 	</div>
@@ -32,7 +31,8 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 		<input id="dateEndInscr" name="dateEndInscr" type="text" placeholder="Data fim inscricão">
 	</div>
 	<div>
-		<button>Carregar novo modelo de certificado</button>
+		<h3>Modelo do certificado</h3>
+		<input type="file"  id="userfile" name="userfile" accept="application/pdf">
 	</div>
 	<div>
 		<button type="submit">Finalizar</button>
@@ -44,10 +44,10 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 
 <script type="text/javascript">
 jQuery(function($){
-	   $("#dateIniEvent").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-	   $("#dateEndEvent").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-	   $("#dateIniInscr").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-	   $("#dateEndInscr").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+	   $("#dateIniEvent").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+	   $("#dateEndEvent").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+	   $("#dateIniInscr").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+	   $("#dateEndInscr").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
 	});
 </script>
 
