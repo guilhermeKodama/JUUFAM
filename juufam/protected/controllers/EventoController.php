@@ -10,6 +10,8 @@ class EventoController extends Controller {
 		
 		if (isset ( $_POST )) {
 			
+			/* Salva informacões do evento do banco de dados */
+			
 			$model = new Evento ();
 			$model->nome = $_POST ["nameEvent"];
 			
@@ -27,22 +29,36 @@ class EventoController extends Controller {
 			
 			/* carregar o arquivo do modelo e colocar em um diretorio */
 			$foto = $_FILES ["userfile"];
-			$nome_imagem = "modelo_".date("Y").".pdf";
-			$caminho_imagem = "/var/www/html/juufam/modelo_certificado/".$nome_imagem;
+			$nome_imagem = "modelo_" . date ( "Y" ) . ".pdf";
+			$caminho_imagem = "/var/www/html/juufam/modelo_certificado/" . $nome_imagem;
 			
 			if (move_uploaded_file ( $foto ["tmp_name"], $caminho_imagem )) {
-				//carregou o arquivo com sucesso
+				// carregou o arquivo com sucesso
 			} else {
 				print "Possivel ataque de upload! Aqui esta alguma informação:\n";
 				print_r ( $_FILES );
 			}
 			
 			$model->save ();
+			
+			$id_evento = $model->getPrimaryKey ();
+			
+			/* Salva informacões do evento_modalidade no banco de dados */
+			$modalidades = $_POST ["modalidades"];
+			foreach ( $modalidades as $modalidade_id ) {
+				
+				$model = new EventoModalidade ();
+				$model->id_evento = $id_evento;
+				$model->id_modalidade = $modalidade_id;
+				
+				$model->save ();
+			}
+			
+			
 			// print_r ($model->getErrors());
 			$this->redirect ( Yii::app ()->homeUrl );
 		}
 	}
-	
 	public static function getCurrentEventOpen() {
 		$models = Evento::model ()->findAllBySql ( "SELECT * from evento where  evento.data_end_event >= '" . date ( 'Y-m-d' ) . "'" );
 		
@@ -52,22 +68,28 @@ class EventoController extends Controller {
 			return null;
 		}
 	}
-	/**Retorna os eventos anteriores(fechados) em forma de menu*/
-	public function getMenuClosedEvents(){
-		//array ('label' => 'Principal','url' => array ('/site/index'))
-		$array = array();
+	/**
+	 * Retorna os eventos anteriores(fechados) em forma de menu
+	 */
+	public function getMenuClosedEvents() {
+		// array ('label' => 'Principal','url' => array ('/site/index'))
+		$array = array ();
 		$models = Evento::model ()->findAllBySql ( "SELECT * from evento where evento.data_end_event < '" . date ( 'Y-m-d' ) . "'" );
 		if (count ( $models ) > 0) {
-			foreach ($models as $model){
-				$array[] = array ('label' => $model->nome,'url' => array ('/site/index'));
+			foreach ( $models as $model ) {
+				$array [] = array (
+						'label' => $model->nome,
+						'url' => array (
+								'/site/index' 
+						) 
+				);
 			}
 			
 			return $array;
-		}else{
+		} else {
 			return $array;
 		}
 	}
-	
 	public function hasEventOpen() {
 		$models = Evento::model ()->findAllBySql ( "SELECT * from evento where evento.data_end_event >= '" . date ( 'Y-m-d' ) . "'" );
 		
