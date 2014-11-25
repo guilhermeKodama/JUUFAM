@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Usuario', 'url'=>array('index')),
-	array('label'=>'Create Usuario', 'url'=>array('create')),
-	array('label'=>'View Usuario', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Listar Representantes', 'url'=>array('index')),
+	array('label'=>'Criar Representantes', 'url'=>array('create')),
+	array('label'=>'Visualizar Representante', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gerenciar representantes', 'url'=>array('admin')),
 );
 ?>
 

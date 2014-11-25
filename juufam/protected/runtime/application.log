@@ -998,3 +998,14 @@ Stack trace:
 REQUEST_URI=/juufam/index.php?r=representante/create
 HTTP_REFERER=http://localhost/juufam/index.php?r=representante/create
 ---
+2014/11/25 11:53:07 [error] [php] Undefined index: modalidades (/var/www/html/juufam/protected/controllers/EventoController.php:47)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(286): EventoController->runAction()
+#1 /var/www/html/yii/framework/web/CController.php(265): EventoController->runActionWithFilters()
+#2 /var/www/html/yii/framework/web/CWebApplication.php(282): EventoController->run()
+#3 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/html/juufam/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php?r=Evento/Create
+in /var/www/html/juufam/protected/controllers/EventoController.php (47)
+in /var/www/html/juufam/index.php (13)

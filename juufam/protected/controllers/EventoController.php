@@ -44,16 +44,19 @@ class EventoController extends Controller {
 			$id_evento = $model->getPrimaryKey ();
 			
 			/* Salva informacões do evento_modalidade no banco de dados */
-			$modalidades = $_POST ["modalidades"];
-			foreach ( $modalidades as $modalidade_id ) {
-				
-				$model = new EventoModalidade ();
-				$model->id_evento = $id_evento;
-				$model->id_modalidade = $modalidade_id;
-				
-				$model->save ();
+			if (isset ( $_POST ["modalidades"] )) {
+				$modalidades = $_POST ["modalidades"];
+				foreach ( $modalidades as $modalidade_id ) {
+					
+					$model = new EventoModalidade ();
+					$model->id_evento = $id_evento;
+					$model->id_modalidade = $modalidade_id;
+					
+					$model->save ();
+				}
+			}else{
+				//retorna erro que nenhuma modalidade foi selecionada
 			}
-			
 			
 			// print_r ($model->getErrors());
 			$this->redirect ( Yii::app ()->homeUrl );

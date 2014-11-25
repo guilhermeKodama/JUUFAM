@@ -6,24 +6,26 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'usuario-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+<?php
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'usuario-form',
+		
+		// Please note: When you enable ajax validation, make sure the corresponding
+		// controller action is handling ajax validation correctly.
+		// There is a call to performAjaxValidation() commented in generated controller code.
+		// See class documentation of CActiveForm for details on this.
+		'enableAjaxValidation' => false 
+) );
+?>
+
+	<p class="note">
+		Fields with <span class="required">*</span> are required.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nome'); ?>
@@ -43,21 +45,32 @@
 		<?php echo $form->error($model,'senha'); ?>
 	</div>
 
-	<div class="row" id = "gone" >
+	<div class="row" id="gone_type">
 		<?php echo $form->labelEx($model,'id_tipo_usuario'); ?>
 		<?php echo $form->textField($model,'id_tipo_usuario',array('size'=>13,'maxlength'=>13,'value'=>'representante')); ?>
 		<?php echo $form->error($model,'id_tipo_usuario'); ?>
 	</div>
-	
-	<script type="text/javascript">
-	document.getElementById("gone").style.display="none";
-	</script>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_chapa'); ?>
-		<?php echo $form->textField($model,'id_chapa'); ?>
-		<?php echo $form->error($model,'id_chapa'); ?>
-	</div>
+	<script type="text/javascript">
+	document.getElementById("gone_type").style.display="none";
+	</script>
+	<!-- <input name="Usuario[id_chapa]" id="Usuario_id_chapa" type="text"> -->
+	
+		<?php
+		$controller = new ChapaController ( 'chapa' );
+		$models = $controller->getAllChapas ();
+		
+		if (sizeof ( $models ) > 0) {
+			print '<select name="Usuario[id_chapa]">';
+			foreach ( $models as $model ) {
+				print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
+			}
+			print '</select>';
+		}else{
+			print "<h3>Não existe nenhuma chapa cadastrada</h3>";
+		}
+		
+		?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
@@ -65,4 +78,5 @@
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
+<!-- form -->

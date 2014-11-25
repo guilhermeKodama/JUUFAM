@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Usuario', 'url'=>array('create')),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Criar Representante', 'url'=>array('create')),
+	array('label'=>'Gerenciar Representante', 'url'=>array('admin')),
 );
 ?>
 
