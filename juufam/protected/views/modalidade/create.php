@@ -4,15 +4,17 @@
 
 $this->breadcrumbs=array(
 	'Modalidades'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(
-	array('label'=>'List Modalidade', 'url'=>array('index')),
-	array('label'=>'Manage Modalidade', 'url'=>array('admin')),
+	array('label'=>'Listar Modalidade', 'url'=>array('index')),
+	array('label'=>'Gerir Modalidade', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Modalidade</h1>
+<div id="box-form">
+	<h1>Criar Modalidade</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

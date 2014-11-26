@@ -17,10 +17,6 @@
 	<?php echo CHtml::encode($data->login); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('senha')); ?>:</b>
-	<?php echo CHtml::encode($data->senha); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_tipo_usuario')); ?>:</b>
 	<?php echo CHtml::encode($data->id_tipo_usuario); ?>
 	<br />

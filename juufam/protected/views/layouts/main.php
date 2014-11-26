@@ -3,7 +3,7 @@
 	xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Atividades Extracurriculares - IComp</title>
+<title>Jogos Universitários da UFAM</title>
 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/main_template/style.css"
@@ -57,7 +57,6 @@ label.error {
 
 			<div class="container-side">
 				<div class="menu">
-					<h4>Menu</h4>
 				<?php
 				$items = array();
 				
@@ -90,36 +89,25 @@ label.error {
 						array ('label' => 'Login','url' => array ('/site/login' ),'visible' => Yii::app ()->user->isGuest ),
 						array ('label' => 'Logout (' . Yii::app ()->user->name . ')','url' => array ('/site/logout' ),'visible' => ! Yii::app ()->user->isGuest )));
 				
-				
-				
-				if (! Yii::app ()->user->isGuest) {//está logado
-					if($mEventoController->hasEventOpen()){//tem um evento ocorrendo
-				
+				if (!Yii::app ()->user->isGuest) {//está logado
+					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
 						$items = $itemsEventOn;
-				
-					}else{
-				
+					} else {
 						$items = $itemsEventOff;
-				
 					}
-				
-				}else{//não está logado
-				
+				} else {//não está logado
 					$items = $itemsLogOff;
-				
 				}
 				
 				
-				$this->widget('zii.widgets.CMenu',$items);
+				$this->widget('zii.widgets.CMenu', $items);
 				
 				?>
 				</div>
 			</div>
 
 			<div class="container-main">
-			
 				<?php echo $content; ?>
-				
 			</div>
 		</div>
 
@@ -127,7 +115,6 @@ label.error {
 			<div class="art-footer-body">
 				<div class="art-footer-text">
 					<p>© ICOMP - Instituto de Computação</p>
-					<p>Desenvolvido no contexto da disciplina IEC112 - 2012/02</p>
 				</div>
 				<div class="cleared"></div>
 			</div>

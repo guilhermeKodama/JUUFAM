@@ -19,13 +19,9 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ) );
 ?>
 
-	<p class="note">
-		Fields with <span class="required">*</span> are required.
-	</p>
+	<p class="note">Campos com <span class="required">*</span> são obrigatórios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nome'); ?>
@@ -41,7 +37,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'senha'); ?>
-		<?php echo $form->textField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->passwordField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'senha'); ?>
 	</div>
 
@@ -78,7 +74,15 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		
 		?>
 
-	
+	<div class="row">
+		<?php echo $form->labelEx($model,'Chapa'); ?>
+		<?php echo $form->textField($model,'id_chapa'); ?>
+		<?php echo $form->error($model,'id_chapa'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Adicionar' : 'Salvar'); ?>
+	</div>
 
 <?php $this->endWidget(); ?>
 

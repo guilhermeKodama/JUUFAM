@@ -3,9 +3,9 @@
 /* @var $model Usuario */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
+	'Usuários'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Atualizar',
 );
 
 $this->menu=array(
@@ -16,6 +16,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Usuario <?php echo $model->id; ?></h1>
+<div id="box-form">
+	<h1>Atualizar Usuário <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

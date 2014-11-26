@@ -1464,8 +1464,8 @@ span.art-postcommentsicon:after
 .art-footer-text p
 {
     padding:0;
-    margin:0;
-    text-align: center;
+    margin: 10px;
+    text-align: right;
 }
 
 .art-footer-body a,

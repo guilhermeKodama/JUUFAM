@@ -39,7 +39,7 @@ class Usuario extends CActiveRecord
 			array('id_tipo_usuario', 'length', 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nome, login, senha, id_tipo_usuario, id_chapa', 'safe', 'on'=>'search'),
+			array('id, nome, login, id_tipo_usuario, id_chapa', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,8 +66,8 @@ class Usuario extends CActiveRecord
 			'nome' => 'Nome',
 			'login' => 'Login',
 			'senha' => 'Senha',
-			'id_tipo_usuario' => 'Id Tipo Usuario',
-			'id_chapa' => 'Id Chapa',
+			'id_tipo_usuario' => 'Tipo Usuario',
+			'id_chapa' => 'Chapa',
 		);
 	}
 
@@ -92,7 +92,6 @@ class Usuario extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nome',$this->nome,true);
 		$criteria->compare('login',$this->login,true);
-		$criteria->compare('senha',$this->senha,true);
 		$criteria->compare('id_tipo_usuario',$this->id_tipo_usuario,true);
 		$criteria->compare('id_chapa',$this->id_chapa);
 

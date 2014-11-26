@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Usuarios',
+	'Usuários',
 );
 
 $this->menu=array(
@@ -12,9 +12,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Usuarios</h1>
+<div id="box-form">
+	<h1>Usuarios</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+	<?php $this->widget('zii.widgets.CListView', array(
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view',
+	)); ?>
+</div>

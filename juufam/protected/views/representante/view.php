@@ -3,7 +3,7 @@
 /* @var $model Usuario */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
+	'Usuários'=>array('index'),
 	$model->id,
 );
 
@@ -16,16 +16,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Usuario #<?php echo $model->id; ?></h1>
+<div id="box-form">
+	<h1>Visualizar Usuário #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'nome',
-		'login',
-		'senha',
-		'id_tipo_usuario',
-		'id_chapa',
-	),
-)); ?>
+	<?php $this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model,
+		'attributes'=>array(
+			'id',
+			'nome',
+			'login',
+			'id_tipo_usuario',
+			'id_chapa',
+		),
+	)); ?>
+</div>

@@ -15,7 +15,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos com <span class="required">*</span> são obrigaatórios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -26,37 +26,37 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nome'); ?>
+		<?php echo $form->labelEx($model,'Nome: '); ?>
 		<?php echo $form->textField($model,'nome',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'nome'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'tipo_modalidade'); ?>
+		<?php echo $form->labelEx($model,'Tipo Modalidade :'); ?>
 		<?php echo $form->textField($model,'tipo_modalidade',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'tipo_modalidade'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'min_inscr'); ?>
+		<?php echo $form->labelEx($model,'Minimo Inscritos: '); ?>
 		<?php echo $form->textField($model,'min_inscr'); ?>
 		<?php echo $form->error($model,'min_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'max_inscr'); ?>
+		<?php echo $form->labelEx($model,'Máximo Inscritos: '); ?>
 		<?php echo $form->textField($model,'max_inscr'); ?>
 		<?php echo $form->error($model,'max_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'genero'); ?>
+		<?php echo $form->labelEx($model,'gênero: '); ?>
 		<?php echo $form->textField($model,'genero',array('size'=>9,'maxlength'=>9)); ?>
 		<?php echo $form->error($model,'genero'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Criar' : 'Salvar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -233,10 +233,12 @@ class RepresentanteController extends Controller {
 	 * @return Usuario the loaded model
 	 * @throws CHttpException
 	 */
-	public function loadModel($id) {
-		$model = Usuario::model ()->findByPk ( $id );
-		if ($model === null)
-			throw new CHttpException ( 404, 'The requested page does not exist.' );
+	public function loadModel($id)
+	{
+		$model=Usuario::model()->findByPk($id);
+		if ($model === null) {
+			throw new CHttpException(404,'A página requisitada não existe.');
+		}
 		return $model;
 	}
 	
