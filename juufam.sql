@@ -2,6 +2,7 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+DROP SCHEMA IF EXISTS `juufam` ;
 CREATE SCHEMA IF NOT EXISTS `juufam` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 USE `juufam` ;
 
@@ -58,13 +59,12 @@ ENGINE = InnoDB;
 -- Table `juufam`.`usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `juufam`.`usuario` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `login` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
   `id_tipo_usuario` ENUM('representante', 'admin') NOT NULL,
   `id_chapa` INT NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`login`),
   INDEX `id_chapa_idx` (`id_chapa` ASC),
   CONSTRAINT `id_chapa`
     FOREIGN KEY (`id_chapa`)
@@ -156,19 +156,19 @@ ENGINE = InnoDB;
 -- Table `juufam`.`repr_atleta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `juufam`.`repr_atleta` (
-  `id_repr` INT NOT NULL,
+  `id_repr` VARCHAR(45) NOT NULL,
   `id_atleta` INT NOT NULL,
   `data` DATE NOT NULL,
-  INDEX `id_repr_idx` (`id_repr` ASC),
   INDEX `id_atleta_idx` (`id_atleta` ASC),
+  INDEX `fk_id_representante_idx` (`id_repr` ASC),
   CONSTRAINT `id_atleta`
     FOREIGN KEY (`id_atleta`)
     REFERENCES `juufam`.`atleta` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `id_repr`
+  CONSTRAINT `fk_id_representante`
     FOREIGN KEY (`id_repr`)
-    REFERENCES `juufam`.`usuario` (`id`)
+    REFERENCES `juufam`.`usuario` (`login`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
