@@ -14,7 +14,7 @@ $this->menu=array(
 ?>
 
 <div id="box-form">
-	<h1>Criar Usuário</h1>
+	<h1>Criar Representante</h1>
 
 	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

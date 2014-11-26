@@ -17,7 +17,7 @@ $this->menu=array(
 ?>
 
 <div id="box-form">
-	<h1>Visualizar Usuário #<?php echo $model->id; ?></h1>
+	<h1>Visualizar Representante #<?php echo $model->id; ?></h1>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,

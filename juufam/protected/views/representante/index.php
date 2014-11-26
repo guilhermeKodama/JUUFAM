@@ -13,7 +13,7 @@ $this->menu=array(
 ?>
 
 <div id="box-form">
-	<h1>Usuarios</h1>
+	<h1>Representantes</h1>
 
 	<?php $this->widget('zii.widgets.CListView', array(
 		'dataProvider'=>$dataProvider,
