@@ -33,7 +33,8 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, id_chapa', 'numerical', 'integerOnly'=>true),
+			array('nome, login, senha, id_tipo_usuario, id_chapa', 'required'),
+			array('id_chapa', 'numerical', 'integerOnly'=>true),
 			array('nome, login, senha', 'length', 'max'=>45),
 			array('id_tipo_usuario', 'length', 'max'=>13),
 			// The following rule is used by search().

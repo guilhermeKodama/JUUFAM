@@ -66,15 +66,19 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 				print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
 			}
 			print '</select>';
+			
+			echo '<div class="row buttons">';
+			
+			echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
+			
+			echo '</div>';
 		}else{
 			print "<h3>Não existe nenhuma chapa cadastrada</h3>";
 		}
 		
 		?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+	
 
 <?php $this->endWidget(); ?>
 
