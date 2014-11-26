@@ -19,7 +19,9 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ) );
 ?>
 
-	<p class="note">Campos com <span class="required">*</span> são obrigatórios.</p>
+	<p class="note">
+		Campos com <span class="required">*</span> são obrigatórios.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -51,38 +53,34 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	document.getElementById("gone_type").style.display="none";
 	</script>
 	<!-- <input name="Usuario[id_chapa]" id="Usuario_id_chapa" type="text"> -->
+	<?php
+	$controller = new ChapaController ( 'chapa' );
+	$models = $controller->getAllChapas ();
 	
-		<?php
-		$controller = new ChapaController ( 'chapa' );
-		$models = $controller->getAllChapas ();
-		
-		if (sizeof ( $models ) > 0) {
-			print '<select name="Usuario[id_chapa]">';
-			foreach ( $models as $model ) {
-				print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
-			}
-			print '</select>';
-			
-			echo '<div class="row buttons">';
-			
-			echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
-			
-			echo '</div>';
-		}else{
-			print "<h3>Não existe nenhuma chapa cadastrada</h3>";
+	/* Lista as chapas para serem vinculadas ao novo representante */
+	
+	if (sizeof ( $models ) > 0) {
+		echo '<div class="row">';
+		echo '<label  class="required"> Chapa do representante <span class="required">*</span></label>';
+		print '<select name="Usuario[id_chapa]">';
+		foreach ( $models as $model ) {
+			print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
 		}
+		print '</select>';
+		echo '</div>';
 		
-		?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Chapa'); ?>
-		<?php echo $form->textField($model,'id_chapa'); ?>
-		<?php echo $form->error($model,'id_chapa'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Adicionar' : 'Salvar'); ?>
-	</div>
+		echo '<div class="row buttons">';
+		
+		echo CHtml::submitButton ( $model->isNewRecord ? 'Create' : 'Save' );
+		
+		echo '</div>';
+	} else {
+		echo '<div class="row buttons">';
+		print "<h3>Não existe nenhuma chapa cadastrada</h3>";
+		echo '</div>';
+	}
+	
+	?>
 
 <?php $this->endWidget(); ?>
 
