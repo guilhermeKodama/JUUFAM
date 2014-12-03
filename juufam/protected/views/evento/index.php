@@ -56,7 +56,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 		
 	<?php
 	/* Mostrar os eventos */
-	$mEventoController = new ModalidadeController ( 'modalidade' );
+	$mEventoController = new ModalidadeController ('modalidade');
 	$models = $mEventoController->getAllModality ();
 	
 	foreach ( $models as $model ) {

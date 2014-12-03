@@ -3,21 +3,19 @@
 /* @var $model Usuario */
 
 $this->breadcrumbs=array(
-	'Usuários'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Atualizar',
+	'Usuarios'=>array('index'),
+	$model->login=>array('view','id'=>$model->login),
+	'Update',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Representantes', 'url'=>array('index')),
-	array('label'=>'Criar Representantes', 'url'=>array('create')),
-	array('label'=>'Visualizar Representante', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Gerenciar representantes', 'url'=>array('admin')),
+	array('label'=>'List Usuario', 'url'=>array('index')),
+	array('label'=>'Create Usuario', 'url'=>array('create')),
+	array('label'=>'View Usuario', 'url'=>array('view', 'id'=>$model->login)),
+	array('label'=>'Manage Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<div id="box-form">
-	<h1>Atualizar Usuário <?php echo $model->id; ?></h1>
+<h1>Update Usuario <?php echo $model->login; ?></h1>
 
-	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
-</div>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>

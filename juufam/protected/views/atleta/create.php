@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Atleta', 'url'=>array('index')),
-	array('label'=>'Manage Atleta', 'url'=>array('admin')),
+	array('label'=>'Listar Atletas', 'url'=>array('index')),
+	array('label'=>'Gerenciar Atletas', 'url'=>array('admin')),
 );
 ?>
 

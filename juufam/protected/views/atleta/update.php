@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Atleta', 'url'=>array('index')),
-	array('label'=>'Create Atleta', 'url'=>array('create')),
-	array('label'=>'View Atleta', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Atleta', 'url'=>array('admin')),
+	array('label'=>'Listar Atletas', 'url'=>array('index')),
+	array('label'=>'Criar Atleta', 'url'=>array('create')),
+	array('label'=>'Visualizar Atleta', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gerenciar Atletas', 'url'=>array('admin')),
 );
 ?>
 

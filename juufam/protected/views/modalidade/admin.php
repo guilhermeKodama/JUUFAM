@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Modalidades'=>array('index'),
-	'Gerir',
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modalidade', 'url'=>array('index')),
-	array('label'=>'Criar Modalidade', 'url'=>array('create')),
+	array('label'=>'Listar Modalidades', 'url'=>array('index')),
+	array('label'=>'Criar Modalidades', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,9 +26,14 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gerenciamento de Modalidades</h1>
+<h1>Manage Modalidades</h1>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<p>
+Você pode opcionalmente colocar operadores de comparação (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) no começo de cada busca para especificar como deve ser comparado.
+</p>
+
+<?php echo CHtml::link('Busca Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

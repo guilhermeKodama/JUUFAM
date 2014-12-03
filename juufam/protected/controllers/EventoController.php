@@ -80,7 +80,7 @@ class EventoController extends Controller {
 		$dateEndInscrIsOk = false;
 		$modalidadesIsOk = false;
 		
-		$erro;
+		$erro = array();
 		
 		if (isset ( $params ["nameEvent"] ) && strlen ( $params ["nameEvent"] ) > 0) {
 			$nameIsOk = true;

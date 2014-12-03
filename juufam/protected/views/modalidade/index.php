@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Criar Modalidade', 'url'=>array('create')),
-	array('label'=>'Gerir Modalidade', 'url'=>array('admin')),
+	array('label'=>'Criar Modalidades', 'url'=>array('create')),
+	array('label'=>'Gerenciar Modalidades', 'url'=>array('admin')),
 );
 ?>
 

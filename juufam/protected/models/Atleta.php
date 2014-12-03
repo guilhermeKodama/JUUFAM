@@ -37,7 +37,7 @@ class Atleta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curso', 'required'),
+			array('nome, data_nasc, genero, tipo_atleta, id_curso', 'required'),
 			array('matricula', 'length', 'max'=>8),
 			array('cpf, tipo_atleta', 'length', 'max'=>11),
 			array('rg', 'length', 'max'=>255),

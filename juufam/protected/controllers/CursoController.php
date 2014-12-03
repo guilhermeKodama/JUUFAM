@@ -65,7 +65,7 @@ class CursoController extends Controller
 		$model=new Curso;
 
 		// Uncomment the following line if AJAX validation is needed
-		 //$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Curso']))
 		{
@@ -169,5 +169,10 @@ class CursoController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function getAllCursos(){
+		$models = Curso::model ()->findAll();
+		return $models;
 	}
 }

@@ -20,7 +20,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ?>
 
 	<p class="note">
-		Campos com <span class="required">*</span> são obrigatórios.
+		Fields with <span class="required">*</span> are required.
 	</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -39,7 +39,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'senha'); ?>
-		<?php echo $form->passwordField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'senha'); ?>
 	</div>
 

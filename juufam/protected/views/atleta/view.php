@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Atleta', 'url'=>array('index')),
-	array('label'=>'Create Atleta', 'url'=>array('create')),
-	array('label'=>'Update Atleta', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Atleta', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Atleta', 'url'=>array('admin')),
+	array('label'=>'Listar Atletas', 'url'=>array('index')),
+	array('label'=>'Criar Atleta', 'url'=>array('create')),
+	array('label'=>'Atualizar Atleta', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Deletar Atleta', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Gerenciar Atletas', 'url'=>array('admin')),
 );
 ?>
 

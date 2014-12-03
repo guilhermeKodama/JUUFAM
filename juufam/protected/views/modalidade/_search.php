@@ -27,22 +27,22 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Mínimo Inscritos'); ?>
+		<?php echo $form->label($model,'min_inscr'); ?>
 		<?php echo $form->textField($model,'min_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Máximo Inscritos'); ?>
+		<?php echo $form->label($model,'max_inscr'); ?>
 		<?php echo $form->textField($model,'max_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'gênero'); ?>
+		<?php echo $form->label($model,'genero'); ?>
 		<?php echo $form->textField($model,'genero',array('size'=>9,'maxlength'=>9)); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Pesquisar'); ?>
+		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

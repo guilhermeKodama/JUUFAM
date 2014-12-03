@@ -15,44 +15,50 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Campos com <span class="required">*</span> são obrigaatórios.</p>
+	<p class="note">Campos com <span class="required">*</span> são obrigatórios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Nome: '); ?>
+		<?php echo $form->labelEx($model,'nome'); ?>
 		<?php echo $form->textField($model,'nome',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'nome'); ?>
 	</div>
-
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'Tipo Modalidade :'); ?>
-		<?php echo $form->textField($model,'tipo_modalidade',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'tipo_modalidade'); ?>
+		<label for="Modalidade_tipo_modalidade" class="required">
+		Tipo Modalidade <span class="required">*</span>
+		</label>
+		<br/>
+		<select name="Modalidade[tipo_modalidade]">
+			<option value="coletivo">Coletivo</option>
+			<option value="individual">Individual</option>
+		</select>
 	</div>
-
+	
+	
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'Minimo Inscritos: '); ?>
+		<?php echo $form->labelEx($model,'min_inscr'); ?>
 		<?php echo $form->textField($model,'min_inscr'); ?>
 		<?php echo $form->error($model,'min_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Máximo Inscritos: '); ?>
+		<?php echo $form->labelEx($model,'max_inscr'); ?>
 		<?php echo $form->textField($model,'max_inscr'); ?>
 		<?php echo $form->error($model,'max_inscr'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'gênero: '); ?>
-		<?php echo $form->textField($model,'genero',array('size'=>9,'maxlength'=>9)); ?>
-		<?php echo $form->error($model,'genero'); ?>
+		<label for="Modalidade_genero" class="required">
+		Genero <span class="required">*</span>
+		</label>
+		<br/>
+		<select name="Modalidade[genero]">
+			<option value="masculino">Masculino</option>
+			<option value="feminino">Feminino</option>
+		</select>
 	</div>
 
 	<div class="row buttons">

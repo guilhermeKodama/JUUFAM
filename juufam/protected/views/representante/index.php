@@ -3,20 +3,18 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Usuários',
+	'Usuarios',
 );
 
 $this->menu=array(
-	array('label'=>'Criar Representante', 'url'=>array('create')),
-	array('label'=>'Gerenciar Representante', 'url'=>array('admin')),
+	array('label'=>'Create Usuario', 'url'=>array('create')),
+	array('label'=>'Manage Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<div id="box-form">
-	<h1>Representantes</h1>
+<h1>Usuarios</h1>
 
-	<?php $this->widget('zii.widgets.CListView', array(
-		'dataProvider'=>$dataProvider,
-		'itemView'=>'_view',
-	)); ?>
-</div>
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>

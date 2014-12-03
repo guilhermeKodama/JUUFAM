@@ -67,6 +67,9 @@ label.error {
 				$itemsEventOn = array ('items' => array (
 						array ('label' => 'Principal','url' => array ('/site/index')),
 						array ('label' => 'Cadastro','url' => array ('/site/index')),
+						array ('label' => 'Gerenciar Modalidades','url' => array ('/modalidade/admin')),
+						array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
+						array ('label' => 'Gerenciar Representantes','url' => array ('/representante/admin')),
 						array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
 						array ('label' => 'Inscricão','url' => array ('/site/index')),

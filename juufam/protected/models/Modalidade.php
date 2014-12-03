@@ -13,6 +13,7 @@
  *
  * The followings are the available model relations:
  * @property AtletaModalidade[] $atletaModalidades
+ * @property EventoModalidade[] $eventoModalidades
  */
 class Modalidade extends CActiveRecord
 {
@@ -32,8 +33,8 @@ class Modalidade extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, min_inscr, max_inscr, genero', 'required'),
-			array('id, min_inscr, max_inscr', 'numerical', 'integerOnly'=>true),
+			array('nome, tipo_modalidade, min_inscr, max_inscr, genero', 'required'),
+			array('min_inscr, max_inscr', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>45),
 			array('tipo_modalidade', 'length', 'max'=>10),
 			array('genero', 'length', 'max'=>9),
@@ -52,6 +53,7 @@ class Modalidade extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'atletaModalidades' => array(self::HAS_MANY, 'AtletaModalidade', 'id_modalidade'),
+			'eventoModalidades' => array(self::HAS_MANY, 'EventoModalidade', 'id_modalidade'),
 		);
 	}
 

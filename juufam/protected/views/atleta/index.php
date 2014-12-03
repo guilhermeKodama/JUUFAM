@@ -2,19 +2,33 @@
 /* @var $this AtletaController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Atletas',
+
+$this->breadcrumbs = array (
+		'Atletas' 
 );
 
-$this->menu=array(
-	array('label'=>'Create Atleta', 'url'=>array('create')),
-	array('label'=>'Manage Atleta', 'url'=>array('admin')),
+$this->menu = array (
+		array (
+				'label' => 'Criar Atleta',
+				'url' => array (
+						'create' 
+				) 
+		),
+		array (
+				'label' => 'Gerenciar Atletas',
+				'url' => array (
+						'admin' 
+				) 
+		) 
 );
 ?>
 
 <h1>Atletas</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php
+
+$this->widget ( 'zii.widgets.CListView', array (
+		'dataProvider' => $dataProvider,
+		'itemView' => '_view' 
+) );
+?>

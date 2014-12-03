@@ -3,30 +3,28 @@
 /* @var $model Usuario */
 
 $this->breadcrumbs=array(
-	'Usuários'=>array('index'),
-	$model->id,
+	'Usuarios'=>array('index'),
+	$model->login,
 );
 
 $this->menu=array(
-	array('label'=>'Listar Representante', 'url'=>array('index')),
-	array('label'=>'Criar Representante', 'url'=>array('create')),
-	array('label'=>'Atualizar Representante', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Excluir Representante', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Gerenciar Representantes', 'url'=>array('admin')),
+	array('label'=>'List Usuario', 'url'=>array('index')),
+	array('label'=>'Create Usuario', 'url'=>array('create')),
+	array('label'=>'Update Usuario', 'url'=>array('update', 'id'=>$model->login)),
+	array('label'=>'Delete Usuario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->login),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<div id="box-form">
-	<h1>Visualizar Representante #<?php echo $model->id; ?></h1>
+<h1>View Usuario #<?php echo $model->login; ?></h1>
 
-	<?php $this->widget('zii.widgets.CDetailView', array(
-		'data'=>$model,
-		'attributes'=>array(
-			'id',
-			'nome',
-			'login',
-			'id_tipo_usuario',
-			'id_chapa',
-		),
-	)); ?>
-</div>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'nome',
+		'login',
+		'senha',
+		'id_tipo_usuario',
+		'id_chapa',
+	),
+)); ?>
