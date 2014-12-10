@@ -185,27 +185,41 @@ CREATE TABLE IF NOT EXISTS `juufam`.`repr_atleta` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `juufam`.`atleta_modalidade`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `juufam`.`atleta_modalidade` (
-  `id_atleta` INT NOT NULL,
+DROP TABLE IF EXISTS `juufam`.`time` ;
+CREATE TABLE IF NOT EXISTS `juufam`.`time` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_modalidade` INT NOT NULL,
-  `tipo_funcao` ENUM('atleta', 'tecnico') NOT NULL,
-  INDEX `id_modalidade_idx` (`id_modalidade` ASC),
-  INDEX `id_atleta_idx` (`id_atleta` ASC),
-  CONSTRAINT `id_modalidade`
+  `id_curso` VARCHAR(12) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `id_modalidade_time`
     FOREIGN KEY (`id_modalidade`)
     REFERENCES `juufam`.`modalidade` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `id_atleta_modalidade`
-    FOREIGN KEY (`id_atleta`)
-    REFERENCES `juufam`.`atleta` (`id`)
+  CONSTRAINT `id_curso_time`
+    FOREIGN KEY (`id_curso`)
+    REFERENCES `juufam`.`curso` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+CREATE TABLE IF NOT EXISTS `juufam`.`time_atletas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_atleta` INT NOT NULL,
+  `id_time` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `id_atleta_time`
+    FOREIGN KEY (`id_atleta`)
+    REFERENCES `juufam`.`atleta` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_time_time`
+    FOREIGN KEY (`id_time`)
+    REFERENCES `juufam`.`time` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION) 
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `juufam`.`evento_modalidade`

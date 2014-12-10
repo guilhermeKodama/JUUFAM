@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Modalidades'=>array('index'),
-	'Manage',
+	'Gerenciar',
 );
 
 $this->menu=array(
@@ -26,12 +26,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Modalidades</h1>
+<h1>Gerenciar Modalidades</h1>
 
-<p>
-Você pode opcionalmente colocar operadores de comparação (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) no começo de cada busca para especificar como deve ser comparado.
-</p>
 
 <?php echo CHtml::link('Busca Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
