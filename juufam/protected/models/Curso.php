@@ -13,6 +13,7 @@
  * @property Atleta[] $atletas
  * @property Instituto $idInstituto
  * @property Unidade $idUnidade
+ * @property Time[] $times
  */
 class Curso extends CActiveRecord
 {
@@ -53,6 +54,7 @@ class Curso extends CActiveRecord
 			'atletas' => array(self::HAS_MANY, 'Atleta', 'id_curso'),
 			'idInstituto' => array(self::BELONGS_TO, 'Instituto', 'id_instituto'),
 			'idUnidade' => array(self::BELONGS_TO, 'Unidade', 'id_unidade'),
+			'times' => array(self::HAS_MANY, 'Time', 'id_curso'),
 		);
 	}
 

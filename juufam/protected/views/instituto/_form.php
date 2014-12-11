@@ -20,22 +20,43 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'nome'); ?>
 		<?php echo $form->textArea($model,'nome',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'nome'); ?>
 	</div>
+	
+	<?php 
+	
+	/*LISTAR AS UNIDADES*/
+	
+	$controller = new UnidadeController ( 'unidade' );
+	$models = $controller->getAllUnidades();
+	
+	if (sizeof ( $models ) > 0) {
+		echo '<div class="row">';
+		echo '<label  class="required"> Unidade <span class="required">*</span></label></br>';
+		print '<select name="Instituto[id_uni]">';
+		foreach ( $models as $m ) {
+			print '<option  value="' . $m->id . '"> ' . $m->nome . '</option>';
+		}
+		print '</select>';
+		echo $form->error ( $m, 'id_uni' );
+		echo '</div>';
+	
+		$hasUnidade = true;
+	
+	} else {
+		echo '<div class="row">';
+		print "<h4>Não existe nenhuma unidade cadastrada ,por favor insira uma para prosseguir</h4>";
+		echo '</div>';
+	}
+	
+	
+	
+	
+	?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_uni'); ?>
-		<?php echo $form->textField($model,'id_uni'); ?>
-		<?php echo $form->error($model,'id_uni'); ?>
-	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

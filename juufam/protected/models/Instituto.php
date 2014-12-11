@@ -30,8 +30,8 @@ class Instituto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, nome, id_uni', 'required'),
-			array('id, id_uni', 'numerical', 'integerOnly'=>true),
+			array('nome, id_uni', 'required'),
+			array('id_uni', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nome, id_uni', 'safe', 'on'=>'search'),

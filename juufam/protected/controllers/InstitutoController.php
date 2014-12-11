@@ -170,4 +170,9 @@ class InstitutoController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	public function getAllInstitutos(){
+		$models = Instituto::model ()->findAll();
+		return $models;
+	}
 }

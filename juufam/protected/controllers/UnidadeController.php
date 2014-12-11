@@ -1,6 +1,6 @@
 <?php
 
-class CursoController extends Controller
+class UnidadeController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class CursoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Curso;
+		$model=new Unidade;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Curso']))
+		if(isset($_POST['Unidade']))
 		{
-			$model->attributes=$_POST['Curso'];
+			$model->attributes=$_POST['Unidade'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class CursoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Curso']))
+		if(isset($_POST['Unidade']))
 		{
-			$model->attributes=$_POST['Curso'];
+			$model->attributes=$_POST['Unidade'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class CursoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Curso');
+		$dataProvider=new CActiveDataProvider('Unidade');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class CursoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Curso('search');
+		$model=new Unidade('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Curso']))
-			$model->attributes=$_GET['Curso'];
+		if(isset($_GET['Unidade']))
+			$model->attributes=$_GET['Unidade'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class CursoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Curso the loaded model
+	 * @return Unidade the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Curso::model()->findByPk($id);
+		$model=Unidade::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,14 +160,19 @@ class CursoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Curso $model the model to be validated
+	 * @param Unidade $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='curso-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='unidade-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function getAllUnidades(){
+		$models = Unidade::model ()->findAll();
+		return $models;
 	}
 }
