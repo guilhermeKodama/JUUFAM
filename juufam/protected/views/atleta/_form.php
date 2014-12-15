@@ -37,24 +37,34 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php if(isset($erro["matricula"])){echo '<font size="2" color="red">'.$erro["matricula"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'matricula'); ?>
 		<?php echo $form->textField($model,'matricula',array('size'=>8,'maxlength'=>8)); ?>
 		<?php echo $form->error($model,'matricula'); ?>
 	</div>
 
 	<div class="row">
+		<?php if(isset($erro["cpf"])){echo '<font size="2" color="red">'.$erro["cpf"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'cpf'); ?>
-		<?php echo $form->textField($model,'cpf',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->textField($model,'cpf',array('size'=>14,'maxlength'=>14,'id'=>'cpf')); ?>
 		<?php echo $form->error($model,'cpf'); ?>
 	</div>
+	
+	<script type="text/javascript">
+		jQuery(function($){
+	   	$("#cpf").mask("999.999.999-99",{placeholder:""});
+		});
+	</script>
 
 	<div class="row">
+		<?php if(isset($erro["rg"])){echo '<font size="2" color="red">'.$erro["rg"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'rg'); ?>
 		<?php echo $form->textField($model,'rg',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'rg'); ?>
 	</div>
 
 	<div class="row">
+		<?php if(isset($erro["nome"])){echo '<font size="2" color="red">'.$erro["nome"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'nome'); ?>
 		<?php echo $form->textField($model,'nome',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'nome'); ?>
