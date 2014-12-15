@@ -1,5 +1,9 @@
 <?php
 
+ini_set ( 'display_errors', 1 );
+ini_set ( 'display_startup_erros', 1 );
+error_reporting ( E_ALL );
+
 /**
  * LoginForm class.
  * LoginForm is the data structure for keeping
@@ -45,9 +49,12 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
+			
 			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
+			if(!$this->_identity->authenticate($this->username,$this->password))
 				$this->addError('password','Login ou senha incorretos.');
+			
+			
 		}
 	}
 
@@ -55,12 +62,12 @@ class LoginForm extends CFormModel
 	 * Logs in the user using the given username and password in the model.
 	 * @return boolean whether login is successful
 	 */
-	public function login()
-	{
-		if($this->_identity===null)
-		{
+	public function login(){
+		
+		if($this->_identity===null){
+			
 			$this->_identity=new UserIdentity($this->username,$this->password);
-			$this->_identity->authenticate();
+			$this->_identity->authenticate($this->username,$this->password);
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
 		{
