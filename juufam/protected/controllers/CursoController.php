@@ -170,4 +170,9 @@ class CursoController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	public function getAllCursos(){
+		$models = Curso::model ()->findAll();
+		return $models;
+	}
 }
