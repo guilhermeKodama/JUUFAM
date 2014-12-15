@@ -1,28 +1,28 @@
 <?php
 
 /**
- * This is the model class for table "modalidade".
+ * This is the model class for table "evento".
  *
- * The followings are the available columns in table 'modalidade':
+ * The followings are the available columns in table 'evento':
  * @property integer $id
  * @property string $nome
- * @property string $tipo_modalidade
- * @property integer $min_inscr
- * @property integer $max_inscr
- * @property string $genero
+ * @property string $data_ini_event
+ * @property string $data_end_event
+ * @property string $data_ini_insc
+ * @property string $data_end_insc
+ * @property string $cert_conc_path
  *
  * The followings are the available model relations:
- * @property AtletaModalidade[] $atletaModalidades
- * @property EventoModalidade[] $eventoModalidades
+ * @property Chapa[] $chapas
  */
-class Modalidade extends CActiveRecord
+class Inscricao extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'modalidade';
+		return 'time_atletas';
 	}
 
 	/**
@@ -33,14 +33,6 @@ class Modalidade extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, tipo_modalidade, min_inscr, max_inscr, genero', 'required'),
-			array('min_inscr, max_inscr', 'numerical', 'integerOnly'=>true),
-			array('nome', 'length', 'max'=>45),
-			array('tipo_modalidade', 'length', 'max'=>10),
-			array('genero', 'length', 'max'=>9),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nome, tipo_modalidade, min_inscr, max_inscr, genero', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +44,6 @@ class Modalidade extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'eventoModalidades' => array(self::HAS_MANY, 'EventoModalidade', 'id_modalidade'),
 		);
 	}
 
@@ -62,12 +53,6 @@ class Modalidade extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'nome' => 'Nome',
-			'tipo_modalidade' => 'Tipo Modalidade',
-			'min_inscr' => 'Min Inscr',
-			'max_inscr' => 'Max Inscr',
-			'genero' => 'Genero',
 		);
 	}
 
@@ -90,11 +75,6 @@ class Modalidade extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nome',$this->nome,true);
-		$criteria->compare('tipo_modalidade',$this->tipo_modalidade,true);
-		$criteria->compare('min_inscr',$this->min_inscr);
-		$criteria->compare('max_inscr',$this->max_inscr);
-		$criteria->compare('genero',$this->genero,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -105,7 +85,7 @@ class Modalidade extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Modalidade the static model class
+	 * @return Evento the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

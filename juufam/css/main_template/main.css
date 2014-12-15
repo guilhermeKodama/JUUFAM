@@ -199,3 +199,68 @@ body {
 	line-height: 25px;
 	border-bottom: 1px solid #bbb;
 }
+
+.team {
+	width: 70%; margin: 0 auto;
+	padding: 20px 0;
+	display: table;
+}
+
+.team-title {
+	border: 1px solid #ccc; height: 30px; line-height: 30px; background-color: #bbb; padding: 0 20px;
+}
+
+.team-title h3 {
+	float: left;
+}
+
+.team-title div.team-title-menu {
+	float: right;
+}
+
+.team-title div.team-title-menu div { 
+	float: left;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.box-atletas {
+	clear: both;
+	margin: 5px 0;
+	display: table;
+}
+.box-atletas .new-atleta { 
+	float: left;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.box-atletas .team-atleta-menu { 
+	float: right;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.box-atletas .team-atleta-menu div { 
+	float: left;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.submit-inscricao {
+	margin: 0 auto;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.info-atleta {
+	margin: 15px 20px;
+}
+
+.escolha-modalidade {
+	text-align: center; height: 50px; width: 100%;
+}
+
+.escolha-modalidade select option {
+	width: 250px; height: 15px; font-weight: 14px;
+}

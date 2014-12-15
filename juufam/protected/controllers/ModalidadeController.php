@@ -143,6 +143,16 @@ class ModalidadeController extends Controller
 		));
 	}
 
+	public static function getAllModality() {
+		$modalidades = Modalidade::model()->findAllBySql ("SELECT id, nome FROM modalidade");
+
+		if (count ($modalidades) > 0) {
+			return $modalidades;
+		} else {
+			return null;
+		}
+	}	
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
