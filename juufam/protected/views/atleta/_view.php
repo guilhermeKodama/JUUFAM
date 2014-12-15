@@ -5,16 +5,12 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cpf')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->cpf), array('view', 'id'=>$data->cpf)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('matricula')); ?>:</b>
 	<?php echo CHtml::encode($data->matricula); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cpf')); ?>:</b>
-	<?php echo CHtml::encode($data->cpf); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('rg')); ?>:</b>
@@ -33,11 +29,11 @@
 	<?php echo CHtml::encode($data->genero); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tipo_atleta')); ?>:</b>
 	<?php echo CHtml::encode($data->tipo_atleta); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_curso')); ?>:</b>
 	<?php echo CHtml::encode($data->id_curso); ?>
 	<br />

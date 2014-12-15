@@ -4,19 +4,19 @@
 
 $this->breadcrumbs=array(
 	'Atletas'=>array('index'),
-	$model->id,
+	$model->cpf,
 );
 
 $this->menu=array(
-	array('label'=>'Listar Atletas', 'url'=>array('index')),
-	array('label'=>'Criar Atleta', 'url'=>array('create')),
-	array('label'=>'Atualizar Atleta', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Deletar Atleta', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Gerenciar Atletas', 'url'=>array('admin')),
+	array('label'=>'List Atleta', 'url'=>array('index')),
+	array('label'=>'Create Atleta', 'url'=>array('create')),
+	array('label'=>'Update Atleta', 'url'=>array('update', 'id'=>$model->cpf)),
+	array('label'=>'Delete Atleta', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->cpf),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Atleta', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Atleta #<?php echo $model->id; ?></h1>
+<h1>View Atleta #<?php echo $model->cpf; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -27,7 +27,6 @@ $this->menu=array(
 		'nome',
 		'data_nasc',
 		'genero',
-		'id',
 		'tipo_atleta',
 		'id_curso',
 	),

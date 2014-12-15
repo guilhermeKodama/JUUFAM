@@ -10,14 +10,13 @@
  * @property string $nome
  * @property string $data_nasc
  * @property string $genero
- * @property integer $id
  * @property string $tipo_atleta
  * @property string $id_curso
  *
  * The followings are the available model relations:
  * @property Curso $idCurso
- * @property AtletaModalidade[] $atletaModalidades
  * @property ReprAtleta[] $reprAtletas
+ * @property TimeAtletas[] $timeAtletases
  */
 class Atleta extends CActiveRecord
 {
@@ -37,7 +36,7 @@ class Atleta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, data_nasc, genero, tipo_atleta, id_curso', 'required'),
+			array('cpf, nome, data_nasc, genero, tipo_atleta, id_curso', 'required'),
 			array('matricula', 'length', 'max'=>8),
 			array('cpf, tipo_atleta', 'length', 'max'=>11),
 			array('rg', 'length', 'max'=>255),
@@ -46,7 +45,7 @@ class Atleta extends CActiveRecord
 			array('id_curso', 'length', 'max'=>12),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('matricula, cpf, rg, nome, data_nasc, genero, id, tipo_atleta, id_curso', 'safe', 'on'=>'search'),
+			array('matricula, cpf, rg, nome, data_nasc, genero, tipo_atleta, id_curso', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,8 +58,8 @@ class Atleta extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCurso' => array(self::BELONGS_TO, 'Curso', 'id_curso'),
-			'atletaModalidades' => array(self::HAS_MANY, 'AtletaModalidade', 'id_atleta'),
 			'reprAtletas' => array(self::HAS_MANY, 'ReprAtleta', 'id_atleta'),
+			'timeAtletases' => array(self::HAS_MANY, 'TimeAtletas', 'id_atleta'),
 		);
 	}
 
@@ -76,7 +75,6 @@ class Atleta extends CActiveRecord
 			'nome' => 'Nome',
 			'data_nasc' => 'Data Nasc',
 			'genero' => 'Genero',
-			'id' => 'ID',
 			'tipo_atleta' => 'Tipo Atleta',
 			'id_curso' => 'Id Curso',
 		);
@@ -106,7 +104,6 @@ class Atleta extends CActiveRecord
 		$criteria->compare('nome',$this->nome,true);
 		$criteria->compare('data_nasc',$this->data_nasc,true);
 		$criteria->compare('genero',$this->genero,true);
-		$criteria->compare('id',$this->id);
 		$criteria->compare('tipo_atleta',$this->tipo_atleta,true);
 		$criteria->compare('id_curso',$this->id_curso,true);
 

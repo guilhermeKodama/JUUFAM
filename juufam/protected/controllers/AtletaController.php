@@ -71,7 +71,7 @@ class AtletaController extends Controller
 		{
 			$model->attributes=$_POST['Atleta'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->cpf));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class AtletaController extends Controller
 		{
 			$model->attributes=$_POST['Atleta'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->cpf));
 		}
 
 		$this->render('update',array(

@@ -6,6 +6,7 @@
 
 <div class="form">
 
+
 <!-- import javascript -->
 <?php
 
@@ -14,6 +15,7 @@ $cs = Yii::app ()->getClientScript ();
 $cs->registerScriptFile ( $baseUrl . '/js/jquery-1.11.1.min.js' );
 $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 ?>
+
 
 <?php
 
@@ -29,7 +31,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ?>
 
 	<p class="note">
-		Campos com <span class="required">*</span> são obrigatórios.
+		Fields with <span class="required">*</span> are required.
 	</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -93,7 +95,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 	<?php
 	$controller = new CursoController ( 'chapa' );
-	$models = $controller->getAllCursos();
+	$models = $controller->getAllCursos ();
 	
 	/* Lista as chapas para serem vinculadas ao novo representante */
 	
@@ -105,7 +107,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 			print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
 		}
 		print '</select>';
-		echo $form->error($model,'id_curso');
+		echo $form->error ( $model, 'id_curso' );
 		echo '</div>';
 		
 		echo '<div class="row buttons">';
