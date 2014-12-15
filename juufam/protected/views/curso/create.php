@@ -15,4 +15,11 @@ $this->menu=array(
 
 <h1>Create Curso</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php
+if(isset($erro)){
+	$this->renderPartial('_form', array('model'=>$model,'erro' => $erro));
+}else{
+	$this->renderPartial('_form', array('model'=>$model));
+}
+
+?>

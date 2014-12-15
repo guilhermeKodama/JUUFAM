@@ -29,9 +29,11 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php if(isset($erro)){echo '<font size="2" color="red">'.$erro.'</font></br>';}?>
 		<?php echo $form->labelEx($model,'Codigo do curso *'); ?>
 		<?php echo $form->textField($model,'id',array('size'=>12,'maxlength'=>12)); ?>
 		<?php echo $form->error($model,'id'); ?>
+		
 	</div>
 
 	<div class="row">
