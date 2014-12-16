@@ -53,7 +53,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Inscricao/Create'?>">
 
 	<div class="escolha-modalidade">
-		<select>
+		<select name="modalidade">
 		<?php
 			$modalidadeModal = new ModalidadeController('modalidade');
 			$modalidades = $modalidadeModal->getAllModality();
@@ -78,7 +78,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 				<div class="box-atletas">
 					<div class="info-atleta">
 						<div class="new-atleta">
-							<input type="text" name="nome[]" placeholder="Matricula"/>
+							<input type="text" name="nome[0]" placeholder="Matricula"/>
 							<input type="radio" name="typeatleta-0" value="tecnico">Técnico
 							<input type="radio" name="typeatleta-0" value="atleta" checked>Atleta
 						</div>
@@ -89,17 +89,17 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 				</div> 
 			</div> 
 			<input type="hidden" name="time[]" value="1" />
-			<input type="hidden" class="atletascount" name="time_atletas[1]" value="1," />
+			<input type="hidden" class="atletascount-1" name="time_atletas[1]" value="0," />
 		</div>	
 	</div>	
 	<div class="submit-inscricao">
+		<input type="hidden" title="Inscrever" />
 		<input type="submit" id="submit-ins" title="Inscrever" />
 	</div>
 </form>
 
 <script type="text/javascript">
-
-    var quantAtleta = 1,
+    var quantAtleta = 0,
     	quantTeams = 1;
 
     function createDivFieldsAtleta(){
@@ -108,12 +108,12 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
         var html  = '<div class="box-atletas box-atleta-' + quantAtleta + '">';
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
-			html += '<input type="text" name="nome[]" placeholder="Matricula"/>';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="Matricula"/>';
 			html += '<input type="radio" name="typeatleta-' + quantAtleta + '" value="tecnico">Técnico';
 			html += '<input type="radio" name="typeatleta-' + quantAtleta + '" value="atleta" checked>Atleta';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
-			html += '<div onclick="removerAtleta(this, ' + quantAtleta + ');">-</div>';
+			html += '<div onclick="removerAtleta(this, ' + quantAtleta + ', ' + quantTeams + ');">-</div>';
 			html += '</div>';
 			html += '</div>';
 			html += '</div> ';
@@ -122,19 +122,14 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
     }
 
 	function addAtleta(value, quantTeam) { 
-		var selector = $(value).closest(".team").get();
-		var element = $(selector);
-
-		
 		$(".big-box-" + quantTeam + "").append(createDivFieldsAtleta());
 		
-		var elementnow = $(element.children(".atletascount"));
-		var atual = $(element.children(".atletascount")).val();
-		
+		var elementnow = $(".atletascount-" + quantTeam);
+		var atual = elementnow.val();
+
 		atual += quantAtleta + ",";
 		elementnow.val(atual);
 	}
-
 
     function createDivFieldsAtletaNew(){
     	quantAtleta++;
@@ -142,7 +137,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
         var html  = '<div class="box-atletas">';
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
-			html += '<input type="text" name="nome[]" placeholder="Matricula"/>';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="Matricula"/>';
 			html += '<input type="radio" name="typeatleta-' + quantAtleta + '" value="tecnico">Técnico';
 			html += '<input type="radio" name="typeatleta-' + quantAtleta + '" value="atleta" checked>Atleta';
 			html += '</div>';
@@ -155,7 +150,6 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
             return html;
     }    
 
-
 	function removerTime(value, quantTeams) { 
 		$(".team-" + quantTeams + "").remove();
 	}
@@ -165,7 +159,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 
         var html  = '<div class="team team-' + quantTeams + '">';
             html += '<div class="team-title">';
-			html += '<h3>Time ' + quantTeams + '</h3>';
+			html += '<h3>Time ' + (quantTeams + 1) + '</h3>';
 			html += '<div class="team-title-menu"> ';
 			html += '<div onclick="removerTime(this, ' + quantTeams + ');">-</div>';
 			html += '</div></div>';
@@ -174,7 +168,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 			html += '</div>';
 			html += '</div></div>';
 			html += '<input type="hidden" name="time[]" value="' + quantTeams + '" />';
-			html += '<input type="hidden" class="atletascount" name="time_atletas[' + quantTeams + ']" value="" />';
+			html += '<input type="hidden" class="atletascount-' + quantTeams + '" name="time_atletas[' + quantTeams + ']" value="' + quantAtleta + '," />';
             return html;
     }    
 
@@ -186,7 +180,16 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
         return $(".team").length - 1;
     }
 
-	function removerAtleta(value, quantAtleta) { 
+	function removerAtleta(value, quantAtleta, quantTeam) { 
+		var elementnow = $(".atletascount-" + quantTeam);
+		var atual = elementnow.val();
+		
+		console.log(elementnow);
+		console.log(atual);
+
+		atual = atual.replace(quantAtleta + ",", "");
+		elementnow.val(atual);
+
 		$(".box-atleta-" + quantAtleta + "").remove();
 	}
 
