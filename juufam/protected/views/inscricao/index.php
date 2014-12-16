@@ -184,9 +184,6 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 		var elementnow = $(".atletascount-" + quantTeam);
 		var atual = elementnow.val();
 		
-		console.log(elementnow);
-		console.log(atual);
-
 		atual = atual.replace(quantAtleta + ",", "");
 		elementnow.val(atual);
 

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "Time".
+ * This is the model class for table "TimeAtletas".
  *
- * The followings are the available columns in table 'Time':
+ * The followings are the available columns in table 'TimeAtletas':
  * @property integer $id
  * @property string $nome
  * @property integer $id_uni
@@ -12,10 +12,10 @@
  * @property Curso[] $cursos
  * @property Unidade $idUni
  */
-class Time
+class TimeAtletas
 {
     public $id;
-    public $id_modalidade;
-    public $id_curso;
-    public $atletas;
+    public $id_atleta;
+    public $id_time;
+    public $tipo_atleta;
 }

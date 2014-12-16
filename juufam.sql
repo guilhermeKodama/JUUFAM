@@ -255,11 +255,7 @@ CREATE TABLE `time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_modalidade` int(11) NOT NULL,
   `id_curso` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_modalidade_time` (`id_modalidade`),
-  KEY `id_curso_time` (`id_curso`),
-  CONSTRAINT `id_curso_time` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -283,11 +279,8 @@ CREATE TABLE `time_atletas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_atleta` varchar(11) NOT NULL,
   `id_time` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_time_time` (`id_time`),
-  KEY `fk_id_atleta_time_idx` (`id_atleta`),
-  CONSTRAINT `fk_id_atleta_time` FOREIGN KEY (`id_atleta`) REFERENCES `atleta` (`cpf`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `id_time_time` FOREIGN KEY (`id_time`) REFERENCES `time` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `tipo_atleta` ENUM('atleta','tecnico') NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
