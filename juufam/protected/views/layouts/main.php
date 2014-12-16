@@ -95,9 +95,49 @@ label.error {
 						array ('label' => 'Login','url' => array ('/site/login' ),'visible' => Yii::app ()->user->isGuest ),
 						array ('label' => 'Logout (' . Yii::app ()->user->name . ')','url' => array ('/site/logout' ),'visible' => ! Yii::app ()->user->isGuest )));
 				
-				if (!Yii::app ()->user->isGuest) {//está logado
+                                  //Acesso do usuário quando ele é administrador
+                                $itemsIsAdmin = array ( 'items' => array (
+                                                array ('label' => 'Principal','url' => array ('/site/index')),
+						array ('label' => 'Cadastro','url' => array ('/site/index')),
+						array ('label' => 'Gerenciar Modalidades','url' => array ('/modalidade/admin')),
+						array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
+						array ('label' => 'Gerenciar Representantes','url' => array ('/representante/admin')),
+						array ('label' => 'Gerenciar Institutos','url' => array ('/instituto/admin')),
+						array ('label' => 'Gerenciar Unidades','url' => array ('/unidade/admin')),
+						array ('label' => 'Gerenciar Cursos','url' => array ('/curso/admin')),
+						array ('label' => 'Relatorios','url' => array ('/site/index')),
+						array ('label' => 'Certificados','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Regulamento','url' => array ('/site/index')),
+						array ('label' => 'Descricão','url' => array ('/site/index')),
+						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
+								'url' => array ('/site/logout' ),
+								'visible' => ! Yii::app ()->user->isGuest )));
+                                
+                                //Acesso do usuário quando ele é representante
+                                $itemsIsRepresentante =array ( 'items' => array (
+                                                array ('label' => 'Principal','url' => array ('/site/index')),
+						array ('label' => 'Cadastro','url' => array ('/site/index')),
+                                                array ('label' => 'Relatorios','url' => array ('/site/index')),
+						array ('label' => 'Certificados','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Regulamento','url' => array ('/site/index')),
+						array ('label' => 'Descricão','url' => array ('/site/index')),
+						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
+								'url' => array ('/site/logout' ),
+								'visible' => ! Yii::app ()->user->isGuest )));
+                                
+                                
+				if (!Yii::app ()->user->isGuest && UsuarioController::isAdmin(Yii::app ()->user->name)) {//está logado
 					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
-						$items = $itemsEventOn;
+						$items = $itemsIsAdmin;
+					} else {
+						$items = $itemsEventOff;
+					}
+				} 
+                                else if(!Yii::app ()->user->isGuest && UsuarioController::isRepresentante(Yii::app ()->user->name)) {//está logado
+					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
+						$items = $itemsIsRepresentante;
 					} else {
 						$items = $itemsEventOff;
 					}

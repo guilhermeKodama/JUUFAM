@@ -21,9 +21,31 @@ class UsuarioController extends Controller {
 		}else{
 			return false;
 		}
+         
 
 	}
-	
+	public static function isAdmin ($login){
+            $id = array ($login);
+             $model = Usuario::model()->findAllByPk($id);
+             if (sizeof ($model) > 0){
+                 if ($model[0] ->id_tipo_usuario == "admin"){
+                     return true;
+                 }else{
+                     return false;
+                 }
+             }
+        }
+        public static function isRepresentante ($login){
+            $id = array ($login);
+             $model = Usuario::model()->findAllByPk($id);
+             if (sizeof ($model) > 0){
+                 if ($model[0] ->id_tipo_usuario == "representante"){
+                     return true;
+                 }else{
+                     return false;
+                 }
+             }
+        }
 	// Uncomment the following methods and override them if needed
 	/*
 	 * public function filters()

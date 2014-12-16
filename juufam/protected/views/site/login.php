@@ -38,6 +38,13 @@ $this->breadcrumbs=array(
 		<div class="row buttons">
 			<?php echo CHtml::submitButton('Entrar'); ?>
 		</div>
+                <div class="row">
+                        <?php
+                         echo "<a href= 'http://localhost/juufam/index.php?r=RecuperarSenha'>  Esqueci minha senha  </a>"
+                        ?>
+                    
+                </div>
+
 
 	<?php $this->endWidget(); ?>
 	</div><!-- form -->

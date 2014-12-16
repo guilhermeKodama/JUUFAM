@@ -160,7 +160,7 @@ class AtletaController extends Controller {
 		}
 		
 		/* Checa se o nome tem numero */
-		if (! ctype_alpha ( $model->nome )) {
+		if( preg_match('([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $model->nome) )  {
 			$this->erro ["nome"] = "*O nome não pode conter números";
 			$nameHasNumber = true;
 		}
