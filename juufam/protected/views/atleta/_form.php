@@ -71,6 +71,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</div>
 
 	<div class="row">
+		<?php if(isset($erro["data_nasc"])){echo '<font size="2" color="red">'.$erro["data_nasc"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'data_nasc'); ?>
 		<?php echo $form->textField($model,'data_nasc',array('size'=>45,'maxlength'=>45,'id'=>'dataNasc')); ?>
 		<?php echo $form->error($model,'data_nasc'); ?>

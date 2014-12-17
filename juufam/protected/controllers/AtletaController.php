@@ -122,6 +122,7 @@ class AtletaController extends Controller {
 		$isCPFWrong = false;
 		$rgHasLetter = false;
 		$nameHasNumber = false;
+		$dataNascErro = false;
 		
 		/* Checa se o CPF é duplicado */
 		$ids = array (
@@ -136,11 +137,22 @@ class AtletaController extends Controller {
 		}
 		
 		/* Checa se a matricula tem letra */
-		if (sizeof ( $model->matricula ) > 1) {
-			if (! ctype_digit ( $model->matricula )) {
+		
+		if (strlen ( $model->matricula ) > 0) {
+			if (preg_match ( '![^0-9]!i', $model->matricula )) {
 				$this->erro ["matricula"] = "*Matricula só pode conter números";
 				$matriculaHasLetter = true;
 			}
+			
+			if (strlen ( $model->matricula ) < 8) {
+				$this->erro ["matricula"] = "*Matricula incompleta";
+				$matriculaHasLetter = true;
+			}
+		}
+		
+		if (strlen ( $model->cpf ) < 11) {
+			$this->erro ["cpf"] = "*CPF incompleto";
+			$isCPFWrong = true;
 		}
 		
 		/* Checa se o CPF esta no formato correto */
@@ -151,21 +163,31 @@ class AtletaController extends Controller {
 		 * }
 		 */
 		
-		/* Checa se o RH tem letra */
-		
-		if (preg_match ( '![^0-9]!i', $model->rg )) {
-			$this->erro ["rg"] = "*RG só pode conter números";
-			$rgHasLetter = true;
+		/* Checa se o RG tem letra ou caracter especial */
+		if (strlen ( $model->rg ) > 0) {
+			if (preg_match ( '![^0-9]!i', $model->rg )) {
+				$this->erro ["rg"] = "*RG só pode conter números";
+				$rgHasLetter = true;
+			}
 		}
 		
 		/* Checa se o nome tem numero */
-		
-		if (preg_match ( '([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $model->nome ) || preg_match ( '![^a-z 0-9]!i', $model->nome )) {
-			$this->erro ["nome"] = "*O nome não pode conter números ou caracteres especiais";
+		if (strlen ( $model->nome ) > 0) {
+			if (preg_match ( '([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $model->nome ) || preg_match ( '![^a-z 0-9]!i', $model->nome )) {
+				$this->erro ["nome"] = "*O nome não pode conter números ou caracteres especiais";
+				$nameHasNumber = true;
+			}
+		} else {
+			$this->erro ["nome"] = "*O nome é obrigatório";
 			$nameHasNumber = true;
 		}
 		
-		if ($isCpfDuplicated || $matriculaHasLetter || $isCPFWrong || $rgHasLetter || $nameHasNumber) {
+		if (strlen ( $model->data_nasc ) == 0) {
+			$dataNascErro = true;
+			$this->erro ["data_nasc"] = "*Data de nascimento incompleta";
+		}
+		
+		if ($isCpfDuplicated || $matriculaHasLetter || $isCPFWrong || $rgHasLetter || $nameHasNumber || $dataNascErro) {
 			return false;
 		} else {
 			return true;
