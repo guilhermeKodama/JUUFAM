@@ -1,7 +1,7 @@
 <?php
 /* @var $this CriarEventoController */
 $this->breadcrumbs = array (
-		'Criar Evento' 
+		'Inscricao' 
 );
 ?>
 <!-- import javascript -->
@@ -14,5 +14,5 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 ?>
 
 <h1>Inscrever atletas</h1>
-<p>Ocorreu um erro na inscrição de atletas</h1>
+<p>Ocorreu um erro na inscrição de atletas</p>
 

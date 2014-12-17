@@ -1,7 +1,7 @@
 <?php
 /* @var $this CriarEventoController */
 $this->breadcrumbs = array (
-		'Criar Evento' 
+		'Inscricao' 
 );
 ?>
 <!-- import javascript -->
