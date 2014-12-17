@@ -118,6 +118,7 @@ label.error {
                                 $itemsIsRepresentante =array ( 'items' => array (
                                                 array ('label' => 'Principal','url' => array ('/site/index')),
 						array ('label' => 'Cadastro','url' => array ('/site/index')),
+                                                array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
                                                 array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
 						array ('label' => 'Inscricão','url' => array ('/site/index')),
