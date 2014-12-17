@@ -49,7 +49,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 	<div class="big-box-team">
 		<div class="team team-1">
 			<div class="team-title"> 
-				<h3>Time 1</h3>
+				<h3>Time</h3>
 
 				<div class="team-title-menu"> 
 					<div class="add-team">+</div>
@@ -81,7 +81,8 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 
 <script type="text/javascript">
     var quantAtleta = 0,
-    	quantTeams = 1;
+    	quantTeams = 1,
+    	quantTeamsView = 1;;
 
     function createDivFieldsAtleta(){
     	quantAtleta++;
@@ -140,7 +141,7 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 
         var html  = '<div class="team team-' + quantTeams + '">';
             html += '<div class="team-title">';
-			html += '<h3>Time ' + (quantTeams + 1) + '</h3>';
+			html += '<h3>Time</h3>';
 			html += '<div class="team-title-menu"> ';
 			html += '<div onclick="removerTime(this, ' + quantTeams + ');">-</div>';
 			html += '</div></div>';
