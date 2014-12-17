@@ -134,8 +134,7 @@ label.error {
 					} else {
 						$items = $itemsEventOff;
 					}
-				} 
-                                else if(!Yii::app ()->user->isGuest && UsuarioController::isRepresentante(Yii::app ()->user->name)) {//está logado
+				}else if(!Yii::app ()->user->isGuest && UsuarioController::isRepresentante(Yii::app ()->user->name)) {//está logado
 					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
 						$items = $itemsIsRepresentante;
 					} else {

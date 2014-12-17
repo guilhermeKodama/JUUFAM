@@ -93,12 +93,9 @@ class AtletaController extends Controller {
 			
 			$model->attributes = $_POST ['Atleta'];
 			
-			
 			$model->cpf = preg_replace ( '/[^0-9]/is', '', $model->cpf );
 			
 			if ($this->isParamsValid ( $model )) {
-				
-				
 				
 				if ($model->save ())
 					$this->redirect ( array (
@@ -112,11 +109,12 @@ class AtletaController extends Controller {
 						'erro' => $this->erro 
 				) );
 			}
+		} else {
+			
+			$this->render ( 'create', array (
+					'model' => $model 
+			) );
 		}
-		
-		$this->render ( 'create', array (
-				'model' => $model 
-		) );
 	}
 	private function isParamsValid($model) {
 		$isCpfDuplicated = false;
@@ -146,22 +144,24 @@ class AtletaController extends Controller {
 		}
 		
 		/* Checa se o CPF esta no formato correto */
-		/*if (ValidationUtilities::isCPFValid ( $model->cpf )) {
-			$this->erro ["cpf"] = "*CPF incorreto";
-			$isCPFWrong = true;
-		}*/
+		/*
+		 * if (ValidationUtilities::isCPFValid ( $model->cpf )) {
+		 * $this->erro ["cpf"] = "*CPF incorreto";
+		 * $isCPFWrong = true;
+		 * }
+		 */
 		
 		/* Checa se o RH tem letra */
-		if (sizeof ( $model->rg ) > 1) {
-			if (! ctype_digit ( $model->rg )) {
-				$this->erro ["rg"] = "*RG só pode conter números";
-				$rgHasLetter = true;
-			}
+		
+		if (preg_match ( '![^0-9]!i', $model->rg )) {
+			$this->erro ["rg"] = "*RG só pode conter números";
+			$rgHasLetter = true;
 		}
 		
 		/* Checa se o nome tem numero */
-		if( preg_match('([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $model->nome) )  {
-			$this->erro ["nome"] = "*O nome não pode conter números";
+		
+		if (preg_match ( '([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $model->nome ) || preg_match ( '![^a-z 0-9]!i', $model->nome )) {
+			$this->erro ["nome"] = "*O nome não pode conter números ou caracteres especiais";
 			$nameHasNumber = true;
 		}
 		
