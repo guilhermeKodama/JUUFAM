@@ -22,6 +22,10 @@ $this->widget ( 'zii.widgets.grid.CGridView', array (
 				'tipo_atleta',
 				'id_curso',
 				'status',
+				array( 'class'=>'CLinkColumn',
+						'header'=>'Documentos',
+						'labelExpression'=>'"Documentos para aprovação"',
+						'urlExpression'=>'Yii::app()->request->baseUrl."/egresso_doc/".$data->cpf.".pdf"'),
 				array (
 						'class' => 'CButtonColumn',
 						'template' => '{approve}{decline}{back}',

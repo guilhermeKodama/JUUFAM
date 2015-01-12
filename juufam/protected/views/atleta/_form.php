@@ -7,7 +7,7 @@
 <div class="form">
 
 
-<!-- import javascript -->
+	<!-- import javascript -->
 <?php
 
 $baseUrl = Yii::app ()->baseUrl;
@@ -26,7 +26,10 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		// controller action is handling ajax validation correctly.
 		// There is a call to performAjaxValidation() commented in generated controller code.
 		// See class documentation of CActiveForm for details on this.
-		'enableAjaxValidation' => false 
+		'enableAjaxValidation' => false,
+		'htmlOptions' => array (
+				'enctype' => 'multipart/form-data' 
+		) 
 ) );
 ?>
 
@@ -49,7 +52,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->textField($model,'cpf',array('size'=>14,'maxlength'=>14,'id'=>'cpf')); ?>
 		<?php echo $form->error($model,'cpf'); ?>
 	</div>
-	
+
 	<script type="text/javascript">
 		jQuery(function($){
 	   	$("#cpf").mask("999.999.999-99",{placeholder:""});
@@ -93,16 +96,40 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->error($model,'genero'); ?>
 	</div>
 
+	<script type="text/javascript">
+		function loadPDF(){
+		  var myselect = document.getElementById("selectOpt");
+		  if(myselect.options[myselect.selectedIndex].value == "egresso"){
+			  document.getElementById("loadFile").style.display = 'block';
+			  
+			}else{
+				
+				 document.getElementById("loadFile").style.display = 'none';
+			}
+		}
+
+	</script>
+
+
 	<div class="row">
 		<label for="Atleta_tipo_atleta" class="required"> Tipo de Atleta <span
 			class="required">*</span>
-		</label> <br /> <select name="Atleta[tipo_atleta]">
+		</label> <br /> <select name="Atleta[tipo_atleta]" id="selectOpt"
+			onChange="loadPDF()">
 			<option value="ativo">Ativo</option>
 			<option value="funcionario">Funcionario</option>
 			<option value="egresso">Egresso</option>
 		</select>
 		<?php echo $form->error($model,'tipo_atleta'); ?>
 	</div>
+
+	<div class="row" id="loadFile" style="display:none">
+		<h3>Documentos de comprovação</h3>
+		<?php if(isset($erro["file"])){echo '<font size="2" color="red">'.$erro["file"].'</font></br>';}?>
+		<input type="file" id="userfile" name="userfile"
+			accept="application/pdf">
+	</div>
+	
 
 	<?php
 	$controller = new CursoController ( 'chapa' );

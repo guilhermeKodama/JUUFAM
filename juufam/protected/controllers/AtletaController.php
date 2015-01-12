@@ -97,11 +97,32 @@ class AtletaController extends Controller {
 			
 			if ($this->isParamsValid ( $model )) {
 				
-				if ($model->save ())
+				if ($model->tipo_atleta == "egresso") {
+					
+					$model->status = "em analise";
+					
+					/* carregar o arquivo do modelo e colocar em um diretorio */
+					
+					$foto = $_FILES ["userfile"];
+					$nome_imagem = $model->cpf . ".pdf";
+					$caminho_imagem = "/var/www/html/juufam/egresso_doc/" . $nome_imagem;
+					
+					if (move_uploaded_file ( $foto ["tmp_name"], $caminho_imagem )) {
+						// carregou o arquivo com sucesso
+					} else {
+						print "Possivel ataque de upload! Aqui esta alguma informação:\n";
+						print_r ( $_FILES );
+					}
+				} else {
+					$model->status = "aprovado";
+				}
+				
+				if ($model->save ()) {
 					$this->redirect ( array (
 							'view',
 							'id' => $model->cpf 
 					) );
+				}
 			} else {
 				
 				$this->render ( 'create', array (
