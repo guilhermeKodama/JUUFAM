@@ -1,8 +1,8 @@
 <?php
-/* @var $this UsuarioController */
+/* @var $this EvaluateExternalRegistrationController */
 
 $this->breadcrumbs=array(
-	'Usuario',
+	'Evaluate External Registration',
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>

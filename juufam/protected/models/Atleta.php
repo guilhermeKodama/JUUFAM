@@ -12,6 +12,7 @@
  * @property string $genero
  * @property string $tipo_atleta
  * @property string $id_curso
+ * @property string $status
  *
  * The followings are the available model relations:
  * @property Curso $idCurso
@@ -43,9 +44,10 @@ class Atleta extends CActiveRecord
 			array('nome, data_nasc', 'length', 'max'=>45),
 			array('genero', 'length', 'max'=>9),
 			array('id_curso', 'length', 'max'=>12),
+			array('status', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('matricula, cpf, rg, nome, data_nasc, genero, tipo_atleta, id_curso', 'safe', 'on'=>'search'),
+			array('matricula, cpf, rg, nome, data_nasc, genero, tipo_atleta, id_curso, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,13 +72,14 @@ class Atleta extends CActiveRecord
 	{
 		return array(
 			'matricula' => 'Matricula',
-			'cpf' => 'CPF',
-			'rg' => 'RG',
+			'cpf' => 'Cpf',
+			'rg' => 'Rg',
 			'nome' => 'Nome',
-			'data_nasc' => 'Data de Nascimento',
-			'genero' => 'Gênero',
+			'data_nasc' => 'Data Nasc',
+			'genero' => 'Genero',
 			'tipo_atleta' => 'Tipo Atleta',
-			'id_curso' => 'Codigo do Curso',
+			'id_curso' => 'Id Curso',
+			'status' => 'Status',
 		);
 	}
 
@@ -106,9 +109,30 @@ class Atleta extends CActiveRecord
 		$criteria->compare('genero',$this->genero,true);
 		$criteria->compare('tipo_atleta',$this->tipo_atleta,true);
 		$criteria->compare('id_curso',$this->id_curso,true);
+		$criteria->compare('status',$this->status,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		));
+	}
+	
+	public function searchEgresso(){
+		// @todo Please modify the following code to remove attributes that should not be searched.
+	
+		$criteria=new CDbCriteria;
+	
+		$criteria->compare('matricula',$this->matricula,true);
+		$criteria->compare('cpf',$this->cpf,true);
+		$criteria->compare('rg',$this->rg,true);
+		$criteria->compare('nome',$this->nome,true);
+		$criteria->compare('data_nasc',$this->data_nasc,true);
+		$criteria->compare('genero',$this->genero,true);
+		$criteria->compare('tipo_atleta','egresso',true);
+		$criteria->compare('id_curso',$this->id_curso,true);
+		$criteria->compare('status',$this->status,true);
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
 		));
 	}
 
