@@ -120,6 +120,7 @@ label.error {
                         array ('label' => 'Principal','url' => array ('/site/index')),
 						array ('label' => 'Cadastro','url' => array ('/site/index')),
                         array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
+						array ('label' => 'Avaliar Inscrições Externas','url' => array ('/evaluateExternalRegistration/index')),
                         array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
 						array ('label' => 'Inscricão','url' => array ('/inscricao/index')),

@@ -1,5 +1,6 @@
 <?php
 class EvaluateRegistrationEgressoController extends Controller {
+	
 	public function actionIndex() {
 		$model = new Atleta ( 'search' );
 		$model->unsetAttributes (); // clear any default values

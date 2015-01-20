@@ -20,10 +20,12 @@ class UserIdentity extends CUserIdentity{
 		$userController = new UsuarioController('usuario');
 		
 		
-		if($userController->loginIsValid($this->username,$this->password) == false)
+		if($userController->loginIsValid($this->username,$this->password) == false){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
+		}else{
 			$this->errorCode=self::ERROR_NONE;
+		}
 		return !$this->errorCode;
 	}
+	
 }

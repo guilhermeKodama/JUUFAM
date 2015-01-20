@@ -12,6 +12,7 @@
  *
  * The followings are the available model relations:
  * @property ReprAtleta[] $reprAtletas
+ * @property TimeAtletas[] $timeAtletases
  * @property Chapa $idChapa
  */
 class Usuario extends CActiveRecord
@@ -51,6 +52,7 @@ class Usuario extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'reprAtletas' => array(self::HAS_MANY, 'ReprAtleta', 'id_repr'),
+			'timeAtletases' => array(self::HAS_MANY, 'TimeAtletas', 'id_repr'),
 			'idChapa' => array(self::BELONGS_TO, 'Chapa', 'id_chapa'),
 		);
 	}
@@ -64,8 +66,8 @@ class Usuario extends CActiveRecord
 			'nome' => 'Nome',
 			'login' => 'Login',
 			'senha' => 'Senha',
-			'id_tipo_usuario' => 'Tipo Usuario',
-			'id_chapa' => 'Chapa',
+			'id_tipo_usuario' => 'Id Tipo Usuario',
+			'id_chapa' => 'Id Chapa',
 		);
 	}
 
@@ -108,4 +110,9 @@ class Usuario extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	private function getLogin(){
+		$this->login;
+	}
+
 }

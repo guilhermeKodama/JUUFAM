@@ -35,7 +35,8 @@ class UsuarioController extends Controller {
                  }
              }
         }
-        public static function isRepresentante ($login){
+        
+    public static function isRepresentante ($login){
             $id = array ($login);
              $model = Usuario::model()->findAllByPk($id);
              if (sizeof ($model) > 0){
@@ -46,6 +47,18 @@ class UsuarioController extends Controller {
                  }
              }
         }
+        
+     public static function getUser($login){
+     	
+     	$id = array (
+     			$login
+     	);
+     	
+     	$model = Usuario::model ()->findAllByPk ( $id );
+     	
+     	return $model;
+     	
+     }
 	// Uncomment the following methods and override them if needed
 	/*
 	 * public function filters()
