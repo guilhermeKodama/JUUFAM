@@ -264,3 +264,8 @@ body {
 .escolha-modalidade select option {
 	width: 250px; height: 15px; font-weight: 14px;
 }
+
+.team-tech {
+	margin: 10px 0;
+	float: left;
+}

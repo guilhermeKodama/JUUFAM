@@ -305,6 +305,8 @@ CREATE TABLE `time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_modalidade` int(11) NOT NULL,
   `id_curso` varchar(12) NOT NULL,
+  `tecnico` varchar(11) NULL,
+  `auxiliar` varchar(11) NULL,
   PRIMARY KEY (`id`),
   KEY `id_modalidade_time` (`id_modalidade`),
   KEY `id_curso_time` (`id_curso`),
