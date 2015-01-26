@@ -61,42 +61,48 @@ class RegulamentoController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
-	{           
-            $model=new Regulamento;
+	public function actionCreate() {           
+        $path = explode("/", $_SERVER['SCRIPT_FILENAME']);
+        unset($path[count($path) - 1]);
+
+        $stringpath = "";
+        
+        for ($i=0; $i < count($path); $i++) { 
+            $stringpath .= $path[$i] . "/";
+        }
+
+        $model=new Regulamento;
+        
+        if(isset($_POST['Regulamento']))
+        {   
+            $arquivo = $_FILES['arquivoRegulamento'];
+            $nome_arquivo = "regulamento_". date ( "Y" ) .".pdf"; 
+            $link = Yii::app()->baseUrl . "/regulamento/" . $nome_arquivo;
+            $caminho_arquivo = $stringpath . 'regulamento/' .$nome_arquivo;
+            $model->attributes = $_POST['Regulamento'];              
+            $model->link = $link;
             
-            if(isset($_POST['Regulamento']))
-            {   
-                //$link = "http://localhost/juufam/regulamento/";                
-                $arquivo = $_FILES['arquivoRegulamento'];
-                $nome_arquivo = "regulamento_". date ( "Y" ) .".pdf"; 
-                $link = Yii::app()->baseUrl . "/regulamento/" . $nome_arquivo;
-                $caminho_arquivo = '/var/www/html/juufam-teste/regulamento/' .$nome_arquivo;
-                $model->attributes = $_POST['Regulamento'];              
-                $model->link = $link;
-                
-                move_uploaded_file($arquivo["tmp_name"], $caminho_arquivo);                                
-                if($model->save()){                                     
-                    $this->redirect(Yii::app ()->homeUrl);
-                }                            
-                
-        } $this->render('create', array('model'=>$model));
-        }                    
+            move_uploaded_file($arquivo["tmp_name"], $caminho_arquivo);                                
+            
+            if ($model->save()) {
+                $this->redirect(Yii::app()->homeUrl . "?r=regulamento/index");
+            }                            
+    	} 
+
+    	$this->render('create', array('model'=>$model));
+    }                    
         
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Regulamento']))
 		{
 			$model->attributes=$_POST['Regulamento'];
+
 			if ($model->save()) {
-                            $this->redirect(array('view', 'id' => $model->ano));
-                           
-                        }                       
+				$this->redirect(array('view', 'id' => $model->ano));
+			}                       
 		}
 
 		$this->render('update',array(
@@ -171,7 +177,4 @@ class RegulamentoController extends Controller
 			Yii::app()->end();
 		}
 	}
-
-       
- }
-                
+ }               

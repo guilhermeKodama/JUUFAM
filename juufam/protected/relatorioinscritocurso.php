@@ -1,9 +1,32 @@
 <?php
-    
-    $id_modalidade = $_POST["modalidade"];
-    $id_curso = $_POST["curso"];
-    
-   
+
+    function GetBasePathWProtectec() {
+        $path = explode("/", $_SERVER['SCRIPT_FILENAME']);
+        unset($path[count($path) - 1]);
+
+        $stringpath = "";
+        for ($i=0; $i < count($path); $i++) { 
+            $stringpath .= $path[$i] . "/";
+        }
+
+        return $stringpath;
+    } 
+
+    function GetBasePath() {
+        $path = explode("/", $_SERVER['SCRIPT_FILENAME']);
+        unset($path[count($path) - 1]);
+        unset($path[count($path) - 1]);
+
+        $stringpath = "";
+        for ($i=0; $i < count($path); $i++) { 
+            $stringpath .= $path[$i] . "/";
+        }
+
+        return $stringpath;
+    } 
+
+    $id_modalidade = $_GET["modalidade"];
+    $id_curso = $_GET["curso"];
     
     $sql = "SELECT modalidade.nome AS modalidade, time.id, curso.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN curso ON curso.id = time.id_curso";
     
@@ -25,12 +48,11 @@
         $sql .= "id_modalidade LIKE '" . $id_modalidade . "'";   
     }
     
-    $con = mysqli_connect("localhost", "root", "", "juufam");
+    $con = mysqli_connect("localhost", "root", "nh3mu123", "juufam3");
     
     $curso = mysqli_query($con, $sql);
     
-    
-    require 'protected/extensions/fpdf/fpdf.php';
+    require GetBasePathWProtectec() . 'extensions/fpdf/fpdf.php';
     
     function converte($string){
         return iconv("UTF-8", "ISO-8859-1", $string);
@@ -40,8 +62,8 @@
     $pdf->AddPage();
     $pdf->Ln(3);
     
-    $pdf->Image('images/braso.png', 10, 7);
-    $pdf->Image('images/ufam.png', 500,15);
+    $pdf->Image(GetBasePath() . 'images/braso.png', 10, 7);
+    $pdf->Image(GetBasePath() . 'images/ufam.png', 500,15);
     
     $pdf->SetFont("arial", "B", 12);
     $pdf->Cell(0,5,"PODER EXECUTIVO", 0,1,"C");
@@ -59,7 +81,6 @@
          $titulo .= " GERAL ";    
     }
     
-    
     if ($id_curso != "0") {
         $titulo .= " INSCRITOS POR CURSO ";    
     }
@@ -68,21 +89,15 @@
          $titulo .= " INSCRITOS POR MODALIDADE";    
     }
 
-    
     $pdf->Cell(0,50,converte($titulo),0,1,"C");
     
-    //$pdf->Cell(0, 5, converte("Relatório"), 0, 1, "C");
     $pdf->Ln(10);
     
-
-    while($linha = mysqli_fetch_array($curso)){
-        
+    while ($linha = mysqli_fetch_array($curso)){
         $id_time = $linha["id"];
-        $sql2 = "SELECT atleta.nome, atleta.matricula, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso WHERE time_atletas.id_time = " . $id_time ;
+        $sql2 = "SELECT atleta.nome, atleta.cpf as matricula, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso WHERE time_atletas.id_time = " . $id_time ;
         
         $atletas = mysqli_query($con, $sql2);
-        
-    
         
         $pdf->SetFont("arial", "B", 12);
         $pdf->Cell(0,50,converte("Modalidade: " . $linha["modalidade"]),0,1,"L");
@@ -95,29 +110,16 @@
         $pdf->Cell(200, 20, 'Atleta',1,0,"L");
         $pdf->Cell(200, 20, 'Curso',1,0,"L");
        
-        
-        
         $pdf->Ln(20);
         $pdf->SetFont("arial", "", 12);
-        
         
         while($linha2 = mysqli_fetch_array($atletas)){
             $pdf->Cell(100, 20, $linha2["matricula"],1 ,0, "L");
             $pdf->Cell(200, 20, $linha2["nome"],1 ,0, "L");
             $pdf->Cell(200, 20, $linha2["curso"],1 ,0, "L");
-           
-            
             $pdf->Ln(20);
-            
-       
         }
-        
-        
-            
     }
-    
-        
-//    }
-   
+
     $pdf->Output("inscritoscurso.pdf", "I");
 ?>

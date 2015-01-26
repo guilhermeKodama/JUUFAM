@@ -85,6 +85,15 @@ class AtletaController extends Controller {
 	 */
 	public function actionCreate() {
 		$model = new Atleta ();
+
+        $path = explode("/", $_SERVER['SCRIPT_FILENAME']);
+        unset($path[count($path) - 1]);
+
+        $stringpath = "";
+        
+        for ($i=0; $i < count($path); $i++) { 
+            $stringpath .= $path[$i] . "/";
+        }		
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -105,7 +114,7 @@ class AtletaController extends Controller {
 					
 					$foto = $_FILES ["userfile"];
 					$nome_imagem = $model->cpf . ".pdf";
-					$caminho_imagem = "/var/www/html/juufam/egresso_doc/" . $nome_imagem;
+					$caminho_imagem = $stringpath . "egresso_doc/" . $nome_imagem;
 					
 					if (move_uploaded_file ( $foto ["tmp_name"], $caminho_imagem )) {
 						// carregou o arquivo com sucesso
