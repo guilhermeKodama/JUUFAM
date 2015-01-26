@@ -69,7 +69,7 @@ CREATE TABLE `chapa` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `chapa`
+-- Dumping data for table `chapa`/atlr
 --
 
 LOCK TABLES `chapa` WRITE;
@@ -305,6 +305,8 @@ CREATE TABLE `time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_modalidade` int(11) NOT NULL,
   `id_curso` varchar(12) NOT NULL,
+  `tecnico` varchar(11) NULL,
+  `auxiliar` varchar(11) NULL,
   PRIMARY KEY (`id`),
   KEY `id_modalidade_time` (`id_modalidade`),
   KEY `id_curso_time` (`id_curso`),
@@ -319,7 +321,7 @@ CREATE TABLE `time` (
 
 LOCK TABLES `time` WRITE;
 /*!40000 ALTER TABLE `time` DISABLE KEYS */;
-INSERT INTO `time` VALUES (5,1,'IE015');
+INSERT INTO `time` VALUES (5,1,'IE015', '91230130031', '91230130031');
 /*!40000 ALTER TABLE `time` ENABLE KEYS */;
 UNLOCK TABLES;
 
