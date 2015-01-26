@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'JUUFAM',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -54,10 +54,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=juufam',
+			'connectionString' => 'mysql:host=localhost;dbname=juufam3',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'multi@media2',
+			'password' => 'nh3mu123',
 			'charset' => 'utf8',
 		),
 	
