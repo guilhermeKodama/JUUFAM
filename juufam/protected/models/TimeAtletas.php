@@ -17,6 +17,12 @@
  * @property Time $idTime
  */
 class TimeAtletas extends CActiveRecord {
+	public $id;
+	public $id_atleta;
+	public $id_time;
+	public $id_repr;
+	public $status = "aprovado";
+	
 	/**
 	 *
 	 * @return string the associated database table name
@@ -165,20 +171,4 @@ class TimeAtletas extends CActiveRecord {
 		return parent::model ( $className );
 	}
 }
-=======
- * @property string $nome
- * @property integer $id_uni
- *
- * The followings are the available model relations:
- * @property Curso[] $cursos
- * @property Unidade $idUni
- */
-class TimeAtletas
-{
-    public $id;
-    public $id_atleta;
-    public $id_time;
-    public $id_repr;
-    public $status = "aprovado";
-}
->>>>>>> d22ef59be05db06cc905b6b034218702166400e3
+

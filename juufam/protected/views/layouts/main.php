@@ -107,7 +107,7 @@ label.error {
 						array ('label' => 'Gerenciar Cursos','url' => array ('/curso/admin')),
 						array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
-						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/inscricao/index')),
 						array ('label' => 'Regulamento','url' => array ('/regulamento/create')),
 						array ('label' => 'Descricão','url' => array ('/descricao/index')),
 						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
@@ -118,16 +118,14 @@ label.error {
                                 $itemsIsRepresentante =array ( 'items' => array (
                                                 array ('label' => 'Principal','url' => array ('/site/index')),
 						array ('label' => 'Cadastro','url' => array ('/site/index')),
-<<<<<<< HEAD
+
                         array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
 						array ('label' => 'Avaliar Inscrições Externas','url' => array ('/evaluateExternalRegistration/index')),
                         array ('label' => 'Relatorios','url' => array ('/site/index')),
-=======
-                                                array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
-                                                array ('label' => 'Relatorios','url' => array ('/site/index')),
->>>>>>> d22ef59be05db06cc905b6b034218702166400e3
+                        array ('label' => 'Gerenciar Atletas','url' => array ('/atleta/admin')),
+                        array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
-						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/inscricao/index')),
 						array ('label' => 'Regulamento','url' => array ('/regulamento/index')),
 						array ('label' => 'Descricão','url' => array ('/descricao/index')),
 						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
