@@ -71,13 +71,13 @@ class RegulamentoController extends Controller
                 $arquivo = $_FILES['arquivoRegulamento'];
                 $nome_arquivo = "regulamento_". date ( "Y" ) .".pdf"; 
                 $link = Yii::app()->baseUrl . "/regulamento/" . $nome_arquivo;
-                $caminho_arquivo = 'C:/xampp/htdocs/juufam/regulamento/' .$nome_arquivo;
+                $caminho_arquivo = '/var/www/html/juufam-teste/regulamento/' .$nome_arquivo;
                 $model->attributes = $_POST['Regulamento'];              
                 $model->link = $link;
                 
                 move_uploaded_file($arquivo["tmp_name"], $caminho_arquivo);                                
                 if($model->save()){                                     
-                    $this->redirect(array('Regulamentos', 'id'=>$this->index));
+                    $this->redirect(Yii::app ()->homeUrl);
                 }                            
                 
         } $this->render('create', array('model'=>$model));

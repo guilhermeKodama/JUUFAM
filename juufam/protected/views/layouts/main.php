@@ -107,7 +107,7 @@ label.error {
 						array ('label' => 'Gerenciar Cursos','url' => array ('/curso/admin')),
 						array ('label' => 'Relatorios','url' => array ('/site/index')),
 						array ('label' => 'Certificados','url' => array ('/site/index')),
-						array ('label' => 'Inscricão','url' => array ('/site/index')),
+						array ('label' => 'Inscricão','url' => array ('/inscricao/index')),
 						array ('label' => 'Regulamento','url' => array ('/regulamento/create')),
 						array ('label' => 'Descricão','url' => array ('/descricao/index')),
 						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
