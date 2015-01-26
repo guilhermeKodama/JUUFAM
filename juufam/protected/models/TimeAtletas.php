@@ -1,10 +1,11 @@
 <?php
 
 /**
- * This is the model class for table "time_atletas".
+ * This is the model class for table "TimeAtletas".
  *
- * The followings are the available columns in table 'time_atletas':
+ * The followings are the available columns in table 'TimeAtletas':
  * @property integer $id
+<<<<<<< HEAD
  * @property string $id_atleta
  * @property integer $id_time
  * @property string $id_repr
@@ -164,3 +165,20 @@ class TimeAtletas extends CActiveRecord {
 		return parent::model ( $className );
 	}
 }
+=======
+ * @property string $nome
+ * @property integer $id_uni
+ *
+ * The followings are the available model relations:
+ * @property Curso[] $cursos
+ * @property Unidade $idUni
+ */
+class TimeAtletas
+{
+    public $id;
+    public $id_atleta;
+    public $id_time;
+    public $id_repr;
+    public $status = "aprovado";
+}
+>>>>>>> d22ef59be05db06cc905b6b034218702166400e3

@@ -1,27 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "time".
+ * This is the model class for table "regulamento".
  *
- * The followings are the available columns in table 'time':
- * @property integer $id
- * @property integer $id_modalidade
- * @property string $id_curso
- *
- * The followings are the available model relations:
- * @property Curso $idCurso
- * @property Modalidade $idModalidade
- * @property TimeAtletas[] $timeAtletases
+ * The followings are the available columns in table 'regulamento':
+ * @property integer $ano
+ * @property string $link
  */
-class Time extends CActiveRecord
+class Regulamento extends CActiveRecord
 {
-<<<<<<< HEAD
-	/**
+    
+    /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'time';
+		return 'regulamento';
 	}
 
 	/**
@@ -32,12 +26,9 @@ class Time extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_modalidade, id_curso', 'required'),
-			array('id_modalidade', 'numerical', 'integerOnly'=>true),
-			array('id_curso', 'length', 'max'=>12),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, id_modalidade, id_curso', 'safe', 'on'=>'search'),
+			array('ano, link', 'required'),
+			array('ano', 'numerical', 'integerOnly'=>true),                        
+			array('ano, link', 'safe', 'on'=>'search'),      
 		);
 	}
 
@@ -49,9 +40,6 @@ class Time extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idCurso' => array(self::BELONGS_TO, 'Curso', 'id_curso'),
-			'idModalidade' => array(self::BELONGS_TO, 'Modalidade', 'id_modalidade'),
-			'timeAtletases' => array(self::HAS_MANY, 'TimeAtletas', 'id_time'),
 		);
 	}
 
@@ -61,9 +49,8 @@ class Time extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'id_modalidade' => 'Id Modalidade',
-			'id_curso' => 'Id Curso',
+			'ano' => 'Ano',
+			'link' => 'Link',
 		);
 	}
 
@@ -85,9 +72,8 @@ class Time extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_modalidade',$this->id_modalidade);
-		$criteria->compare('id_curso',$this->id_curso,true);
+		$criteria->compare('ano',$this->ano);
+		$criteria->compare('link',$this->link,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -98,18 +84,10 @@ class Time extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Time the static model class
+	 * @return Regulamento the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-=======
-    public $id;
-    public $id_modalidade;
-    public $id_curso;
-    public $tecnico;
-    public $auxiliar;
-    public $atletas;
->>>>>>> d22ef59be05db06cc905b6b034218702166400e3
 }
