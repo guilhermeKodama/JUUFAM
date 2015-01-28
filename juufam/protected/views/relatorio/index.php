@@ -1,5 +1,5 @@
 <h1>Relatórios</h1>
-<form method="get" action="<?php echo Yii::app()->request->baseUrl; ?>/protected/relatorioinscritocurso.php">
+<form method="get" action="<?php echo Yii::app()->createUrl('relatorio/print'); ?>">
     <center><p>Escolha uma modalidade:</p></center>
     <div class="escolha-modalidade">
         <select name="modalidade">
@@ -33,7 +33,6 @@
     </div>
     <hr align="center" width="400" size="1">
     <span style="padding-left:20px"></span>
-
+    <input type="hidden" name="r" value="relatorio/print" />
     <center><input type="submit" name="submit-relatorio"></input></center>
-   <span style="padding-left:10px"></span>
 </form>
