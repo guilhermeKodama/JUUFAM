@@ -41,6 +41,11 @@
 		<?php echo $form->textField($model,'genero',array('size'=>9,'maxlength'=>9)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'max_time'); ?>
+		<?php echo $form->textField($model,'max_time'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

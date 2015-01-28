@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modalidades', 'url'=>array('index')),
-	array('label'=>'Criar Modalidades', 'url'=>array('create')),
-	array('label'=>'Visualizar Modalidade', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Gerenciar Modalidades', 'url'=>array('admin')),
+	array('label'=>'List Modalidade', 'url'=>array('index')),
+	array('label'=>'Create Modalidade', 'url'=>array('create')),
+	array('label'=>'View Modalidade', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Manage Modalidade', 'url'=>array('admin')),
 );
 ?>
 

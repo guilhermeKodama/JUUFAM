@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.40, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: juufam
 -- ------------------------------------------------------
--- Server version	5.5.40-0ubuntu0.14.04.1
+-- Server version	5.5.41-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -69,7 +69,7 @@ CREATE TABLE `chapa` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `chapa`/atlr
+-- Dumping data for table `chapa`
 --
 
 LOCK TABLES `chapa` WRITE;
@@ -234,8 +234,9 @@ CREATE TABLE `modalidade` (
   `min_inscr` int(11) NOT NULL,
   `max_inscr` int(11) NOT NULL,
   `genero` enum('masculino','feminino') NOT NULL,
+  `max_time` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,29 +245,33 @@ CREATE TABLE `modalidade` (
 
 LOCK TABLES `modalidade` WRITE;
 /*!40000 ALTER TABLE `modalidade` DISABLE KEYS */;
-INSERT INTO `modalidade` VALUES (1,'Futsal','coletivo',5,10,'masculino'),(2,'Natação','individual',3,10,'masculino'),(3,'Volley','coletivo',5,10,'masculino'),(4,'Futsal','coletivo',5,10,'feminino');
+INSERT INTO `modalidade` VALUES (1,'Futsal','coletivo',5,10,'masculino',5),(2,'Natação','individual',3,10,'masculino',0),(3,'Volley','coletivo',5,10,'masculino',0),(4,'Futsal','coletivo',5,10,'feminino',0),(5,'Xadrez','individual',5,10,'masculino',10);
 /*!40000 ALTER TABLE `modalidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
--- --------------------------------------------------------
-
 --
--- Estrutura da tabela `regulamento`
+-- Table structure for table `regulamento`
 --
 
-CREATE TABLE IF NOT EXISTS `regulamento` (
+DROP TABLE IF EXISTS `regulamento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `regulamento` (
   `ano` int(4) NOT NULL,
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `regulamento`
+-- Dumping data for table `regulamento`
 --
 
-INSERT INTO `regulamento` (`ano`, `link`) VALUES
-(2015, 'http://localhost/juufam/regulamento/regulamento_2015.pdf');
+LOCK TABLES `regulamento` WRITE;
+/*!40000 ALTER TABLE `regulamento` DISABLE KEYS */;
+INSERT INTO `regulamento` VALUES (2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf');
+/*!40000 ALTER TABLE `regulamento` ENABLE KEYS */;
+UNLOCK TABLES;
 
--- --------------------------------------------------------
 --
 -- Table structure for table `repr_atleta`
 --
@@ -305,8 +310,8 @@ CREATE TABLE `time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_modalidade` int(11) NOT NULL,
   `id_curso` varchar(12) NOT NULL,
-  `tecnico` varchar(11) NULL,
-  `auxiliar` varchar(11) NULL,
+  `tecnico` varchar(11) DEFAULT NULL,
+  `auxiliar` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_modalidade_time` (`id_modalidade`),
   KEY `id_curso_time` (`id_curso`),
@@ -321,7 +326,7 @@ CREATE TABLE `time` (
 
 LOCK TABLES `time` WRITE;
 /*!40000 ALTER TABLE `time` DISABLE KEYS */;
-INSERT INTO `time` VALUES (5,1,'IE015', '91230130031', '91230130031');
+INSERT INTO `time` VALUES (5,1,'IE015','91230130031','91230130031');
 /*!40000 ALTER TABLE `time` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -420,4 +425,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-19 20:10:14
+-- Dump completed on 2015-01-28 17:26:57
