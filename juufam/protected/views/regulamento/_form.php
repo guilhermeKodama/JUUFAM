@@ -30,10 +30,12 @@
            
         </div> 
        
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+	
+        </br></br>
+        <div>
+        <center><button type="submit" name="submit-relatorio" class="btn btn-primary"> Enviar </button></center>
+        </div>
+        
 <?php $this->endWidget(); ?>
 </div> 
 </form>

@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Curso <?php echo $model->id; ?></h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Editar Curso - </b><?php echo $model->nome; ?></div></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

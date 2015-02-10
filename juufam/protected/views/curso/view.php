@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Curso #<?php echo $model->id; ?></h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Visualizar Curso - </b><?php echo $model->id; ?></div></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

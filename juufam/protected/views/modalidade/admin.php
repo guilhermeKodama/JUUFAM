@@ -26,7 +26,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gerenciar Modalidades</h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Modalidades</b></h1></div>
+<hr>
 
 
 <?php echo CHtml::link('Busca Avançada','#',array('class'=>'search-button')); ?>
@@ -40,6 +41,7 @@ $('.search-form form').submit(function(){
 	'id'=>'modalidade-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+        'itemsCssClass'=>"table table-striped",
 	'columns'=>array(
 		'id',
 		'nome',

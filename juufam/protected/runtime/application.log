@@ -6326,3 +6326,1077 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/juufam-teste/index.php?r=relatorio/index
 ---
+2015/01/28 22:12:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1580): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\juufam\protected\controllers\EventoController.php(154): CActiveRecord->findAllBySql('SELECT * from e...')
+#8 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(82): EventoController->getMenuClosedEvents()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#13 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#16 C:\xampp\htdocs\juufam\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#17 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#20 C:\xampp\htdocs\juufam\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#27 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/juufam/index.php?r=atleta/admin
+HTTP_REFERER=http://localhost/juufam/index.php?r=representante/admin
+---
+2015/02/02 21:33:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "chapas".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chapas')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/juufam/index.php/chapas
+---
+2015/02/04 22:15:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/ind...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/certificado/index.php
+---
+2015/02/08 15:35:26 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:36:09 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:36:33 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/j.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:36:37 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/j.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:37:09 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/j.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:37:39 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/j.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:37:44 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/j.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 15:40:01 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/images/file.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:18:05 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/modelo_certificado/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:18:52 [error] [php] fopen(C:\xampp\htdocs\juufam\protected../modelo_certificado/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:18:56 [error] [php] fopen(C:\xampp\htdocs\juufam\protected../modelo_certificado/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:19:21 [error] [php] fopen(C:\xampp\htdocs\juufam\protected/modelo_certificado/juufam_land.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:20:00 [error] [php] fopen(C:\xampp\htdocs\juufam\protected../modelo_certificado/modelo_2015.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:20:04 [error] [php] fopen(C:\xampp\htdocs\juufam\protected../modelo_certificado/modelo_2015.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:20:12 [error] [php] fopen(C:\xampp\htdocs\juufam\protectedjuufam/modelo_certificado/modelo_2015.png): failed to open stream: No such file or directory (C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php:1232)
+Stack trace:
+#0 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(29): FPDF->Image()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (1232)
+in C:\xampp\htdocs\juufam\protected\extensions\fpdf\fpdf.php (901)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (29)
+2015/02/08 16:34:56 [error] [php] Undefined variable: titulo (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (38)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 17:01:13 [error] [php] Undefined index: curso (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:13:56 [error] [php] Undefined variable: form (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:17:50 [error] [php] Undefined index: modalidade (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:18:31 [error] [php] Undefined index: modalidade (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:18:49 [error] [php] Undefined index: modalidade (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:19:10 [error] [php] Undefined index: modalidade (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:19:22 [error] [php] Undefined index: curso (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (19)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:33:21 [error] [php] Undefined variable: id_time (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (45)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:33:38 [error] [php] Undefined variable: linha2 (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:56)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (56)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:38:07 [error] [php] Undefined index: nameInscrito (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:38:13 [error] [php] Undefined index: nameInscrito (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?nameInscrito=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (18)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:42:11 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:42:12 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:42:13 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:43:17 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:43:36 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:43:37 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:43:37 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:43:38 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:44:12 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:44:13 [error] [php] Undefined variable: name (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:44:36 [error] [php] Undefined variable: nameInscrito (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:44:37 [error] [php] Undefined variable: nameInscrito (C:\xampp\htdocs\juufam\protected\views\certificado\index.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CertificadoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): CertificadoController->renderPartial()
+#2 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(12): CertificadoController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/certificado/index
+in C:\xampp\htdocs\juufam\protected\views\certificado\index.php (20)
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (12)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:48:07 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (46)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:50:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'atleta'. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso JOIN atleta WHERE atleta.nome = Juliana Pereira.
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (48)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:50:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'atleta'. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso JOIN atleta WHERE atleta.nome = Juliana Pereira' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(48): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 21:54:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'atleta'. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso JOIN atleta WHERE atleta.nome = Juliana Pereira.
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (48)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:54:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'atleta'. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso JOIN atleta WHERE atleta.nome = Juliana Pereira' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(48): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 21:56:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pereira' at line 1. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso WHERE atleta.nome = Juliana Pereira.
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (48)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:56:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pereira' at line 1. The SQL statement executed was: SELECT atleta.nome, curso.nome AS curso FROM atleta JOIN time_atletas ON atleta.cpf = time_atletas.id_atleta JOIN curso ON curso.id = atleta.id_curso WHERE atleta.nome = Juliana Pereira' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(48): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 21:57:51 [error] [php] Undefined variable: curso (C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): CertificadoController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): CertificadoController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CertificadoController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (43)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:58:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pereira' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE atleta.nome = Juliana Pereira.
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (47)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 21:58:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pereira' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE atleta.nome = Juliana Pereira' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(47): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 22:00:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira).
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (47)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 22:00:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(47): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 22:00:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira).
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (47)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 22:00:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(47): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/08 22:03:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira).
+in C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php (47)
+in C:\xampp\htdocs\juufam\index.php (13)
+2015/02/08 22:03:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Juliana Pereira)' at line 1. The SQL statement executed was: SELECT atleta.nome FROM atleta WHERE EXISTS (Juliana Pereira)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\juufam\protected\controllers\CertificadoController.php(47): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CertificadoController->actionPrint()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('certificado/pri...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?name=Juliana+Pereira&r=certificado%2Fprint&submit-certificado=
+HTTP_REFERER=http://localhost/juufam/index.php/certificado/index
+---
+2015/02/09 21:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "descricao/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('descricao/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/juufam/index.php/descricao/index
+HTTP_REFERER=http://localhost/juufam/index.php/regulamento/create
+---
+2015/02/09 23:45:06 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.itemsCssClass" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('itemsCssClass', 'table table-str...')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ModalidadeController), 'zii.widgets.CDe...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\xampp\htdocs\juufam\protected\views\modalidade\view.php(32): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(56): CController->render('view', Array)
+#9 [internal function]: ModalidadeController->actionView('1')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ModalidadeController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ModalidadeController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('modalidade/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/modalidade/1
+HTTP_REFERER=http://localhost/juufam/index.php/modalidade/admin
+---
+2015/02/09 23:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/09 23:55:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/09 23:55:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/09 23:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/09 23:55:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/09 23:55:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "IE015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('IE015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('IE015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/IE015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/IE015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/10 00:51:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ICC015".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ICC015')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ICC015')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/ICC015')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/curso/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/10 00:51:44 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('curso/update/IC...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\juufam\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/juufam/index.php/curso/update/ICC015
+HTTP_REFERER=http://localhost/juufam/index.php/curso/admin
+---
+2015/02/10 17:29:53 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): ModalidadeController->createWidget()
+#1 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(169): ModalidadeController->widget()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): ModalidadeController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): ModalidadeController->endWidget()
+#9 C:\xampp\htdocs\juufam\protected\views\layouts\column2.php(22): ModalidadeController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): ModalidadeController->renderFile()
+#13 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(143): ModalidadeController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ModalidadeController->actionAdmin()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ModalidadeController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ModalidadeController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): ModalidadeController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ModalidadeController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/modalidade/admin
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (76)
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (44)
+in C:\xampp\htdocs\juufam\protected\views\layouts\main.php (169)
+2015/02/10 17:35:36 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): ModalidadeController->createWidget()
+#1 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(169): ModalidadeController->widget()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): ModalidadeController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): ModalidadeController->endWidget()
+#9 C:\xampp\htdocs\juufam\protected\views\layouts\column2.php(22): ModalidadeController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): ModalidadeController->renderFile()
+#13 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(143): ModalidadeController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ModalidadeController->actionAdmin()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ModalidadeController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ModalidadeController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): ModalidadeController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ModalidadeController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/modalidade/admin
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (76)
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (44)
+in C:\xampp\htdocs\juufam\protected\views\layouts\main.php (169)
+2015/02/10 17:35:37 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): ModalidadeController->createWidget()
+#1 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(169): ModalidadeController->widget()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): ModalidadeController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): ModalidadeController->endWidget()
+#9 C:\xampp\htdocs\juufam\protected\views\layouts\column2.php(22): ModalidadeController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): ModalidadeController->renderFile()
+#13 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(143): ModalidadeController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ModalidadeController->actionAdmin()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ModalidadeController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ModalidadeController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): ModalidadeController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ModalidadeController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/modalidade/admin
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (76)
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (44)
+in C:\xampp\htdocs\juufam\protected\views\layouts\main.php (169)
+2015/02/10 17:36:53 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): ModalidadeController->createWidget()
+#1 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(169): ModalidadeController->widget()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): ModalidadeController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): ModalidadeController->endWidget()
+#9 C:\xampp\htdocs\juufam\protected\views\layouts\column2.php(22): ModalidadeController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): ModalidadeController->renderFile()
+#13 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(143): ModalidadeController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ModalidadeController->actionAdmin()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ModalidadeController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ModalidadeController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): ModalidadeController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ModalidadeController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/modalidade/admin
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (76)
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (44)
+in C:\xampp\htdocs\juufam\protected\views\layouts\main.php (169)
+2015/02/10 17:36:54 [error] [php] Undefined index: name (C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): ModalidadeController->createWidget()
+#1 C:\xampp\htdocs\juufam\protected\views\layouts\main.php(169): ModalidadeController->widget()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): ModalidadeController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): ModalidadeController->endWidget()
+#9 C:\xampp\htdocs\juufam\protected\views\layouts\column2.php(22): ModalidadeController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ModalidadeController->renderInternal()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): ModalidadeController->renderFile()
+#13 C:\xampp\htdocs\juufam\protected\controllers\ModalidadeController.php(143): ModalidadeController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ModalidadeController->actionAdmin()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ModalidadeController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ModalidadeController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): ModalidadeController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ModalidadeController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\juufam\index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam/index.php/modalidade/admin
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (76)
+in C:\xampp\htdocs\juufam\protected\extensions\menu\EMenu.php (44)
+in C:\xampp\htdocs\juufam\protected\views\layouts\main.php (169)

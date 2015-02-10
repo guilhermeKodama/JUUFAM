@@ -237,7 +237,7 @@ body
     margin:0;
     min-width: 700px;
     color: #364149;
-    background-color: #FFFFFF;
+    background-color: #f6f8f7;
     background-image: url('images/Bottom_texture.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
@@ -382,12 +382,12 @@ li p, .art-postcontent li p, .art-blockcontent-body li p
 div.art-header
 {
     min-width: 700px;
-    max-width: 1728px;
+    max-width: 2000px;
     margin: 0 auto;
     position: relative;
     z-index: -5;
-    width:90%;
-    margin-top: 20px;
+    width:100%;
+    margin-top: 0px;
     margin-bottom: 0;
 }
 .art-header-position
@@ -1405,6 +1405,7 @@ span.art-postcommentsicon:after
     margin-top:0;
     margin-bottom:0;
     width: 100%;
+	
 }
 
 .art-footer-body

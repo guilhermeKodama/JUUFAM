@@ -35,8 +35,8 @@ class EventoController extends Controller {
 				
 				/* carregar o arquivo do modelo e colocar em um diretorio */
 				$foto = $_FILES ["userfile"];
-				$nome_imagem = "modelo_" . date ( "Y" ) . ".pdf";
-				$caminho_imagem = "/var/www/html/juufam/modelo_certificado/" . $nome_imagem;
+				$nome_imagem = "modelo_" . date ( "Y" ) . ".png";
+				$caminho_imagem = "/C:/xampp/htdocs/juufam/modelo_certificado/" . $nome_imagem;
 				
 				if (move_uploaded_file ( $foto ["tmp_name"], $caminho_imagem )) {
 					// carregou o arquivo com sucesso

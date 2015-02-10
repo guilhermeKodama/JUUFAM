@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Usuario <?php echo $model->login; ?></h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Editar Usuário - </b><?php echo $model->login; ?></div></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

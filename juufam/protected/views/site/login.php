@@ -10,7 +10,8 @@ $this->breadcrumbs=array(
 ?>
 
 <div class="login">
-	<h1>Login</h1>
+	</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Login</b></h1></div>
+<hr>
 
 	<p>Insira as informações abaixo para entrar no sistema:</p>
 

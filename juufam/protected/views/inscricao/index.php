@@ -12,7 +12,8 @@ $cs = Yii::app ()->getClientScript ();
 $cs->registerScriptFile ($baseUrl . '/js/jquery-1.11.1.min.js');
 $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 ?>
-<h1>Inscrever atletas</h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Inscrever Atletas</b></h1></div>
+<hr>
 
 <form enctype="multipart/form-data" method="post"
 	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Inscricao/Create'?>">

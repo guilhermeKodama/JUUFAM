@@ -13,6 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Fazer upload de regulamentos</h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Fazer Upload de Regulamentos</b></h1></div>
+<hr>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

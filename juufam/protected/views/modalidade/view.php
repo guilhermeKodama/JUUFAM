@@ -16,11 +16,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Modalidade #<?php echo $model->id; ?></h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Visualizar Modalidade - </b><?php echo $model->nome; ?></h1></div>
+<hr> 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'attributes'=>array(
+    	'attributes'=>array(
 		'id',
 		'nome',
 		'tipo_modalidade',

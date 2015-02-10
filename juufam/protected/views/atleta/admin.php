@@ -26,21 +26,23 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gerenciar Atletas</h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Atletas</b></h1></div>
+<hr>
 
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Pesquisa Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
-</div><!-- search-form -->
+</div><!-- search-form --></br>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'atleta-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'columns'=>array(
+        'itemsCssClass'=>"table table-striped",
+        'columns'=>array(
 		'matricula',
 		'cpf',
 		'rg',

@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Atleta #<?php echo $model->cpf; ?></h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Visualizar Atleta - </b><?php echo $model->nome; ?></div></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

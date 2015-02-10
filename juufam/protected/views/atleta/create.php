@@ -13,7 +13,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Atleta</h1>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Cadastrar Atleta</b></h1></div>
+<hr>
 
 <?php
 if(isset($erro)){

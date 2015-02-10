@@ -61,7 +61,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	
 	if (sizeof ( $models ) > 0) {
 		echo '<div class="row">';
-		echo '<label  class="required"> Chapa do representante <span class="required">*</span></label>';
+		echo '<label  class="required"> Chapa do Representante <span class="required">*</span></label>';
 		print '<select name="Usuario[id_chapa]">';
 		foreach ( $models as $model ) {
 			print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
@@ -71,7 +71,8 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		
 		echo '<div class="row buttons">';
 		
-		echo CHtml::submitButton ( $model->isNewRecord ? 'Create' : 'Save' );
+		
+                echo CHtml::submitButton ( $model->isNewRecord ? 'Create' : 'Save' );
 		
 		echo '</div>';
 	} else {
