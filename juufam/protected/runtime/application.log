@@ -6428,3 +6428,500 @@ Stack trace:
 #29 {main}
 REQUEST_URI=/juufam-teste/
 ---
+2015/02/02 17:08:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('js')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('js')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/js/bootst...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/create
+---
+2015/02/02 17:09:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('js')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('js')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/js/bootst...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/create
+---
+2015/02/02 17:10:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('js')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('js')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/js/bootst...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/create
+---
+2015/02/02 17:11:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('js')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('js')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/js/bootst...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/create
+---
+2015/02/02 17:12:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('js')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('js')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/js/bootst...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/create
+---
+2015/02/09 14:38:26 [error] [php] Undefined index: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:70)
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (70)
+in /var/www/html/juufam-teste/index.php (13)
+2015/02/09 14:51:59 [error] [php] Undefined variable: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:90)
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (90)
+in /var/www/html/juufam-teste/index.php (13)
+2015/02/09 14:52:01 [error] [php] Undefined variable: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:90)
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (90)
+in /var/www/html/juufam-teste/index.php (13)
+2015/02/09 14:52:13 [error] [php] Undefined index: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:90)
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (90)
+in /var/www/html/juufam-teste/index.php (13)
+2015/02/09 14:52:16 [error] [php] Undefined index: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:90)
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (90)
+in /var/www/html/juufam-teste/index.php (13)
+2015/02/09 16:57:55 [error] [php] Missing argument 1 for CController::__construct(), called in /var/www/html/juufam-teste/protected/views/chapa/_form.php on line 34 and defined (/var/www/html/yii/framework/web/CController.php:110)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#1 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#2 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): ChapaController->renderPartial()
+#3 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#4 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#5 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#6 /var/www/html/yii/framework/web/CController.php(782): ChapaController->renderPartial()
+#7 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): ChapaController->render()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#9 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#17 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#18 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/views/chapa/_form.php (34)
+in /var/www/html/juufam-teste/protected/views/chapa/create.php (18)
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (113)
+2015/02/09 16:58:09 [error] [php] Missing argument 1 for CController::__construct(), called in /var/www/html/juufam-teste/protected/views/chapa/_form.php on line 34 and defined (/var/www/html/yii/framework/web/CController.php:110)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#1 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#2 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): ChapaController->renderPartial()
+#3 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#4 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#5 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#6 /var/www/html/yii/framework/web/CController.php(782): ChapaController->renderPartial()
+#7 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): ChapaController->render()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#9 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#17 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#18 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+in /var/www/html/juufam-teste/protected/views/chapa/_form.php (34)
+in /var/www/html/juufam-teste/protected/views/chapa/create.php (18)
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (113)
+2015/02/09 16:58:18 [error] [exception.CException] exception 'CException' with message 'Property "Evento.id_evento" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_evento')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('id_evento')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Evento), 'id_evento')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Evento), 'id_evento', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(Evento), 'id_evento', Array)
+#5 /var/www/html/juufam-teste/protected/views/chapa/_form.php(67): CActiveForm->textField(Object(Evento), 'id_evento')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#9 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/create')
+#26 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 16:58:48 [error] [exception.CException] exception 'CException' with message 'Property "Evento.id_evento" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_evento')
+#1 /var/www/html/juufam-teste/protected/views/chapa/_form.php(44): CActiveRecord->__get('id_evento')
+#2 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#3 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#4 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#5 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): CController->renderPartial('_form', Array)
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#9 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#10 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): CController->render('create', Array)
+#11 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#12 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/create')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 16:58:49 [error] [exception.CException] exception 'CException' with message 'Property "Evento.id_evento" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_evento')
+#1 /var/www/html/juufam-teste/protected/views/chapa/_form.php(44): CActiveRecord->__get('id_evento')
+#2 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#3 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#4 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#5 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): CController->renderPartial('_form', Array)
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#9 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#10 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): CController->render('create', Array)
+#11 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#12 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/create')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:01:18 [error] [exception.CException] exception 'CException' with message 'Property "Evento.id_evento" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_evento')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('id_evento')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Evento), 'id_evento')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Evento), 'id_evento', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(Evento), 'id_evento', Array)
+#5 /var/www/html/juufam-teste/protected/views/chapa/_form.php(63): CActiveForm->textField(Object(Evento), 'id_evento')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#9 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/create')
+#26 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:01:36 [error] [exception.CException] exception 'CException' with message 'Property "Evento.id_evento" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_evento')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('id_evento')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Evento), 'id_evento')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Evento), 'id_evento', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(Evento), 'id_evento', Array)
+#5 /var/www/html/juufam-teste/protected/views/chapa/_form.php(63): CActiveForm->textField(Object(Evento), 'id_evento')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#9 /var/www/html/juufam-teste/protected/views/chapa/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(113): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): ChapaController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/create')
+#26 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/create
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:14:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/delete/6
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:14:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/delete/6
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:15:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/delete/6
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/09 17:15:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('chapa/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/html/juufam-teste/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/juufam-teste/index.php/chapa/delete/6
+HTTP_REFERER=http://localhost/juufam-teste/index.php/chapa/admin
+---
+2015/02/10 08:40:07 [error] [php] Undefined variable: relations (/var/www/html/juufam-teste/protected/views/chapa/_form.php:6)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#1 /var/www/html/juufam-teste/protected/views/chapa/update.php(21): ChapaController->renderPartial()
+#2 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#4 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#5 /var/www/html/yii/framework/web/CController.php(782): ChapaController->renderPartial()
+#6 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(152): ChapaController->render()
+#7 unknown(0): ChapaController->actionUpdate()
+#8 /var/www/html/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#12 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#15 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#18 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#19 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/update/8
+in /var/www/html/juufam-teste/protected/views/chapa/_form.php (6)
+in /var/www/html/juufam-teste/protected/views/chapa/update.php (21)
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (152)
+2015/02/10 08:40:25 [error] [php] Undefined variable: relations (/var/www/html/juufam-teste/protected/views/chapa/_form.php:22)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#1 /var/www/html/juufam-teste/protected/views/chapa/update.php(21): ChapaController->renderPartial()
+#2 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii/framework/web/CBaseController.php(95): ChapaController->renderInternal()
+#4 /var/www/html/yii/framework/web/CController.php(869): ChapaController->renderFile()
+#5 /var/www/html/yii/framework/web/CController.php(782): ChapaController->renderPartial()
+#6 /var/www/html/juufam-teste/protected/controllers/ChapaController.php(152): ChapaController->render()
+#7 unknown(0): ChapaController->actionUpdate()
+#8 /var/www/html/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#12 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#15 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#18 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#19 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/update/8
+in /var/www/html/juufam-teste/protected/views/chapa/_form.php (22)
+in /var/www/html/juufam-teste/protected/views/chapa/update.php (21)
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (152)
+2015/02/10 09:05:36 [error] [php] Undefined index: cursos (/var/www/html/juufam-teste/protected/controllers/ChapaController.php:132)
+Stack trace:
+#0 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): ChapaController->runAction()
+#3 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): ChapaController->filterAccessControl()
+#6 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/html/yii/framework/web/CController.php(265): ChapaController->runActionWithFilters()
+#9 /var/www/html/yii/framework/web/CWebApplication.php(282): ChapaController->run()
+#10 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/html/juufam-teste/index.php(13): CWebApplication->run()
+REQUEST_URI=/juufam-teste/index.php/chapa/update/8
+in /var/www/html/juufam-teste/protected/controllers/ChapaController.php (132)
+in /var/www/html/juufam-teste/index.php (13)
