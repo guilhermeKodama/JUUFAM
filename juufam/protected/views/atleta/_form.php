@@ -4,6 +4,31 @@
 /* @var $form CActiveForm */
 ?>
 
+<script type="text/javascript">
+function verificaCPF(str) {
+    var Soma,
+    	Resto;
+
+    Soma = 0;
+	if (str == "00000000000") return false;
+    
+	for (i=1; i<=9; i++) Soma = Soma + parseInt(str.substring(i-1, i)) * (11 - i);
+	Resto = (Soma * 10) % 11;
+	
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(str.substring(9, 10)) ) return false;
+	
+	Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(str.substring(i-1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+	
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(str.substring(10, 11))) return false;
+    return true;
+}
+
+</script>
+
 <div class="form">
 
 
@@ -16,35 +41,21 @@ $cs->registerScriptFile ( $baseUrl . '/js/jquery-1.11.1.min.js' );
 $cs->registerScriptFile ( $baseUrl . '/js/jquery.maskedinput.js' );
 ?>
 
-
 <?php
-
-$form = $this->beginWidget ( 'CActiveForm', array (
+$form = $this->beginWidget ('CActiveForm', array (
 		'id' => 'atleta-form',
-		
-		// Please note: When you enable ajax validation, make sure the corresponding
-		// controller action is handling ajax validation correctly.
-		// There is a call to performAjaxValidation() commented in generated controller code.
-		// See class documentation of CActiveForm for details on this.
 		'enableAjaxValidation' => false,
 		'htmlOptions' => array (
 				'enctype' => 'multipart/form-data' 
 		) 
-) );
+));
 ?>
 
 	<p class="note">
-		Fields with <span class="required">*</span> are required.
+		Campos com <span class="required">*</span> são obrigatórios.
 	</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php if(isset($erro["matricula"])){echo '<font size="2" color="red">'.$erro["matricula"].'</font></br>';}?>
-		<?php echo $form->labelEx($model,'matricula'); ?>
-		<?php echo $form->textField($model,'matricula',array('size'=>8,'maxlength'=>8)); ?>
-		<?php echo $form->error($model,'matricula'); ?>
-	</div>
 
 	<div class="row">
 		<?php if(isset($erro["cpf"])){echo '<font size="2" color="red">'.$erro["cpf"].'</font></br>';}?>
@@ -52,10 +63,63 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->textField($model,'cpf',array('size'=>14,'maxlength'=>14,'id'=>'cpf')); ?>
 		<?php echo $form->error($model,'cpf'); ?>
 	</div>
+	<span id="import-ws">Importar dados</span>
+
+	<div class="row">
+		<?php if(isset($erro["matricula"])){echo '<font size="2" color="red">'.$erro["matricula"].'</font></br>';}?>
+		<?php echo $form->labelEx($model,'matricula'); ?>
+		<?php echo $form->textField($model,'matricula',array('size'=>8,'maxlength'=>8, 'readonly' => true)); ?>
+		<?php echo $form->error($model,'matricula'); ?>
+	</div>
 
 	<script type="text/javascript">
+
+		var url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/atleta/import'; ?>" + "?cpf=";
+
 		jQuery(function($){
-	   	$("#cpf").mask("999.999.999-99",{placeholder:""});
+	   		$("#cpf").mask("999.999.999-99",{ placeholder:"" });
+
+	   		$("#import-ws").click(function() {
+	   			var first = this,
+	   				cpfUser = $("#cpf").val();
+
+	   			cpfUser = cpfUser.replace(".", "").replace("-","").replace(".", "");
+
+	   			if (verificaCPF(cpfUser)) {
+		   			urlparam = url + cpfUser;
+
+		   			$(this).css('background-color', '#A5C6DE');
+	   				$(this).text("Carregando...");
+
+					$.get(urlparam, function(user) {
+						if (user.status == "true") {
+							for (var i = 0; i < user.response.length; i++) {
+								$("#Atleta_nome").val(user.response[i].nome);
+								$("#Atleta_matricula").val(user.response[i].matricula);
+								$("#dataNasc").val(user.response[i].nascimento);
+								$("#genero").val(user.response[i].sexo);
+								$("#selectOpt").val(user.response[i].tipo);
+								$("#curso").val(user.response[i].curso);
+								$(first).text("Importado");
+								$(first).css('background-color', 'green');
+								$(first).css('color', 'white');
+							}
+						} else {
+
+							$("#Atleta_nome").val("");
+							$("#Atleta_matricula").val("");
+							$("#dataNasc").val("");
+							$("#curso").val("");
+
+							$(first).text("Erro");
+							$(first).css('background-color', 'red');
+							$(first).css('color', 'white');
+						}
+					});  		
+				} else {
+					alert("CPF Inválido");
+				}
+	   		});
 		});
 	</script>
 
@@ -69,14 +133,14 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	<div class="row">
 		<?php if(isset($erro["nome"])){echo '<font size="2" color="red">'.$erro["nome"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'nome',array('size'=>45,'maxlength'=>45, 'readonly' => true)); ?>
 		<?php echo $form->error($model,'nome'); ?>
 	</div>
 
 	<div class="row">
 		<?php if(isset($erro["data_nasc"])){echo '<font size="2" color="red">'.$erro["data_nasc"].'</font></br>';}?>
 		<?php echo $form->labelEx($model,'data_nasc'); ?>
-		<?php echo $form->textField($model,'data_nasc',array('size'=>45,'maxlength'=>45,'id'=>'dataNasc')); ?>
+		<?php echo $form->textField($model,'data_nasc',array('size'=>45,'maxlength'=>45,'id'=>'dataNasc', 'readonly' => true)); ?>
 		<?php echo $form->error($model,'data_nasc'); ?>
 	</div>
 
@@ -87,9 +151,9 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</script>
 
 	<div class="row">
-		<label for="Atleta_genero" class="required"> Genero <span
+		<label for="Atleta_genero" class="required"> Gênero <span
 			class="required">*</span>
-		</label> <br /> <select name="Atleta[genero]">
+		</label> <br /> <select id="genero" name="Atleta[genero]" readonly="true">
 			<option value="masculino">Masculino</option>
 			<option value="feminino">Feminino</option>
 		</select>
@@ -98,24 +162,20 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 	<script type="text/javascript">
 		function loadPDF(){
-		  var myselect = document.getElementById("selectOpt");
-		  if(myselect.options[myselect.selectedIndex].value == "egresso"){
-			  document.getElementById("loadFile").style.display = 'block';
-			  
-			}else{
-				
-				 document.getElementById("loadFile").style.display = 'none';
+			var myselect = document.getElementById("selectOpt");
+		  
+			if (myselect.options[myselect.selectedIndex].value == "egresso") {
+				document.getElementById("loadFile").style.display = 'block';
+			} else {				
+				document.getElementById("loadFile").style.display = 'none';
 			}
 		}
-
 	</script>
 
 
 	<div class="row">
-		<label for="Atleta_tipo_atleta" class="required"> Tipo de Atleta <span
-			class="required">*</span>
-		</label> <br /> <select name="Atleta[tipo_atleta]" id="selectOpt"
-			onChange="loadPDF()">
+		<label for="Atleta_tipo_atleta" class="required"> Tipo de Atleta <span class="required">*</span>
+		</label> <br /> <select name="Atleta[tipo_atleta]" id="selectOpt" onChange="loadPDF()" readonly="true">
 			<option value="ativo">Ativo</option>
 			<option value="funcionario">Funcionario</option>
 			<option value="egresso">Egresso</option>
@@ -139,10 +199,10 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	
 	if (sizeof ( $models ) > 0) {
 		echo '<div class="row">';
-		echo '<label  class="required"> Curso do Atleta <span class="required">*</span></label>';
-		print '<select name="Atleta[id_curso]">';
-		foreach ( $models as $model ) {
-			print '<option  value="' . $model->id . '"> ' . $model->nome . '</option>';
+		echo '<label class="required"> Curso do Atleta <span class="required">*</span></label>';
+		print '<select id="curso" name="Atleta[id_curso]">';
+		foreach ($models as $model) {
+			print '<option value="' . $model->id . '"> ' . $model->nome . '</option>';
 		}
 		print '</select>';
 		echo $form->error ( $model, 'id_curso' );

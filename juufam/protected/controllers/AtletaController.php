@@ -15,8 +15,8 @@ class AtletaController extends Controller {
 	 */
 	public function filters() {
 		return array (
-				'accessControl', // perform access control for CRUD operations
-				'postOnly + delete' 
+				/*'accessControl', // perform access control for CRUD operations
+				'postOnly + delete + get' */
 		); // we only allow deletion via POST request
 	}
 	
@@ -78,6 +78,69 @@ class AtletaController extends Controller {
 				'model' => $this->loadModel ( $id ) 
 		) );
 	}
+
+
+	public function actionImport() {
+		$json = file_get_contents("http://200.129.163.9:8080/ecampus/servicos/getPessoaValidaSIE?cpf=" . $_GET["cpf"]); 
+		$jsonResponse = json_decode("{'status' : \"false\", 'response' : []}");
+
+		$data = json_decode($json);
+
+		$this->layout=false;
+
+		header('Content-type: application/json');
+
+		if (is_array($data) && count($data) > 0) {
+			foreach ($data as $key => $value) {
+				$value->ativo = $value->ATIVO;
+				$value->matricula = $value->MATR_ALUNO;
+				$value->siape = $value->SIAPE;
+				$value->nome = $value->NOME_PESSOA;
+				$value->sexo = $value->SEXO;
+				
+				if ($value->sexo == "M") {
+					$value->sexo = "masculino";
+				} else {
+					$value->sexo = "feminino";
+				}
+
+				$value->nascimento = $value->DT_NASCTO;
+				$value->curso = $value->CURSO;
+				$value->unidade = $value->UNID_LOTACAO;
+				$value->email = $value->EMAIL;
+
+				$value->tipo = "ativo";
+
+				if ($value->siape && $value->ativo) {
+					$value->tipo = "funcionario";					
+					$value->matricula = $value->siape;	
+				} 
+
+				if ($value->ativo == "false" && is_null($value->siape)) {
+					$value->tipo = "egresso";		
+				}
+
+				unset($value->MATR_ALUNO);
+				unset($value->SIAPE);
+				unset($value->ATIVO);
+				unset($value->NOME_PESSOA);
+				unset($value->SEXO);
+				unset($value->DT_NASCTO);
+				unset($value->CURSO);
+				unset($value->UNID_LOTACAO);
+				unset($value->EMAIL);			
+			}
+
+			$jsonResponse->status = "true";
+			$jsonResponse->response[] = $data[count($data) - 1];
+
+			echo CJavaScript::jsonEncode($jsonResponse);
+		} else {
+			echo CJavaScript::jsonEncode($jsonResponse);
+		}
+
+		Yii::app()->end(); 
+	}
 	
 	/**
 	 * Creates a new model.
@@ -98,13 +161,15 @@ class AtletaController extends Controller {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		
-		if (isset ( $_POST ['Atleta'] )) {
+		if (isset ($_POST['Atleta'])) {
+
+			//print_r($_POST['Atleta']); exit;
 			
 			$model->attributes = $_POST ['Atleta'];
 			
-			$model->cpf = preg_replace ( '/[^0-9]/is', '', $model->cpf );
+			$model->cpf = preg_replace ('/[^0-9]/is', '', $model->cpf);
 			
-			if ($this->isParamsValid ( $model )) {
+			if ($this->isParamsValid ($model)) {
 				
 				if ($model->tipo_atleta == "egresso") {
 					
@@ -120,7 +185,7 @@ class AtletaController extends Controller {
 						// carregou o arquivo com sucesso
 					} else {
 						print "Possivel ataque de upload! Aqui esta alguma informação:\n";
-						print_r ( $_FILES );
+						print_r ($_FILES);
 					}
 				} else {
 					$model->status = "aprovado";
@@ -134,14 +199,14 @@ class AtletaController extends Controller {
 				}
 			} else {
 				
-				$this->render ( 'create', array (
+				$this->render ('create', array (
 						'model' => $model,
 						'erro' => $this->erro 
 				) );
 			}
 		} else {
 			
-			$this->render ( 'create', array (
+			$this->render ('create', array (
 					'model' => $model 
 			) );
 		}
