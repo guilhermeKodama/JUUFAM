@@ -8,12 +8,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Jogos Universitários da UFAM</title>
 
+<<<<<<< HEAD
 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css"/>
+=======
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" type="text/css"
+	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
+
+<!-- END BOOTSTRAP -->
+>>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/main_template/style.css"
@@ -31,6 +41,8 @@
 <link
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/main_template/main.css"
 	rel="stylesheet" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- Scripts -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -75,12 +87,13 @@ label.error {
 			<div class="container-side">
 				<div class="menu">
 				<?php
-				$items = array();
+				$items = array ();
 				
-				$mEventoController = new EventoController('evento');
+				$mEventoController = new EventoController ( 'evento' );
 				
-				$itemsEventClosed = $mEventoController->getMenuClosedEvents();
+				$itemsEventClosed = $mEventoController->getMenuClosedEvents ();
 				
+<<<<<<< HEAD
 				$itemsEventOn = array ('items' => array (
 						array ('label' => 'Principal','url' => array ('/site/index')),
 						array ('label' => 'Cadastro','url' => array ('/site/index')),
@@ -104,14 +117,155 @@ label.error {
 						array ('label' => 'Logout ('.Yii::app ()->user->name.')',
 								'url' => array ('/site/logout' ),
 								'visible' => ! Yii::app ()->user->isGuest ))));
+=======
+				$itemsEventOn = array (
+						'items' => array (
+								array (
+										'label' => 'Principal',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Cadastro',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Modalidades',
+										'url' => array (
+												'/modalidade/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Atletas',
+										'url' => array (
+												'/atleta/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Representantes',
+										'url' => array (
+												'/representante/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Institutos',
+										'url' => array (
+												'/instituto/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Unidades',
+										'url' => array (
+												'/unidade/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Cursos',
+										'url' => array (
+												'/curso/admin' 
+										) 
+								),
+								array (
+										'label' => 'Relatorios',
+										'url' => array (
+												'/relatorio/index' 
+										) 
+								),
+								array (
+										'label' => 'Certificados',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Inscricão',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Regulamento',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Descricão',
+										'url' => array (
+												'/descricao/index' 
+										) 
+								),
+								array (
+										'label' => 'Logout (' . Yii::app ()->user->name . ')',
+										'url' => array (
+												'/site/logout' 
+										),
+										'visible' => ! Yii::app ()->user->isGuest 
+								) 
+						) 
+				);
 				
-				$itemsLogOff = array ('items' => array (
-						array ('label' => 'Página Inicial','url' => array ('/site/index' ) ),
-						array ('label' => 'Sobre','url' => array ('/site/page','view' => 'about' ) ),
-						array ('label' => 'Contato','url' => array ('/site/contact' ) ),
-						array ('label' => 'Login','url' => array ('/site/login' ),'visible' => Yii::app ()->user->isGuest ),
-						array ('label' => 'Logout (' . Yii::app ()->user->name . ')','url' => array ('/site/logout' ),'visible' => ! Yii::app ()->user->isGuest )));
+				$itemsEventOff = array (
+						'items' => array_merge ( $itemsEventClosed, array (
+								array (
+										'label' => 'Criar Evento',
+										'url' => array (
+												'/Evento' 
+										) 
+								),
+								array (
+										'label' => 'Logout (' . Yii::app ()->user->name . ')',
+										'url' => array (
+												'/site/logout' 
+										),
+										'visible' => ! Yii::app ()->user->isGuest 
+								) 
+						) ) 
+				);
+>>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
 				
+				$itemsLogOff = array (
+						'items' => array (
+								array (
+										'label' => 'Página Inicial',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Sobre',
+										'url' => array (
+												'/site/page',
+												'view' => 'about' 
+										) 
+								),
+								array (
+										'label' => 'Contato',
+										'url' => array (
+												'/site/contact' 
+										) 
+								),
+								array (
+										'label' => 'Login',
+										'url' => array (
+												'/site/login' 
+										),
+										'visible' => Yii::app ()->user->isGuest 
+								),
+								array (
+										'label' => 'Logout (' . Yii::app ()->user->name . ')',
+										'url' => array (
+												'/site/logout' 
+										),
+										'visible' => ! Yii::app ()->user->isGuest 
+								) 
+						) 
+				);
+				
+<<<<<<< HEAD
                                   //Acesso do usuário quando ele é administrador
                                 $itemsIsAdmin = array ( 'items' => array (
                                                 array ('label' => 'Principal','url' => array ('/site/index')),
@@ -150,22 +304,195 @@ label.error {
                                 
 				if (!Yii::app ()->user->isGuest && UsuarioController::isAdmin(Yii::app ()->user->name)) {//está logado
 					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
+=======
+				// Acesso do usuário quando ele é administrador
+				$itemsIsAdmin = array (
+						'items' => array (
+								array (
+										'label' => 'Principal',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Cadastro',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Modalidades',
+										'url' => array (
+												'/modalidade/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Atletas',
+										'url' => array (
+												'/atleta/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Representantes',
+										'url' => array (
+												'/representante/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Institutos',
+										'url' => array (
+												'/instituto/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Unidades',
+										'url' => array (
+												'/unidade/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Cursos',
+										'url' => array (
+												'/curso/admin' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Chapas',
+										'url' => array (
+												'/chapa/admin' 
+										) 
+								),
+								array (
+										'label' => 'Avaliar Inscrições Egresso',
+										'url' => array (
+												'/evaluateRegistrationEgresso/index'
+										)
+								),
+								array (
+										'label' => 'Relatorios',
+										'url' => array (
+												'/relatorio/index' 
+										) 
+								),
+								array (
+										'label' => 'Certificados',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Inscricão',
+										'url' => array (
+												'/inscricao/index' 
+										) 
+								),
+								array (
+										'label' => 'Regulamento',
+										'url' => array (
+												'/regulamento/create' 
+										) 
+								),
+								array (
+										'label' => 'Descricão',
+										'url' => array (
+												'/descricao/index' 
+										) 
+								),
+								array (
+										'label' => 'Logout (' . Yii::app ()->user->name . ')',
+										'url' => array (
+												'/site/logout' 
+										),
+										'visible' => ! Yii::app ()->user->isGuest 
+								) 
+						) 
+				);
+				
+				// Acesso do usuário quando ele é representante
+				$itemsIsRepresentante = array (
+						'items' => array (
+								array (
+										'label' => 'Principal',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Cadastro',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Gerenciar Atletas',
+										'url' => array (
+												'/atleta/admin' 
+										) 
+								),
+								array (
+										'label' => 'Avaliar Inscrições Externas',
+										'url' => array (
+												'/evaluateExternalRegistration/index' 
+										) 
+								),
+								array (
+										'label' => 'Relatorios',
+										'url' => array (
+												'/relatorio/index' 
+										) 
+								),
+								array (
+										'label' => 'Certificados',
+										'url' => array (
+												'/site/index' 
+										) 
+								),
+								array (
+										'label' => 'Inscricão',
+										'url' => array (
+												'/inscricao/index' 
+										) 
+								),
+								array (
+										'label' => 'Regulamento',
+										'url' => array (
+												'/regulamento/index' 
+										) 
+								),
+								array (
+										'label' => 'Descricão',
+										'url' => array (
+												'/descricao/index' 
+										) 
+								),
+								array (
+										'label' => 'Logout (' . Yii::app ()->user->name . ')',
+										'url' => array (
+												'/site/logout' 
+										),
+										'visible' => ! Yii::app ()->user->isGuest 
+								) 
+						) 
+				);
+				
+				if (! Yii::app ()->user->isGuest && UsuarioController::isAdmin ( Yii::app ()->user->name )) { // está logado
+					if ($mEventoController->hasEventOpen ()) { // tem um evento ocorrendo
+>>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
 						$items = $itemsIsAdmin;
 					} else {
 						$items = $itemsEventOff;
 					}
-				}else if(!Yii::app ()->user->isGuest && UsuarioController::isRepresentante(Yii::app ()->user->name)) {//está logado
-					if ($mEventoController->hasEventOpen()) {//tem um evento ocorrendo
+				} else if (! Yii::app ()->user->isGuest && UsuarioController::isRepresentante ( Yii::app ()->user->name )) { // está logado
+					if ($mEventoController->hasEventOpen ()) { // tem um evento ocorrendo
 						$items = $itemsIsRepresentante;
 					} else {
 						$items = $itemsEventOff;
 					}
-				} else {//não está logado
+				} else { // não está logado
 					$items = $itemsLogOff;
 				}
 				
-				
-				$this->widget('zii.widgets.CMenu', $items);
+				$this->widget ( 'zii.widgets.CMenu', $items );
 				
 				?>
 				</div>
@@ -186,5 +513,14 @@ label.error {
 		</div>
 		<div class="cleared"></div>
 	</div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script
+		src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
+	<script
+		src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
 </body>
 </html>

@@ -1,21 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "regulamento".
+ * This is the model class for table "chapa_curso".
  *
- * The followings are the available columns in table 'regulamento':
- * @property integer $ano
- * @property string $link
+ * The followings are the available columns in table 'chapa_curso':
+ * @property string $id
+ * @property integer $id_chapa
+ * @property string $id_curso
+ *
+ * The followings are the available model relations:
+ * @property Chapa $idChapa
+ * @property Curso $idCurso
  */
-class Regulamento extends CActiveRecord
+class ChapaCurso extends CActiveRecord
 {
-    
-    /**
+	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'regulamento';
+		return 'chapa_curso';
 	}
 
 	/**
@@ -26,9 +30,11 @@ class Regulamento extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ano, link', 'required'),
-			array('ano', 'numerical', 'integerOnly'=>true),                        
-			array('ano, link', 'safe', 'on'=>'search'),      
+			array('id_chapa', 'numerical', 'integerOnly'=>true),
+			array('id_curso', 'length', 'max'=>12),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id, id_chapa, id_curso', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -40,6 +46,8 @@ class Regulamento extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idChapa' => array(self::BELONGS_TO, 'Chapa', 'id_chapa'),
+			'idCurso' => array(self::BELONGS_TO, 'Curso', 'id_curso'),
 		);
 	}
 
@@ -49,8 +57,9 @@ class Regulamento extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ano' => 'Ano',
-			'link' => 'Link',
+			'id' => 'ID',
+			'id_chapa' => 'Id Chapa',
+			'id_curso' => 'Id Curso',
 		);
 	}
 
@@ -72,8 +81,9 @@ class Regulamento extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('ano',$this->ano);
-		$criteria->compare('link',$this->link,true);
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('id_chapa',$this->id_chapa);
+		$criteria->compare('id_curso',$this->id_curso,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -84,7 +94,7 @@ class Regulamento extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Regulamento the static model class
+	 * @return ChapaCurso the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

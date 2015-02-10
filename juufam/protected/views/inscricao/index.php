@@ -16,7 +16,7 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 <hr>
 
 <form enctype="multipart/form-data" method="post"
-	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Inscricao/Create'?>">
+	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/Create'?>">
 
 	<div class="escolha-modalidade">
 		<select name="modalidade" id="modalidades">
@@ -81,7 +81,7 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
 			html += 'Aluno: ';
-			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="Matricula"/>';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF"/>';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
 			html += '<div onclick="removerAtleta(this, ' + quantAtleta + ', ' + quantTeams + ');">-</div>';
@@ -142,11 +142,11 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 		htmlFirst.push('<div class="team-tech">');
 		htmlFirst.push('<div class="new-atleta">');
 		htmlFirst.push('Técnico: ');
-		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="Matricula Tecnico"/>');
+		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="CPF Tecnico"/>');
 		htmlFirst.push('</div>');
 		htmlFirst.push('<div class="new-atleta">');
 		htmlFirst.push('Auxiliar: ');
-		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="Matricula Auxiliar"/>');
+		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="CPF Auxiliar"/>');
 		htmlFirst.push('</div>');
 		htmlFirst.push('</div>');
 
@@ -197,7 +197,7 @@ function createNewTeam() {
 function getTeams(modalidade_param) {
 	var modalidade = modalidade_param,
 		curso = "ICC015",
-		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Inscricao/view'; ?>" + "&modalidade=" + modalidade + '&curso=' + curso;
+		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/view'; ?>" + "?modalidade=" + modalidade + '&curso=' + curso;
 
 	$.get(url, function(times) {
 

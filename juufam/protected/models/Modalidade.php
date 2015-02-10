@@ -10,10 +10,11 @@
  * @property integer $min_inscr
  * @property integer $max_inscr
  * @property string $genero
+ * @property integer $max_time
  *
  * The followings are the available model relations:
- * @property AtletaModalidade[] $atletaModalidades
  * @property EventoModalidade[] $eventoModalidades
+ * @property Time[] $times
  */
 class Modalidade extends CActiveRecord
 {
@@ -34,13 +35,13 @@ class Modalidade extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nome, tipo_modalidade, min_inscr, max_inscr, genero', 'required'),
-			array('min_inscr, max_inscr', 'numerical', 'integerOnly'=>true),
+			array('min_inscr, max_inscr, max_time', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>45),
 			array('tipo_modalidade', 'length', 'max'=>10),
 			array('genero', 'length', 'max'=>9),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nome, tipo_modalidade, min_inscr, max_inscr, genero', 'safe', 'on'=>'search'),
+			array('id, nome, tipo_modalidade, min_inscr, max_inscr, genero, max_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +54,7 @@ class Modalidade extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'eventoModalidades' => array(self::HAS_MANY, 'EventoModalidade', 'id_modalidade'),
+			'times' => array(self::HAS_MANY, 'Time', 'id_modalidade'),
 		);
 	}
 
@@ -68,6 +70,7 @@ class Modalidade extends CActiveRecord
 			'min_inscr' => 'Min Inscr',
 			'max_inscr' => 'Max Inscr',
 			'genero' => 'Genero',
+			'max_time' => 'Max Time',
 		);
 	}
 
@@ -95,6 +98,7 @@ class Modalidade extends CActiveRecord
 		$criteria->compare('min_inscr',$this->min_inscr);
 		$criteria->compare('max_inscr',$this->max_inscr);
 		$criteria->compare('genero',$this->genero,true);
+		$criteria->compare('max_time',$this->max_time);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

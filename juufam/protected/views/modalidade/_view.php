@@ -29,5 +29,9 @@
 	<?php echo CHtml::encode($data->genero); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('max_time')); ?>:</b>
+	<?php echo CHtml::encode($data->max_time); ?>
+	<br />
+
 
 </div>

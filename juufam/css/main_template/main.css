@@ -63,6 +63,19 @@ body {
 	padding: 20px ;
 	margin: 0;
 	display: table;
+	width: 85%;
+}
+
+#import-ws {
+	float: right;
+	padding: 0 10px;
+	margin: 24px 0 0 0;
+	line-height: 29px;
+	width: 90px;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	display: inline-block;
 }
 
 .container #content .form .row {

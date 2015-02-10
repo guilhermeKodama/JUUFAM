@@ -12,6 +12,7 @@
  * The followings are the available model relations:
  * @property Evento $idEvento
  * @property Unidade $idUnidade
+ * @property ChapaCurso[] $chapaCursos
  * @property Usuario[] $usuarios
  */
 class Chapa extends CActiveRecord
@@ -51,6 +52,7 @@ class Chapa extends CActiveRecord
 		return array(
 			'idEvento' => array(self::BELONGS_TO, 'Evento', 'id_evento'),
 			'idUnidade' => array(self::BELONGS_TO, 'Unidade', 'id_unidade'),
+			'chapaCursos' => array(self::HAS_MANY, 'ChapaCurso', 'id_chapa'),
 			'usuarios' => array(self::HAS_MANY, 'Usuario', 'id_chapa'),
 		);
 	}

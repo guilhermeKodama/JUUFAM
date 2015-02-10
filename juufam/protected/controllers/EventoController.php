@@ -167,6 +167,7 @@ class EventoController extends Controller {
 			return $array;
 		}
 	}
+	
 	public function hasEventOpen() {
 		$models = Evento::model ()->findAllBySql ( "SELECT * from evento where evento.data_end_event >= '" . date ( 'Y-m-d' ) . "'" );
 		
@@ -175,6 +176,11 @@ class EventoController extends Controller {
 		} else {
 			return false;
 		}
+	}
+	
+	public function getAllEventos() {
+		$models = Evento::model ()->findAll ();
+		return $models;
 	}
 	
 	// Uncomment the following methods and override them if needed

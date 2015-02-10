@@ -2,6 +2,10 @@
 class EvaluateExternalRegistrationController extends Controller {
 	
 	public function actionIndex() {
+		
+		ini_set ( 'display_errors', 1 );
+		ini_set ( 'display_startup_erros', 1 );
+		error_reporting ( E_ALL );
 		$model = new TimeAtletas ( 'search' );
 		$model->unsetAttributes (); // clear any default values
 		if (isset ( $_GET ['TimeAtletas'] ))

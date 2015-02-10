@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modalidades', 'url'=>array('index')),
-	array('label'=>'Criar Modalidade', 'url'=>array('create')),
-	array('label'=>'Atualizar Modalidade', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Deletar Modalidade', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Gerenciar Modalidades', 'url'=>array('admin')),
+	array('label'=>'List Modalidade', 'url'=>array('index')),
+	array('label'=>'Create Modalidade', 'url'=>array('create')),
+	array('label'=>'Update Modalidade', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Modalidade', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Modalidade', 'url'=>array('admin')),
 );
 ?>
 
@@ -28,5 +28,6 @@ $this->menu=array(
 		'min_inscr',
 		'max_inscr',
 		'genero',
+		'max_time',
 	),
 )); ?>
