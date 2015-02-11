@@ -140,6 +140,40 @@ class InscricaoController extends Controller {
 			return false;
 		}
 
+		if (count(trim($time->tecnico)) > 1) {
+			if ($this->validaCPF($time->tecnico) == false) {
+				$this->erro = "CPF de tecnico inválido.";
+				return false;	
+			}
+
+			if ($this->existeAtleta($time->tecnico) == false) {
+				$this->erro = "Este atleta (tecnico) não existe.";
+				return false;	
+			}
+
+			if ($this->mesmoCurso($time->tecnico) == false) {
+				$this->erro = "O tecnico não está na mesma chapa.";
+				return false;	
+			}
+		}
+		
+		if (count(trim($time->auxiliar)) > 1) {
+			if ($this->validaCPF($time->auxiliar) == false) {
+				$this->erro = "CPF de auxiliar inválido.";
+				return false;	
+			}
+
+			if ($this->existeAtleta($time->auxiliar) == false) {
+				$this->erro = "Este atleta (auxiliar) não existe.";
+				return false;	
+			}
+
+			if ($this->mesmoCurso($time->auxiliar) == false) {
+				$this->erro = "O auxiliar não está na mesma chapa.";
+				return false;	
+			}
+		}		
+
 		for ($i=0; $i < (count($atletas) - 1); $i++) { 
 			if ($atletas[$i]->id_atleta == $atletas[($i + 1)]->id_atleta) {
 				$this->erro = "O mesmo atleta está inscrito mais de uma vez.";
