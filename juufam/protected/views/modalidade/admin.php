@@ -26,12 +26,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<<<<<<< HEAD
 </br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Modalidades</b></h1></div>
 <hr>
-=======
-<h1>Manage Modalidades</h1>
->>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

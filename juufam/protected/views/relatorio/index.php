@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 $baseUrl = Yii::app ()->baseUrl;
@@ -16,11 +15,6 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
     <center><p><b><h5>Escolha uma modalidade:</h5><b></p></center>
     
 
-=======
-<h1>Relatórios</h1>
-<form method="get" action="<?php echo Yii::app()->createUrl('relatorio/print'); ?>">
-    <center><p>Escolha uma modalidade:</p></center>
->>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
     <div class="escolha-modalidade">
         <select name="modalidade">
         <option value="0">Todos</option>;
@@ -55,15 +49,8 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
     <hr align="center" width="400" size="1">
     <span style="padding-left:20px"></span>
     <input type="hidden" name="r" value="relatorio/print" />
-<<<<<<< HEAD
     
-      <div>
+    <div>
         <center><button type="submit" name="submit-relatorio" class="btn btn-primary">Enviar</button></center>
-		
     </div>
-    
-    
-=======
-    <center><input type="submit" name="submit-relatorio"></input></center>
->>>>>>> a9740aba41a132bf78d7e0ce4d5287dd837c7982
 </form>
