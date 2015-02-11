@@ -3,6 +3,7 @@
 class InscricaoController extends Controller {
 
 	public $id_curso = "";
+	public $erro = "";
 	
 	public function actionIndex() {
 
@@ -18,8 +19,152 @@ class InscricaoController extends Controller {
 			}				
 		}
 
-
 		$this->render('index');
+	}
+
+	function validaCPF($cpf = null) {
+	 
+	    // Verifica se um número foi informado
+	    if(empty($cpf)) {
+	        return false;
+	    }
+	 
+	    // Elimina possivel mascara
+	    $cpf = ereg_replace('[^0-9]', '', $cpf);
+	    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+	     
+	    // Verifica se o numero de digitos informados é igual a 11
+	    if (strlen($cpf) != 11) {
+	        return false;
+	    }
+	    // Verifica se nenhuma das sequências invalidas abaixo
+	    // foi digitada. Caso afirmativo, retorna falso
+	    else if ($cpf == '00000000000' ||
+	        $cpf == '11111111111' ||
+	        $cpf == '22222222222' ||
+	        $cpf == '33333333333' ||
+	        $cpf == '44444444444' ||
+	        $cpf == '55555555555' ||
+	        $cpf == '66666666666' ||
+	        $cpf == '77777777777' ||
+	        $cpf == '88888888888' ||
+	        $cpf == '99999999999') {
+	        return false;
+	     // Calcula os digitos verificadores para verificar se o
+	     // CPF é válido
+	     } else {  
+	         
+	        for ($t = 9; $t < 11; $t++) {
+	             
+	            for ($d = 0, $c = 0; $c < $t; $c++) {
+	                $d += $cpf{$c} * (($t + 1) - $c);
+	            }
+	            $d = ((10 * $d) % 11) % 10;
+	            if ($cpf{$c} != $d) {
+	                return false;
+	            }
+	        }
+	 
+	        return true;
+	    }
+	}	
+
+	function mesmoCurso($cpf = null) {
+		$sqlAtleta = "SELECT curso.nome FROM atleta JOIN curso ON atleta.id_curso = curso.id WHERE cpf = '" . $cpf. "'";
+		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
+
+		$sqlChapa = "SELECT id FROM chapa WHERE nome LIKE '" . $cont[0]['nome']. "'";
+		$idChapa = Yii::app()->db->createCommand($sqlChapa)->queryAll()[0]['id'];
+
+		$sqlChapaUser = "SELECT id_chapa FROM usuario WHERE usuario.login = '" . Yii::app()->user->name . "'";
+		$idChapaUser = Yii::app()->db->createCommand($sqlChapaUser)->queryAll()[0]['id_chapa'];
+
+		if ($idChapa == $idChapaUser) {
+			return true;
+		}
+
+		return false;
+	}	
+
+	function existeAtleta ($cpf = null) {
+		$sqlAtleta = "SELECT count(*) as soma FROM atleta WHERE cpf = '" . $cpf. "'";
+		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
+		
+		if ((int) $cont[0]['soma'] > 0) {
+			return true;
+		}
+
+		return false;
+	}	
+
+	function validaModalidade($idModalidade, $numeroAtletas) {
+		$sqlAtleta = "SELECT min_inscr as min, max_inscr as max FROM modalidade WHERE id = '" . $idModalidade. "'";
+		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
+
+		if ($numeroAtletas >= $cont[0]['min'] && $numeroAtletas <= $cont[0]['max']) {
+			return true;
+		}
+
+		if ($numeroAtletas < $cont[0]['min']) {
+			$this->erro = "Numero de atletas é menor que o minimo para modalidade.";
+		}
+
+		if ($numeroAtletas > $cont[0]['max']) {
+			$this->erro = "Numero de atletas excede máximo para modalidade.";
+		}
+
+		return false;
+	}	
+
+	function validaModalidadeTimes($idModalidade, $numeroTimes) {
+		$sqlAtleta = "SELECT max_time FROM modalidade WHERE id = '" . $idModalidade. "'";
+		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
+
+		if ($numeroTimes <= $cont[0]['max_time']) {
+			return true;
+		} 
+		
+		$this->erro = "Numero de times excede o limite da modalidade.";
+
+		return false;
+	}	
+
+	public function valida($atletas, $time, $numeroTimes) {
+		// Verifica se tem igual
+
+		if ($this->validaModalidadeTimes($time->id_modalidade, $numeroTimes) == false) {
+			return false;
+		}
+
+		if ($this->validaModalidade($time->id_modalidade, count($atletas)) == false) {
+			return false;
+		}
+
+		for ($i=0; $i < (count($atletas) - 1); $i++) { 
+			if ($atletas[$i]->id_atleta == $atletas[($i + 1)]->id_atleta) {
+				$this->erro = "O mesmo atleta está inscrito mais de uma vez.";
+				return false;
+			}
+		}
+
+		for ($i=0; $i < count($atletas); $i++) { 
+			if ($this->validaCPF($atletas[$i]->id_atleta) == false) {
+				$this->erro = "CPF de atleta inválido.";
+				return false;	
+			}
+
+			if ($this->existeAtleta($atletas[$i]->id_atleta) == false) {
+				$this->erro = "Este atleta não existe.";
+				return false;	
+			}
+
+			if ($this->mesmoCurso($atletas[$i]->id_atleta) == false) {
+				$this->erro = "O atleta não está na mesma chapa.";
+				return false;	
+			}
+		}
+
+		return true;
 	}
 
 	public function actionCreate() {
@@ -27,9 +172,8 @@ class InscricaoController extends Controller {
 		Yii::import('application.models.Time');
 		Yii::import('application.models.TimeAtletasInscricao');
 
-		
-		ini_set ( 'display_errors', 1 );
-		ini_set ( 'display_startup_erros', 1 );
+		ini_set ('display_errors', 0);
+		ini_set ('display_startup_erros', 0);
 		error_reporting ( E_ALL );
 		
 		if (isset ($_POST)) {
@@ -99,7 +243,7 @@ class InscricaoController extends Controller {
 				foreach ($atletas as $key => $value) {
 					$nome_atleta = $nomes[$value];
 
-					$timeAtleta = new TimeAtletas();
+					$timeAtleta = new TimeAtletasInscricao();
 					
 					$timeAtleta->id = NULL;
 					$timeAtleta->id_atleta = $nome_atleta;					
@@ -120,14 +264,21 @@ class InscricaoController extends Controller {
 
 				$id_time = Yii::app()->db->createCommand($sqlTime2)->queryRow()['id'];
 
-				foreach ($value->atletas as $key => $value_atletas) {
-					$value_atletas->id_time = $id_time;
-					$value_atletas->id_atleta = trim($value_atletas->id_atleta);
+				$resultValida = $this->valida($value->atletas, $value, count($array_times));
 
-					
-					$sqlTime = "INSERT INTO time_atletas (id, id_atleta, id_time, id_repr, status) VALUES (NULL, \"" . $value_atletas->id_atleta . " \" , " . $value_atletas->id_time . ", \"representante\", \"aprovado\");";
-					
-					$command = Yii::app()->db->createCommand($sqlTime)->execute();
+				if ($resultValida) {
+					foreach ($value->atletas as $key => $value_atletas) {
+						$value_atletas->id_time = $id_time;
+						$value_atletas->id_atleta = trim($value_atletas->id_atleta);
+
+						$sqlTime = "INSERT INTO time_atletas (id, id_atleta, id_time, id_repr, status) VALUES (NULL, \"" . $value_atletas->id_atleta . " \" , " . $value_atletas->id_time . ", \"representante\", \"aprovado\");";
+						
+						$command = Yii::app()->db->createCommand($sqlTime)->execute();
+					}
+				} else {
+					$sqlNaovalidado = "DELETE FROM time WHERE id = " . $id_time;
+					$command = Yii::app()->db->createCommand($sqlNaovalidado)->execute();
+					$command = 0;
 				}
 			}
 

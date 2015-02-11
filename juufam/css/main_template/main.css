@@ -457,6 +457,10 @@ body {
     background:none; 
 }
 
+h1.erro {
+	color: red;
+}
+
 
 #acdnmenu ul.sub div.arrowImage {
     width:12px;

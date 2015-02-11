@@ -13,6 +13,22 @@ $this->breadcrumbs = array (
 	$cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 ?>
 
+<script type="text/javascript">
+	function SomenteNumero(e){
+		var tecla=(window.event)?event.keyCode:e.which;
+		if ((tecla>47 && tecla<58)) {
+			return true;
+		} else {
+			if (tecla==8 || tecla==0) {
+				return true;
+			} else {
+			 return false;
+			}
+		}
+	}
+</script>
+
+
 <div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Inscrever Atletas</b></h1></div>
 <hr>
 
@@ -109,7 +125,7 @@ $this->breadcrumbs = array (
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
 			html += 'Aluno: ';
-			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="14" />';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="11" onkeypress="return SomenteNumero(event)" />';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
 			html += '<div onclick="removerAtleta(this, ' + quantAtleta + ', ' + quantTeams + ');">-</div>';
@@ -137,7 +153,7 @@ $this->breadcrumbs = array (
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
 			html += 'Aluno: ';
-			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="14" />';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="11" onkeypress="return SomenteNumero(event)" />';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
 			html += '<div class="add-atleta" onclick="addAtleta(this, ' + quantTeams + ');">+</div>';
@@ -170,11 +186,11 @@ $this->breadcrumbs = array (
 		htmlFirst.push('<div class="team-tech">');
 		htmlFirst.push('<div>');
 		htmlFirst.push('<p>Técnico: </p>');
-		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="CPF Tecnico" maxlength="14" />');
+		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="CPF Tecnico" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('<div>');
 		htmlFirst.push('<p>Auxiliar: </p>');
-		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="CPF Auxiliar" maxlength="14" />');
+		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="CPF Auxiliar" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('</div>');
 
@@ -268,7 +284,7 @@ function createTeams(times) {
 			htmlFirst.push('<div class="info-atleta">');
 			htmlFirst.push('<div class="new-atleta">');
 			htmlFirst.push('Aluno: ');
-			htmlFirst.push('<input type="text" name="nome[' + i + ']" placeholder="CPF" value="' + time.atletas[i] + '" maxlength="14" />');
+			htmlFirst.push('<input type="text" name="nome[' + i + ']" placeholder="CPF" value="' + time.atletas[i] + '" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 			htmlFirst.push('</div>');
 			htmlFirst.push('<div class="team-atleta-menu">');
 			
@@ -301,11 +317,11 @@ function createTeams(times) {
 		htmlFirst.push('<div class="team-tech">');
 		htmlFirst.push('<div>');
 		htmlFirst.push('<p>Técnico: </p>');
-		htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Tecnico" value="' + time.tecnico + '" maxlength="14" />');
+		htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Tecnico" value="' + time.tecnico + '" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('<div>');
 		htmlFirst.push('<p>Auxiliar: </p>');
-		htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" value="' + time.auxiliar + '"  maxlength="14" />');
+		htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" value="' + time.auxiliar + '" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('</div>');
 
@@ -335,7 +351,7 @@ function createFirstTeam() {
 	htmlFirst.push('<div class="info-atleta">');
 	htmlFirst.push('<div class="new-atleta">');
 	htmlFirst.push('Aluno: ');
-	htmlFirst.push('<input type="text" name="nome[0]" placeholder="CPF" maxlength="14" />');
+	htmlFirst.push('<input type="text" name="nome[0]" placeholder="CPF" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 	htmlFirst.push('</div>');
 	htmlFirst.push('<div class="team-atleta-menu">');
 	htmlFirst.push('<div class="add-atleta" onclick="addAtleta(this, 1);">+</div>');
@@ -347,11 +363,11 @@ function createFirstTeam() {
 	htmlFirst.push('<div class="team-tech">');
 	htmlFirst.push('<div>');
 	htmlFirst.push('<p>Técnico: </p>');
-	htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Técnico" maxlength="14" />');
+	htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Técnico" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 	htmlFirst.push('</div>');
 	htmlFirst.push('<div>');
 	htmlFirst.push('<p>Auxiliar: </p>');
-	htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" maxlength="14" />');
+	htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" maxlength="11" onkeypress="return SomenteNumero(event)" />');
 	htmlFirst.push('</div>');
 	htmlFirst.push('</div>');
 
