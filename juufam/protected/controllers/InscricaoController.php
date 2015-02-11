@@ -1,15 +1,31 @@
 <?php
 
 class InscricaoController extends Controller {
+
+	public $id_curso = "";
 	
 	public function actionIndex() {
-		$this->render ('index');
+
+		$sqlChapa = "SELECT chapa.nome FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
+		$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
+
+		foreach ($chapa as $key => $chapaz) {			
+			$sqlCurso = "SELECT id FROM curso WHERE nome LIKE '%" . $chapaz["nome"] . "%'";
+			$cursos = Yii::app()->db->createCommand($sqlCurso)->queryAll();
+		
+			foreach ($cursos as $key => $curso) {			
+				$this->id_curso = $curso["id"];
+			}				
+		}
+
+
+		$this->render('index');
 	}
 
 	public function actionCreate() {
 
 		Yii::import('application.models.Time');
-		Yii::import('application.models.TimeAtletas');
+		Yii::import('application.models.TimeAtletasInscricao');
 
 		
 		ini_set ( 'display_errors', 1 );
@@ -17,6 +33,20 @@ class InscricaoController extends Controller {
 		error_reporting ( E_ALL );
 		
 		if (isset ($_POST)) {
+			
+			$sqlChapa = "SELECT chapa.nome FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
+			$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
+
+			foreach ($chapa as $key => $chapaz) {			
+				$sqlCurso = "SELECT id FROM curso WHERE nome LIKE '%" . $chapaz["nome"] . "%'";
+				//echo $sqlCurso; exit;
+				$cursos = Yii::app()->db->createCommand($sqlCurso)->queryAll();
+				
+				foreach ($cursos as $key => $curso) {			
+					$id_curso = $curso["id"];
+				}				
+			}
+
 			$nomes = $_POST["nome"];
 
 			$modalidade = $_POST["modalidade"];
@@ -28,7 +58,7 @@ class InscricaoController extends Controller {
 
 				for ($i = 0; $i < $countOldTeams; $i++) { 
 
-					$sqlTime = "SELECT id FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%ICC015%'";
+					$sqlTime = "SELECT id FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%" . $id_curso . "%'";
 
 					$teams = Yii::app()->db->createCommand($sqlTime)->queryAll();
 
@@ -37,13 +67,14 @@ class InscricaoController extends Controller {
 						$command = Yii::app()->db->createCommand($sqlTime)->execute();
 					}
 
-					$sqlTime = "DELETE FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%ICC015%'";
+					$sqlTime = "DELETE FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%" . $id_curso . "%'";
 					$command = Yii::app()->db->createCommand($sqlTime)->execute();
 				}
 			}
 
 			$tecnico = $_POST["tecnico"];
 			$auxiliar = $_POST["auxiliar"];
+
 
 			/*$erro = $this->isParamsValid ( $_POST );
 			
@@ -59,7 +90,7 @@ class InscricaoController extends Controller {
 
     			$time->id = NULL;
 			    $time->id_modalidade = $modalidade;
-			    $time->id_curso = "ICC015";
+			    $time->id_curso = $id_curso;
 			    $time->tecnico = $tecnico[($i - 1)];
 			    $time->auxiliar = $auxiliar[($i - 1)];
 
@@ -110,7 +141,7 @@ class InscricaoController extends Controller {
 
 	public function actionView() {
 		Yii::import('application.models.Time');
-		Yii::import('application.models.TimeAtletas');
+		Yii::import('application.models.TimeAtletasInscricao');
 
 		ini_set ('display_errors', 1);
 		ini_set ('display_startup_erros', 1);

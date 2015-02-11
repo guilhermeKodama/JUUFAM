@@ -32,12 +32,6 @@
 <link
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/main_template/main.css"
 	rel="stylesheet" />
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<!-- Scripts -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
 
 
 
@@ -219,14 +213,6 @@ label.error {
 		</div>
 		<div class="cleared"></div>
 	</div>
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script
-		src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
-	<script
-		src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
 </body>
 </html>
+ 	

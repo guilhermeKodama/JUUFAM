@@ -4,15 +4,16 @@ $this->breadcrumbs = array (
 		'Criar Evento' 
 );
 ?>
+
 <!-- import javascript -->
 <?php
-
-$baseUrl = Yii::app ()->baseUrl;
-$cs = Yii::app ()->getClientScript ();
-$cs->registerScriptFile ($baseUrl . '/js/jquery-1.11.1.min.js');
-$cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
+	$baseUrl = Yii::app()->baseUrl;
+	$cs = Yii::app()->getClientScript();
+	$cs->registerScriptFile ($baseUrl . '/js/jquery-1.11.1.min.js');
+	$cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 ?>
-</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Inscrever Atletas</b></h1></div>
+
+<div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Inscrever Atletas</b></h1></div>
 <hr>
 
 <form enctype="multipart/form-data" method="post"
@@ -31,7 +32,34 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 		</select> 
 	</div>
 
-	<div class="big-box-team">
+<!--	<div class="big-box-team">-->
+
+
+<div class="big-box-team">
+	<div class="team team-1">
+		<div class="team-title">
+			<h3>Time</h3>
+			<div class="team-title-menu">
+				<div onclick="createNewTeam();" class="add-team">+</div>
+			</div>
+		</div>
+		<div class="big-box big-box-1">
+			<div class="box-atletas">
+				<div class="info-atleta">
+					<div class="new-atleta">Aluno: <input type="text" name="nome[0]" placeholder="CPF"></div>
+					<div class="team-atleta-menu"><div onclick="addAtleta(this, 1);" class="add-atleta">+</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="team-tech">
+			<div><p>Técnico: </p><input type="text" placeholder="CPF Técnico" name="tecnico[0]"></div>
+			<div><p>Auxiliar: </p><input type="text" placeholder="CPF Auxiliar" name="auxiliar[0]"></div>
+		</div>
+		<input type="hidden" value="1" name="time[]">
+		<input type="hidden" value="0," name="time_atletas[1]" class="atletascount-1">
+	</div>
+</div>	
 		<!--<div class="team team-1">
 			<div class="team-title"> 
 				<h3>Time 1</h3>
@@ -63,10 +91,10 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 			<input type="hidden" name="time[]" value="1" />
 			<input type="hidden" class="atletascount-1" name="time_atletas[1]" value="0," />
 		</div>	-->
-	</div>	
+	<!--</div>	-->
 	<div class="submit-inscricao">
 		<input type="hidden" title="Inscrever" />
-		<input type="submit" id="submit-ins" title="Inscrever" />
+		<input type="submit" id="submit-ins" value="Inscrever" />
 	</div>
 </form>
 
@@ -81,7 +109,7 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
 			html += 'Aluno: ';
-			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF"/>';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="14" />';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
 			html += '<div onclick="removerAtleta(this, ' + quantAtleta + ', ' + quantTeams + ');">-</div>';
@@ -109,7 +137,7 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
             html += '<div class="info-atleta">';
 			html += '<div class="new-atleta">';
 			html += 'Aluno: ';
-			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="Matricula"/>';
+			html += '<input type="text" name="nome[' + quantAtleta + ']" placeholder="CPF" maxlength="14" />';
 			html += '</div>';
 			html += '<div class="team-atleta-menu"> ';
 			html += '<div class="add-atleta" onclick="addAtleta(this, ' + quantTeams + ');">+</div>';
@@ -140,13 +168,13 @@ $cs->registerScriptFile ($baseUrl . '/js/jquery.maskedinput.js');
 		htmlFirst.push('</div>');
 
 		htmlFirst.push('<div class="team-tech">');
-		htmlFirst.push('<div class="new-atleta">');
-		htmlFirst.push('Técnico: ');
-		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="CPF Tecnico"/>');
+		htmlFirst.push('<div>');
+		htmlFirst.push('<p>Técnico: </p>');
+		htmlFirst.push('<input type="text" name="tecnico[]" placeholder="CPF Tecnico" maxlength="14" />');
 		htmlFirst.push('</div>');
-		htmlFirst.push('<div class="new-atleta">');
-		htmlFirst.push('Auxiliar: ');
-		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="CPF Auxiliar"/>');
+		htmlFirst.push('<div>');
+		htmlFirst.push('<p>Auxiliar: </p>');
+		htmlFirst.push('<input type="text" name="auxiliar[]" placeholder="CPF Auxiliar" maxlength="14" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('</div>');
 
@@ -196,7 +224,7 @@ function createNewTeam() {
 
 function getTeams(modalidade_param) {
 	var modalidade = modalidade_param,
-		curso = "ICC015",
+		curso = "<?php echo $this->id_curso; ?>",
 		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/view'; ?>" + "?modalidade=" + modalidade + '&curso=' + curso;
 
 	$.get(url, function(times) {
@@ -240,7 +268,7 @@ function createTeams(times) {
 			htmlFirst.push('<div class="info-atleta">');
 			htmlFirst.push('<div class="new-atleta">');
 			htmlFirst.push('Aluno: ');
-			htmlFirst.push('<input type="text" name="nome[' + i + ']" placeholder="Matricula" value="' + time.atletas[i] + '"/>');
+			htmlFirst.push('<input type="text" name="nome[' + i + ']" placeholder="CPF" value="' + time.atletas[i] + '" maxlength="14" />');
 			htmlFirst.push('</div>');
 			htmlFirst.push('<div class="team-atleta-menu">');
 			
@@ -271,13 +299,13 @@ function createTeams(times) {
 		htmlFirst.push('</div>'); 
 
 		htmlFirst.push('<div class="team-tech">');
-		htmlFirst.push('<div class="new-atleta">');
-		htmlFirst.push('Técnico: ');
-		htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="Matricula Tecnico" value="' + time.tecnico + '"/>');
+		htmlFirst.push('<div>');
+		htmlFirst.push('<p>Técnico: </p>');
+		htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Tecnico" value="' + time.tecnico + '" maxlength="14" />');
 		htmlFirst.push('</div>');
-		htmlFirst.push('<div class="new-atleta">');
-		htmlFirst.push('Auxiliar: ');
-		htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="Matricula Auxiliar" value="' + time.auxiliar + '" />');
+		htmlFirst.push('<div>');
+		htmlFirst.push('<p>Auxiliar: </p>');
+		htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" value="' + time.auxiliar + '"  maxlength="14" />');
 		htmlFirst.push('</div>');
 		htmlFirst.push('</div>');
 
@@ -307,7 +335,7 @@ function createFirstTeam() {
 	htmlFirst.push('<div class="info-atleta">');
 	htmlFirst.push('<div class="new-atleta">');
 	htmlFirst.push('Aluno: ');
-	htmlFirst.push('<input type="text" name="nome[0]" placeholder="Matricula"/>');
+	htmlFirst.push('<input type="text" name="nome[0]" placeholder="CPF" maxlength="14" />');
 	htmlFirst.push('</div>');
 	htmlFirst.push('<div class="team-atleta-menu">');
 	htmlFirst.push('<div class="add-atleta" onclick="addAtleta(this, 1);">+</div>');
@@ -317,13 +345,13 @@ function createFirstTeam() {
 	
 	htmlFirst.push('</div>'); 
 	htmlFirst.push('<div class="team-tech">');
-	htmlFirst.push('<div class="new-atleta">');
-	htmlFirst.push('Técnico: ');
-	htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="Matricula Tecnico"/>');
+	htmlFirst.push('<div>');
+	htmlFirst.push('<p>Técnico: </p>');
+	htmlFirst.push('<input type="text" name="tecnico[0]" placeholder="CPF Técnico" maxlength="14" />');
 	htmlFirst.push('</div>');
-	htmlFirst.push('<div class="new-atleta">');
-	htmlFirst.push('Auxiliar: ');
-	htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="Matricula Auxiliar"/>');
+	htmlFirst.push('<div>');
+	htmlFirst.push('<p>Auxiliar: </p>');
+	htmlFirst.push('<input type="text" name="auxiliar[0]" placeholder="CPF Auxiliar" maxlength="14" />');
 	htmlFirst.push('</div>');
 	htmlFirst.push('</div>');
 
@@ -333,5 +361,8 @@ function createFirstTeam() {
 
 	$(".big-box-team").append(htmlFirst.join(''));
 }
+	jQuery(function($){
+		$('input[type="text"]').mask("999.999.999-99",{ placeholder:"" });
+	});
 
 </script>

@@ -226,7 +226,6 @@ html, body
     min-width: 90%;
     height:160px;
     margin: 0 auto;
-    background-image: url('images/page_gl.png');
     background-repeat: no-repeat;
     background-position: center top;
 }
@@ -238,7 +237,6 @@ body
     min-width: 700px;
     color: #364149;
     background-color: #f6f8f7;
-    background-image: url('images/Bottom_texture.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: top left;
@@ -1434,7 +1432,6 @@ span.art-postcommentsicon:after
     right:0;
     top:0;
     bottom:5px;
-    background-image: url('images/footer.png');
     background-position:bottom left;
 }
 
@@ -1445,7 +1442,6 @@ span.art-postcommentsicon:after
     z-index:-2;
     bottom:0;
     height:5px;
-    background-image: url('images/footer_b.png');
 }
 
 .art-footer:before
@@ -1548,5 +1544,22 @@ div.art-footer img
     width: 200px;
 }
 /* end LayoutCell, sidebar1 */
+
+
+.team-tech {
+    width: 100%;
+}
+
+.team-tech div {
+    width: 50%; float: left; text-align: center;
+}
+
+.team-tech div p {
+    text-align: left; width: 80%; margin: 10px 0 5px 10px;
+}
+
+.team-tech div input {
+    width: 93%; height: 30px; padding: 5px;
+}
 
 
