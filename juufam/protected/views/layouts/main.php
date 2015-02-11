@@ -151,6 +151,7 @@ label.error {
 						array ('label' => 'Gerenciar Institutos','url' => array ('/instituto/admin')),
 						array ('label' => 'Gerenciar Unidades','url' => array ('/unidade/admin')),
 						array ('label' => 'Gerenciar Cursos','url' => array ('/curso/admin')),
+                        array ('label' => 'Gerenciar Chapas','url' => array ('/chapa/admin')),
 						array ('label' => 'Relatorios','url' => array ('/relatorio/index')),
 						array ('label' => 'Certificados','url' => array ('/certificado/index')),
 						array ('label' => 'Inscricão','url' => array ('/inscricao/index')),

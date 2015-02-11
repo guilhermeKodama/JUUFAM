@@ -108,7 +108,8 @@ class ChapaController extends Controller {
 		}
 		
 		$this->render ( 'create', array (
-				'model' => $model 
+				'model' => $model ,
+				'relations' => $relations = array()
 		) );
 	}
 	
