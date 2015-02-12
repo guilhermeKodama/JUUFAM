@@ -102,9 +102,9 @@ class TimeAtletas extends CActiveRecord{
 	public function attributeLabels() {
 		return array (
 				'id' => 'ID',
-				'id_atleta' => 'Id Atleta',
-				'id_time' => 'Id Time',
-				'id_repr' => 'Id Repr',
+				'id_atleta' => 'ID Atleta',
+				'id_time' => 'ID Time',
+				'id_repr' => 'ID Representante',
 				'status' => 'Status' 
 		);
 	}

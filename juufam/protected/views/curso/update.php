@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar Cursos', 'url'=>array('index')),
-	array('label'=>'CriarCurso', 'url'=>array('create')),
+	array('label'=>'Criar Curso', 'url'=>array('create')),
 	array('label'=>'Visualizar Curso', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Gerenciar Cursos', 'url'=>array('admin')),
 );

@@ -65,8 +65,8 @@ class Chapa extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nome' => 'Nome',
-			'id_evento' => 'Id Evento',
-			'id_unidade' => 'Id Unidade',
+			'id_evento' => 'Evento',
+			'id_unidade' => 'Unidade',
 		);
 	}
 

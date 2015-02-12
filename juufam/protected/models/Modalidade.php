@@ -67,10 +67,10 @@ class Modalidade extends CActiveRecord
 			'id' => 'ID',
 			'nome' => 'Nome',
 			'tipo_modalidade' => 'Tipo Modalidade',
-			'min_inscr' => 'Min Inscr',
-			'max_inscr' => 'Max Inscr',
-			'genero' => 'Genero',
-			'max_time' => 'Max Time',
+			'min_inscr' => 'Minimo Inscritos',
+			'max_inscr' => 'Maximo Inscritos',
+			'genero' => 'Gênero',
+			'max_time' => 'Maximo de Times',
 		);
 	}
 

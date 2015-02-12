@@ -58,8 +58,8 @@ class AtletaModalidade extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_atleta' => 'Id Atleta',
-			'id_modalidade' => 'Id Modalidade',
+			'id_atleta' => 'ID Atleta',
+			'id_modalidade' => 'ID Modalidade',
 			'tipo_funcao' => 'Tipo Funcao',
 		);
 	}

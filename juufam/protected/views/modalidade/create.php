@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Modalidades'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(
-	array('label'=>'List Modalidade', 'url'=>array('index')),
-	array('label'=>'Manage Modalidade', 'url'=>array('admin')),
+	array('label'=>'Listar Modalidades', 'url'=>array('index')),
+	array('label'=>'Gerenciar Modalidades', 'url'=>array('admin')),
 );
 ?>
 

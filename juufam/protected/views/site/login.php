@@ -41,7 +41,7 @@ $this->breadcrumbs=array(
 		</div>
                 <div class="row">
                         <?php
-                         echo "<a href= 'http://localhost/juufam/index.php?r=RecuperarSenha'>  Esqueci minha senha  </a>"
+                         echo "<a href= 'http://localhost/juufam-teste/index.php/recuperarSenha'>  Esqueci minha senha  </a>"
                         ?>
                     
                 </div>

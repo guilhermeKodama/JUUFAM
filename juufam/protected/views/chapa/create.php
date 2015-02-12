@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Chapas'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(
-	array('label'=>'List Chapa', 'url'=>array('index')),
-	array('label'=>'Manage Chapa', 'url'=>array('admin')),
+	array('label'=>'Listar Chapas', 'url'=>array('index')),
+	array('label'=>'Gerenciar Chapas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Chapa</h1>
+<h1>Criar Chapa</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'relations'=>$relations)); ?>

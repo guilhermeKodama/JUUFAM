@@ -58,8 +58,8 @@ class ChapaCurso extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_chapa' => 'Id Chapa',
-			'id_curso' => 'Id Curso',
+			'id_chapa' => 'ID Chapa',
+			'id_curso' => 'ID Curso',
 		);
 	}
 

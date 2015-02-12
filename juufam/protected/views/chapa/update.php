@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Chapa', 'url'=>array('index')),
-	array('label'=>'Create Chapa', 'url'=>array('create')),
-	array('label'=>'View Chapa', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Chapa', 'url'=>array('admin')),
+	array('label'=>'Listar Chapas', 'url'=>array('index')),
+	array('label'=>'Criar Chapa', 'url'=>array('create')),
+	array('label'=>'Visualizar Chapa', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gerenciar Chapas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Chapa <?php echo $model->id; ?></h1>
+<h1>Atualizar Chapa <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'relations'=>$relations)); ?>

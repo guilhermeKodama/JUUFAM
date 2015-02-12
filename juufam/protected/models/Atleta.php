@@ -71,14 +71,14 @@ class Atleta extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'matricula' => 'Matricula',
-			'cpf' => 'Cpf',
-			'rg' => 'Rg',
+			'matricula' => 'Matrícula',
+			'cpf' => 'CPF',
+			'rg' => 'RG',
 			'nome' => 'Nome',
-			'data_nasc' => 'Data Nasc',
-			'genero' => 'Genero',
-			'tipo_atleta' => 'Tipo Atleta',
-			'id_curso' => 'Id Curso',
+			'data_nasc' => 'Data de Nascimento',
+			'genero' => 'Gênero',
+			'tipo_atleta' => 'Tipo de Atleta',
+			'id_curso' => 'ID Curso',
 			'status' => 'Status',
 		);
 	}

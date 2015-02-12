@@ -1,25 +1,31 @@
 <?php
 
 /**
- * This is the model class for table "repr_atleta".
+ * This is the model class for table "usuario".
  *
- * The followings are the available columns in table 'repr_atleta':
- * @property integer $id_repr
- * @property integer $id_atleta
- * @property string $data
- *
- * The followings are the available model relations:
- * @property Atleta $idAtleta
- * @property Usuario $idRepr
+ * The followings are the available columns in table 'usuario':
+ * @property string $nome
+ * @property string $login
+ * @property string $email
+ * @property string $senha
+ * @property string $id_tipo_usuario
+ * @property integer $id_chapa
  */
-class ReprAtleta extends CActiveRecord
+class RecuperarSenha extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
+    
+  //  public $matricula;
+    public $email;
+    public $subject;
+    public $body;
+   // public $verifyCode;
+
 	public function tableName()
 	{
-		return 'repr_atleta';
+		return 'usuario';
 	}
 
 	/**
@@ -30,11 +36,16 @@ class ReprAtleta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_repr, id_atleta, data', 'required'),
-			array('id_repr, id_atleta', 'numerical', 'integerOnly'=>true),
+                      //  array('matricula', 'required'),
+			array('login, email', 'required'),
+			//array('id_chapa', 'numerical', 'integerOnly'=>true),
+			array('nome, login, senha', 'length', 'max'=>45),
+			//array('email', 'length', 'max'=>100),
+			//array('id_tipo_usuario', 'length', 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_repr, id_atleta, data', 'safe', 'on'=>'search'),
+			//array('nome, login, email, senha, id_tipo_usuario, id_chapa', 'safe', 'on'=>'search'),
+                     // array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 
@@ -46,22 +57,13 @@ class ReprAtleta extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idAtleta' => array(self::BELONGS_TO, 'Atleta', 'id_atleta'),
-			'idRepr' => array(self::BELONGS_TO, 'Usuario', 'id_repr'),
 		);
 	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id_repr' => 'ID Representante',
-			'id_atleta' => 'ID Atleta',
-			'data' => 'Data',
-		);
-	}
+	
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -81,9 +83,12 @@ class ReprAtleta extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_repr',$this->id_repr);
-		$criteria->compare('id_atleta',$this->id_atleta);
-		$criteria->compare('data',$this->data,true);
+		$criteria->compare('nome',$this->nome,true);
+		$criteria->compare('login',$this->login,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('senha',$this->senha,true);
+		$criteria->compare('id_tipo_usuario',$this->id_tipo_usuario,true);
+		$criteria->compare('id_chapa',$this->id_chapa);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +99,7 @@ class ReprAtleta extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ReprAtleta the static model class
+	 * @return RecuperarSenha the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

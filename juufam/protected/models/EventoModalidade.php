@@ -56,8 +56,8 @@ class EventoModalidade extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_evento' => 'Id Evento',
-			'id_modalidade' => 'Id Modalidade',
+			'id_evento' => 'ID Evento',
+			'id_modalidade' => 'ID Modalidade',
 		);
 	}
 
