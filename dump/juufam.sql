@@ -253,24 +253,19 @@ UNLOCK TABLES;
 -- Table structure for table `regulamento`
 --
 
-DROP TABLE IF EXISTS `regulamento`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `regulamento` (
+CREATE TABLE IF NOT EXISTS `regulamento` (
   `ano` int(4) NOT NULL,
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `regulamento`
+-- Extraindo dados da tabela `regulamento`
 --
 
-LOCK TABLES `regulamento` WRITE;
-/*!40000 ALTER TABLE `regulamento` DISABLE KEYS */;
-INSERT INTO `regulamento` VALUES (2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2016,'/juufam-teste/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf'),(2015,'http://localhost/juufam/regulamento/regulamento_2015.pdf');
-/*!40000 ALTER TABLE `regulamento` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `regulamento` (`ano`, `link`) VALUES
+(2014, '/juufam/juufam/regulamento/regulamento_2015.pdf');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `repr_atleta`
@@ -397,9 +392,10 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `nome` varchar(45) NOT NULL,
   `login` varchar(45) NOT NULL,
+  `email` char(50) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `id_tipo_usuario` enum('representante','admin') NOT NULL,
-  `id_chapa` int(11) NOT NULL,
+  `id_chapa` int(11) NOT NULL
   PRIMARY KEY (`login`),
   KEY `id_chapa_idx` (`id_chapa`),
   CONSTRAINT `id_chapa` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -412,7 +408,10 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('Guilherme Kodama','admin','admin','admin',1),('Guilherme Kodama','representante','representante','representante',1),('repr_ciencia','repr_ciencia','123','representante',2);
+INSERT INTO `usuario` (`nome`, `login`, `email`, `senha`, `id_tipo_usuario`, `id_chapa`) VALUES
+('Guilherme Kodama', 'admin', '', 'admin', 'admin', 1),
+('Guilherme Kodama', 'representante', '', 'representante', 'representante', 1),
+('repr_ciencia', 'repr_ciencia', '', '123', 'representante', 2);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
