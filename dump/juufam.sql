@@ -29,7 +29,7 @@ CREATE TABLE `atleta` (
   `nome` varchar(45) NOT NULL,
   `data_nasc` varchar(45) NOT NULL,
   `genero` enum('feminino','masculino') NOT NULL,
-  `tipo_atleta` enum('egresso','funcionario','ativo') NOT NULL,
+  `tipo_atleta` enum('egresso','funcionario','corrente') NOT NULL,
   `id_curso` varchar(12) NOT NULL,
   `status` enum('aprovado','em analise','reprovado') NOT NULL DEFAULT 'aprovado',
   PRIMARY KEY (`cpf`),
@@ -44,7 +44,7 @@ CREATE TABLE `atleta` (
 
 LOCK TABLES `atleta` WRITE;
 /*!40000 ALTER TABLE `atleta` DISABLE KEYS */;
-INSERT INTO `atleta` VALUES ('','12321312314','','Guilherme Egresso','13/13/1312','masculino','egresso','ICC015','em analise'),('','66612313123','','Guilherme Ciencia','12/31/3123','masculino','ativo','ICC015','aprovado'),('','91230130031','','Guilherme Sistema','03/11/1992','masculino','ativo','IE015','aprovado');
+INSERT INTO `atleta` VALUES ('','12321312314','','Guilherme Egresso','13/13/1312','masculino','egresso','ICC015','em analise'),('','66612313123','','Guilherme Ciencia','12/31/3123','masculino','corrente','ICC015','aprovado'),('','91230130031','','Guilherme Sistema','03/11/1992','masculino','corrente','IE015','aprovado');
 /*!40000 ALTER TABLE `atleta` ENABLE KEYS */;
 UNLOCK TABLES;
 

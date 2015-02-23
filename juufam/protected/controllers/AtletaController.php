@@ -109,7 +109,7 @@ class AtletaController extends Controller {
 				$value->unidade = $value->UNID_LOTACAO;
 				$value->email = $value->EMAIL;
 
-				$value->tipo = "ativo";
+				$value->tipo = "corrente";
 
 				if ($value->siape && $value->ativo) {
 					$value->tipo = "funcionario";					
