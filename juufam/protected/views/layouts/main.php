@@ -162,12 +162,6 @@ label.error {
 										) 
 								),
 								array (
-										'label' => 'Descricão',
-										'url' => array (
-												'/descricao/index' 
-										) 
-								),
-								array (
 										'label' => 'Logout (' . Yii::app ()->user->name . ')',
 										'url' => array (
 												'/site/logout' 
