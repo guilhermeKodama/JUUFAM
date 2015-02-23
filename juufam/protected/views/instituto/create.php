@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Institutos'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(

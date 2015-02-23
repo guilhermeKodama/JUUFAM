@@ -58,10 +58,10 @@ class RegulamentoController extends Controller
 	}
 
 	/**
-	 * Creates a new model.
+	 * Criars a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate() {           
+	public function actionCriar() {           
         $path = explode("/", $_SERVER['SCRIPT_FILENAME']);
         unset($path[count($path) - 1]);
 
@@ -85,7 +85,7 @@ class RegulamentoController extends Controller
             move_uploaded_file($arquivo["tmp_name"], $caminho_arquivo);                                
             
             if ($model->save()) {
-                $this->redirect(Yii::app()->homeUrl . "?r=regulamento/index");
+                $this->redirect(Yii::app()->homeUrl . "/regulamento/index");
             }                            
     	} 
 
@@ -161,7 +161,7 @@ class RegulamentoController extends Controller
 	{
 		$model=Regulamento::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,'A requisição não existe.');
 		return $model;
 	}
 

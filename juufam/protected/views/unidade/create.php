@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Unidades'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(

@@ -2,6 +2,32 @@ body {
 	background-color: rgb(246,248,247);
 }
 
+.summary {
+	display: none;
+}
+
+#sidebar .portlet-title {
+	display: none;
+}
+
+form input {
+    height: 30px;
+    margin: 0 0 0 10px;
+    padding: 5px;
+    width: 93%;    
+    font-size: 14px;
+}
+
+form select {
+    float: left;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.search-button {
+	display: none;
+}
+
 
 .art-header {
 	clear: both;
@@ -58,20 +84,30 @@ body {
 	text-align: left;
 }
 
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	padding: 2px !important;
+}
+
+hr {
+	margin: 0 !important;
+}
 
 .container #content .form {
-	padding: 20px ;
+	padding: 0 20px;
 	margin: 0;
 	display: table;
 	width: 85%;
 }
 
+#usuario-grid .view, #usuario-grid .update {
+	display: none;
+}
+
 #import-ws {
 	float: right;
 	padding: 0 10px;
-	margin: 24px 0 0 0;
+	margin: 29px 0 0 0;
 	line-height: 29px;
-	width: 90px;
 	text-align: center;
 	background-color: #eee;
 	border: 1px solid #ccc;
@@ -86,14 +122,13 @@ body {
 }
 
 .container #content .form .row label {
-	width: 60px;
-	padding: 6px 0;
+	width: 200px;
+	padding: 2px 0;
+	margin: 0;
 }
 
 .container #content .form .row input {
-	padding: 4px 2px;
-	margin: 5px 0;
-	height: 20px;
+	margin: 0;
 	width: 600px;
 }
 
@@ -328,7 +363,7 @@ body {
 
 .escolha-modalidade select {
 	padding: 3px;
-	float: left;
+	float: none !important;
 	font-weight: 16px;
 	font-size: 14px;
 }

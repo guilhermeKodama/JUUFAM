@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Cursos'=>array('index'),
-	'Manage',
+	'Gerenciar',
 );
 
 $this->menu=array(
@@ -28,8 +28,6 @@ $('.search-form form').submit(function(){
 
 </br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Cursos</b></h1></div>
 <hr>
-
-
 
 <?php echo CHtml::link('Pesquisa Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">

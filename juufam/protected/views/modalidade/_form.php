@@ -18,10 +18,6 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ) );
 ?>
 
-	<p class="note">
-		Fields with <span class="required">*</span> are required.
-	</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -67,7 +63,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Criar' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

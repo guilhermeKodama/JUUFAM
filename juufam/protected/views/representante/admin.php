@@ -30,8 +30,6 @@ $('.search-form form').submit(function(){
 <hr>
 
 
-
-<?php echo CHtml::link('Pesquisa Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

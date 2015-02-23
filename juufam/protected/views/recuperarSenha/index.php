@@ -44,11 +44,11 @@ Se você esqueceu sua senha, siga as instruções para recuperá-la.
 	</div>  
           <div class="row" id="senha" >
 		<?php echo $form->labelEx($model,'senha'); ?>
-		<?php echo $form->textField($model,'senha'); ?>
+		<?php echo $form->passwordField($model,'senha'); ?>
 		<?php echo $form->error($model,'senha'); ?>
 	</div>  
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Enviar'); ?>
+		<?php echo CHtml::submitButton('Modificar senha'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

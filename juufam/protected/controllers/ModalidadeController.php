@@ -78,10 +78,10 @@ class ModalidadeController extends Controller {
 	}
 	
 	/**
-	 * Creates a new model.
+	 * Criars a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate() {
+	public function actionCriar() {
 		$model = new Modalidade ();
 		
 		// Uncomment the following line if AJAX validation is needed
@@ -190,7 +190,7 @@ class ModalidadeController extends Controller {
 	public function loadModel($id) {
 		$model = Modalidade::model ()->findByPk ( $id );
 		if ($model === null)
-			throw new CHttpException ( 404, 'The requested page does not exist.' );
+			throw new CHttpException ( 404, 'A requisição não existe.' );
 		return $model;
 	}
 	

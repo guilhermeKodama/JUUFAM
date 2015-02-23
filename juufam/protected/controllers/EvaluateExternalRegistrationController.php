@@ -52,7 +52,7 @@ class EvaluateExternalRegistrationController extends Controller {
 	public function loadModel($id) {
 		$model = TimeAtletas::model ()->findByPk ( $id );
 		if ($model === null)
-			throw new CHttpException ( 404, 'The requested page does not exist.' );
+			throw new CHttpException ( 404, 'A requisição não existe.' );
 		return $model;
 	}
 	

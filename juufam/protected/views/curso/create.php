@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Cursos'=>array('index'),
-	'Create',
+	'Criar',
 );
 
 $this->menu=array(

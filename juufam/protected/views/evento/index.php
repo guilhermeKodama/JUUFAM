@@ -22,7 +22,7 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
 <hr>
 
 <form  enctype="multipart/form-data" method="post"
-	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Evento/Create'?>">
+	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php?r=Evento/Criar'?>">
 	
 	<?php if(isset($erro["nameEvent"])){echo '<font size="2" color="red">'.$erro["nameEvent"].'</font>';}?>
     <p><b><h5>Insira o nome da edição deste evento:</h5><b></p>

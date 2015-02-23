@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Modalidades'=>array('index'),
-	'Manage',
+	'Gerenciar',
 );
 
 $this->menu=array(
-	array('label'=>'List Modalidade', 'url'=>array('index')),
-	array('label'=>'Create Modalidade', 'url'=>array('create')),
+	array('label'=>'Listar Modalidade', 'url'=>array('index')),
+	array('label'=>'Criar Modalidade', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,10 +27,7 @@ $('.search-form form').submit(function(){
 ?>
 
 </br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Modalidades</b></h1></div>
-<hr>
 
-
-<?php echo CHtml::link('Busca Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

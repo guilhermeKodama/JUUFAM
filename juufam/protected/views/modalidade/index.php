@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Modalidade', 'url'=>array('create')),
+	array('label'=>'Criar Modalidade', 'url'=>array('create')),
 	array('label'=>'Manage Modalidade', 'url'=>array('admin')),
 );
 ?>

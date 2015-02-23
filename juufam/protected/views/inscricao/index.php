@@ -33,7 +33,7 @@ $this->breadcrumbs = array (
 <hr>
 
 <form enctype="multipart/form-data" method="post"
-	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/Create'?>">
+	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/Criar'?>">
 
 	<div class="escolha-modalidade">
 		<select name="modalidade" id="modalidades">

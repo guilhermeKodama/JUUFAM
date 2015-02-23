@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Fazer upload de regulamentos', 'url'=>array('create')),
-	array('label'=>'Editar regulamentos existentes', 'url'=>array('admin')),
+	//array('label'=>'Fazer upload de regulamentos', 'url'=>array('create')),
+	//array('label'=>'Editar regulamentos existentes', 'url'=>array('admin')),
 );
 ?>
 

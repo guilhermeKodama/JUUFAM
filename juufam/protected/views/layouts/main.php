@@ -123,13 +123,13 @@ label.error {
 										'url' => array (
 												'/instituto/admin' 
 										) 
-								),
+								)/*,
 								array (
 										'label' => 'Gerenciar Unidades',
 										'url' => array (
 												'/unidade/admin' 
 										) 
-								),
+								)*/,
 								array (
 										'label' => 'Gerenciar Cursos',
 										'url' => array (
@@ -276,13 +276,13 @@ label.error {
 										'url' => array (
 												'/instituto/admin' 
 										) 
-								),
+								)/*,
 								array (
 										'label' => 'Gerenciar Unidades',
 										'url' => array (
 												'/unidade/admin' 
 										) 
-								),
+								)*/,
 								array (
 										'label' => 'Gerenciar Cursos',
 										'url' => array (

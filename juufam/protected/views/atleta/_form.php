@@ -176,7 +176,7 @@ $form = $this->beginWidget ('CActiveForm', array (
 	<div class="row">
 		<label for="Atleta_tipo_atleta" class="required"> Tipo de Atleta <span class="required">*</span>
 		</label> <br /> <select name="Atleta[tipo_atleta]" id="selectOpt" onChange="loadPDF()" readonly="true">
-			<option value="ativo">Ativo</option>
+			<option value="corrente">Corrente</option>
 			<option value="funcionario">Funcionario</option>
 			<option value="egresso">Egresso</option>
 		</select>
@@ -210,7 +210,7 @@ $form = $this->beginWidget ('CActiveForm', array (
 		
 		echo '<div class="row buttons">';
 		
-		echo CHtml::submitButton ( $model->isNewRecord ? 'Create' : 'Save' );
+		echo CHtml::submitButton ( $model->isNewRecord ? 'Criar' : 'Save' );
 		
 		echo '</div>';
 	} else {

@@ -57,10 +57,10 @@ class UnidadeController extends Controller
 	}
 
 	/**
-	 * Creates a new model.
+	 * Criars a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCriar()
 	{
 		$model=new Unidade;
 
@@ -154,7 +154,7 @@ class UnidadeController extends Controller
 	{
 		$model=Unidade::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,'A requisição não existe.');
 		return $model;
 	}
 

@@ -21,10 +21,6 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 ?>
 
-	<p class="note">
-		Fields with <span class="required">*</span> are required.
-	</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -63,8 +59,8 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<table class="table table-bordered table-hover" id="tab_logic">
 			<thead>
 				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Name</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">Nome</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -132,7 +128,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	<!-- END TABLE CURSOS -->
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Criar' : 'Salvar'); ?>
 	</div>
 
 	<script type="text/javascript">
