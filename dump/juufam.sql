@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `atleta` (
   `nome` varchar(45) NOT NULL,
   `data_nasc` varchar(45) NOT NULL,
   `genero` enum('feminino','masculino') NOT NULL,
-  `tipo_atleta` enum('egresso','funcionario','ativo') NOT NULL,
+  `tipo_atleta` enum('egresso','funcionario','corrente') NOT NULL,
   `id_curso` varchar(12) NOT NULL,
   `status` enum('aprovado','em analise','reprovado') NOT NULL DEFAULT 'aprovado'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -42,12 +42,13 @@ CREATE TABLE IF NOT EXISTS `atleta` (
 -- Extraindo dados da tabela `atleta`
 --
 
-INSERT INTO `atleta` (`matricula`, `cpf`, `rg`, `nome`, `data_nasc`, `genero`, `tipo_atleta`, `id_curso`, `status`) VALUES
-('', '12321312314', '', 'Guilherme Egresso', '13/13/1312', 'masculino', 'egresso', 'ICC015', 'em analise'),
-('', '66612313123', '', 'Guilherme Ciencia', '12/31/3123', 'masculino', 'ativo', 'ICC015', 'aprovado'),
-('', '91230130031', '', 'Guilherme Sistema', '03/11/1992', 'masculino', 'ativo', 'IE015', 'aprovado');
 
--- --------------------------------------------------------
+LOCK TABLES `atleta` WRITE;
+/*!40000 ALTER TABLE `atleta` DISABLE KEYS */;
+INSERT INTO `atleta` VALUES ('','12321312314','','Guilherme Egresso','13/13/1312','masculino','egresso','ICC015','em analise'),('','66612313123','','Guilherme Ciencia','12/31/3123','masculino','corrente','ICC015','aprovado'),('','91230130031','','Guilherme Sistema','03/11/1992','masculino','corrente','IE015','aprovado');
+/*!40000 ALTER TABLE `atleta` ENABLE KEYS */;
+UNLOCK TABLES;
+
 
 --
 -- Estrutura da tabela `chapa`
