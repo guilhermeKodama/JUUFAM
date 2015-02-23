@@ -79,6 +79,7 @@ label.error {
 		<div class="container">
 			<div class="container-side">
 				<div class="menu">
+				<?php if(!Yii::app ()->user->isGuest){$model = EventoController::getCurrentEventOpen(); echo "Evento atual : ".$model->nome;}?>
 				<?php
 				$items = array ();
 				
