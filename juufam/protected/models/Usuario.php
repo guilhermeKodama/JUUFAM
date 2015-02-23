@@ -33,13 +33,13 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, login, senha, id_tipo_usuario, id_chapa', 'required'),
+			array('nome, login, email, senha, id_tipo_usuario, id_chapa', 'required'),
 			array('id_chapa', 'numerical', 'integerOnly'=>true),
-			array('nome, login, senha', 'length', 'max'=>45),
+			array('nome, login, email, senha', 'length', 'max'=>45),
 			array('id_tipo_usuario', 'length', 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('nome, login, senha, id_tipo_usuario, id_chapa', 'safe', 'on'=>'search'),
+			array('nome, login, email, senha, id_tipo_usuario, id_chapa', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +65,7 @@ class Usuario extends CActiveRecord
 		return array(
 			'nome' => 'Nome',
 			'login' => 'Login',
+                        'email' => 'Email',
 			'senha' => 'Senha',
 			'id_tipo_usuario' => 'Id Tipo Usuario',
 			'id_chapa' => 'Id Chapa',
@@ -91,6 +92,7 @@ class Usuario extends CActiveRecord
 
 		$criteria->compare('nome',$this->nome,true);
 		$criteria->compare('login',$this->login,true);
+                $criteria->compare('email',$this->email,true);
 		$criteria->compare('senha',$this->senha,true);
 		$criteria->compare('id_tipo_usuario',$this->id_tipo_usuario,true);
 		$criteria->compare('id_chapa',$this->id_chapa);

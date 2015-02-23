@@ -30,6 +30,8 @@ $('.search-form form').submit(function(){
 <hr>
 
 
+
+<?php echo CHtml::link('Pesquisa Avançada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -45,7 +47,6 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'nome',
 		'login',
-		'senha',
 		'id_tipo_usuario',
 		'id_chapa',
 		array(

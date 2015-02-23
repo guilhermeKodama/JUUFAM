@@ -19,6 +19,10 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ) );
 ?>
 
+	<p class="note">
+		Fields with <span class="required">*</span> are required.
+	</p>
+
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -32,10 +36,16 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->textField($model,'login',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'login'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'email'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'senha'); ?>
-		<?php echo $form->textField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->passwordField($model,'senha',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'senha'); ?>
 	</div>
 
@@ -68,7 +78,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		echo '<div class="row buttons">';
 		
 		
-                echo CHtml::submitButton ( $model->isNewRecord ? 'Criar' : 'Save' );
+                echo CHtml::submitButton ( $model->isNewRecord ? 'Create' : 'Salvar' );
 		
 		echo '</div>';
 	} else {

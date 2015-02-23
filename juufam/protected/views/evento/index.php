@@ -47,11 +47,12 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
                 <input class="form-control" id="dateEndInscr" name="dateEndInscr" type="date"
 			placeholder="Data fim inscricão">
 	</div>
+	<!-- 
 	<div class="form-inline">
             <p><b><h5>Insira o Modelo do Certificado que será utilizado neste evento:</h5></b></p>
         	<input class="form-control" type="file" id="userfile" name="userfile"
 			accept="application/png">
-	</div>
+	</div> -->
 
     <p><b><h5>Selecione as modalidades que estarão nesta edição:</h5></b></p>
 	<div class="checkbox">
