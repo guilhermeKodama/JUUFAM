@@ -16,7 +16,7 @@ class Time
 {
     public $id;
     public $id_modalidade;
-    public $id_curso;
+    public $id_chapa;
     public $tecnico;
     public $auxiliar;
     public $atletas;

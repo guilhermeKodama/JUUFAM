@@ -33,19 +33,24 @@ $this->breadcrumbs = array (
 <hr>
 
 <form enctype="multipart/form-data" method="post"
-	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/Criar'?>">
+	action="<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/Create'?>">
 
 	<div class="escolha-modalidade">
-		<select name="modalidade" id="modalidades">
-		<?php
-			$modalidadeModal = new ModalidadeController('modalidade');
-			$modalidades = $modalidadeModal->getAllModality();
-			
-			foreach ($modalidades as $modalidade) {
-				echo '<option value="' . $modalidade->id . '">' . $modalidade->nome . '</option>';
-			}
-		?>
-		</select> 
+		<div class="modali">
+			<select name="modalidade" id="modalidades">
+			<?php
+				$modalidadeModal = new ModalidadeController('modalidade');
+				$modalidades = $modalidadeModal->getAllModality();
+				
+				foreach ($modalidades as $modalidade) {
+					echo '<option value="' . $modalidade->id . '">' . $modalidade->nome . '</option>';
+				}
+			?>
+			</select> 
+		</div>
+		<div class="msg-modalidade">
+			<p></p>
+		</div>
 	</div>
 
 <!--	<div class="big-box-team">-->
@@ -223,6 +228,7 @@ $this->breadcrumbs = array (
 
 $(function(){
 	getTeams($("#modalidades:first").val());
+	getModalidade($("#modalidades:first").val());
 
   	$(".team .add-team").click(function(){
         return false;
@@ -230,6 +236,7 @@ $(function(){
 
   	$("#modalidades").change(function(){
   		getTeams($(this).val());
+  		getModalidade($(this).val());
     });        
 
 });
@@ -240,8 +247,8 @@ function createNewTeam() {
 
 function getTeams(modalidade_param) {
 	var modalidade = modalidade_param,
-		curso = "<?php echo $this->id_curso; ?>",
-		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/view'; ?>" + "?modalidade=" + modalidade + '&curso=' + curso;
+		chapa = "<?php echo $this->id_chapa; ?>",
+		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/view'; ?>" + "?modalidade=" + modalidade + '&chapa=' + chapa;
 
 	$.get(url, function(times) {
 
@@ -254,6 +261,20 @@ function getTeams(modalidade_param) {
 		}
 	});  		
 }
+
+function getModalidade(modalidade_param) {
+	var modalidade = modalidade_param,
+		url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/Inscricao/viewmodalidades'; ?>" + "?modalidade=" + modalidade;
+
+	$.get(url, function(times) {
+		if (times.max_times == "0") {
+			times.max_times = "Ilimitado";
+		}
+
+		$(".msg-modalidade p").empty().append("Minimo: " + times.min_inscritos + " atleta(s); Máximo: " + times.max_inscritos + " atleta(s); Máximo Times: " + times.max_times);
+	});  		
+}
+
 
 function createTeams(times) {
 	var key = 0;

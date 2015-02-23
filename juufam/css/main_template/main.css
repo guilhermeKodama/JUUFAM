@@ -322,6 +322,11 @@ hr {
 .box-atletas .new-atleta input { 
 	height: 30px; padding: 5px;
 	margin: 0 0 0 10px;
+	width: calc(78%) !important;
+}
+
+.escolha-modalidade div {
+	width: 49%; float: left;
 }
 
 .box-atletas .team-atleta-menu { 

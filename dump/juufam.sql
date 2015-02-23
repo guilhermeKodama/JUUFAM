@@ -44,7 +44,7 @@ CREATE TABLE `atleta` (
 
 LOCK TABLES `atleta` WRITE;
 /*!40000 ALTER TABLE `atleta` DISABLE KEYS */;
-INSERT INTO `atleta` VALUES ('','12321312314','','Guilherme Egresso','13/13/1312','masculino','egresso','ICC015','em analise'),('','66612313123','','Guilherme Ciencia','12/31/3123','masculino','corrente','ICC015','aprovado'),('','91230130031','','Guilherme Sistema','03/11/1992','masculino','corrente','IE015','aprovado');
+INSERT INTO `atleta` VALUES ('','00844105236','','Alexandre Ramon Moura Dias','25/08/1990','masculino','egresso','ICC015','aprovado'),('','00427275296','','Caio Pinheiro','13/12/1990','masculino','corrente','ICC015','aprovado'),('','91230130031','','Guilherme Sistema','03/11/1992','masculino','corrente','IE015','aprovado');
 /*!40000 ALTER TABLE `atleta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +245,7 @@ CREATE TABLE `modalidade` (
 
 LOCK TABLES `modalidade` WRITE;
 /*!40000 ALTER TABLE `modalidade` DISABLE KEYS */;
-INSERT INTO `modalidade` VALUES (1,'Futsal','coletivo',5,10,'masculino',5),(2,'Natação','individual',3,10,'masculino',0),(3,'Volley','coletivo',5,10,'masculino',0),(4,'Futsal','coletivo',5,10,'feminino',0),(5,'Xadrez','individual',5,10,'masculino',10);
+INSERT INTO `modalidade` VALUES (1,'Futsal','coletivo',1,10,'masculino',5),(2,'Natação','individual',3,10,'masculino',0),(3,'Volley','coletivo',5,10,'masculino',0),(4,'Futsal','coletivo',5,10,'feminino',0),(5,'Xadrez','individual',5,10,'masculino',10);
 /*!40000 ALTER TABLE `modalidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -304,15 +304,15 @@ DROP TABLE IF EXISTS `time`;
 CREATE TABLE `time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_modalidade` int(11) NOT NULL,
-  `id_curso` varchar(12) NOT NULL,
+  `id_chapa` int(12) NOT NULL,
   `tecnico` varchar(11) DEFAULT NULL,
   `auxiliar` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_modalidade_time` (`id_modalidade`),
-  KEY `id_curso_time` (`id_curso`),
-  CONSTRAINT `id_curso_time` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  KEY `id_chapa_time` (`id_chapa`),
+  CONSTRAINT `id_chapa_time` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +321,7 @@ CREATE TABLE `time` (
 
 LOCK TABLES `time` WRITE;
 /*!40000 ALTER TABLE `time` DISABLE KEYS */;
-INSERT INTO `time` VALUES (5,1,'IE015','91230130031','91230130031');
+INSERT INTO `time` VALUES (5,1, 1,'00844105236','00427275296');
 /*!40000 ALTER TABLE `time` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,7 +354,7 @@ CREATE TABLE `time_atletas` (
 
 LOCK TABLES `time_atletas` WRITE;
 /*!40000 ALTER TABLE `time_atletas` DISABLE KEYS */;
-INSERT INTO `time_atletas` VALUES (6,'91230130031',5,'representante','aprovado'),(8,'66612313123',5,'representante','em analise');
+INSERT INTO `time_atletas` VALUES (6,'00844105236',5,'representante','aprovado'),(8,'00427275296',5,'representante','em analise');
 /*!40000 ALTER TABLE `time_atletas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +395,7 @@ CREATE TABLE `usuario` (
   `email` char(50) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `id_tipo_usuario` enum('representante','admin') NOT NULL,
-  `id_chapa` int(11) NOT NULL
+  `id_chapa` int(11) NOT NULL,
   PRIMARY KEY (`login`),
   KEY `id_chapa_idx` (`id_chapa`),
   CONSTRAINT `id_chapa` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -409,8 +409,8 @@ CREATE TABLE `usuario` (
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`nome`, `login`, `email`, `senha`, `id_tipo_usuario`, `id_chapa`) VALUES
-('Guilherme Kodama', 'admin', '', 'admin', 'admin', 1),
-('Guilherme Kodama', 'representante', '', 'representante', 'representante', 1),
+('Guilherme Kodama', 'admin', '', 'admin', 'admin', 2),
+('Guilherme Kodama', 'representante', '', 'representante', 'representante', 2),
 ('repr_ciencia', 'repr_ciencia', '', '123', 'representante', 2);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;

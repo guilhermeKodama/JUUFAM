@@ -2,20 +2,20 @@
 
 class InscricaoController extends Controller {
 
-	public $id_curso = "";
+	public $id_chapa = "";
 	public $erro = "";
 	
 	public function actionIndex() {
 
-		$sqlChapa = "SELECT chapa.nome FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
+		$sqlChapa = "SELECT chapa.id as id FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
 		$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
 
 		foreach ($chapa as $key => $chapaz) {			
-			$sqlCurso = "SELECT id FROM curso WHERE nome LIKE '%" . $chapaz["nome"] . "%'";
+			$sqlCurso = "SELECT id FROM chapa_curso WHERE id_chapa = " . $chapaz["id"] . "";
 			$cursos = Yii::app()->db->createCommand($sqlCurso)->queryAll();
 		
 			foreach ($cursos as $key => $curso) {			
-				$this->id_curso = $curso["id"];
+				$this->id_chapa = $curso["id"];
 			}				
 		}
 
@@ -70,17 +70,20 @@ class InscricaoController extends Controller {
 	}	
 
 	function mesmoCurso($cpf = null) {
-		$sqlAtleta = "SELECT curso.nome FROM atleta JOIN curso ON atleta.id_curso = curso.id WHERE cpf = '" . $cpf. "'";
-		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
-
-		$sqlChapa = "SELECT id FROM chapa WHERE nome LIKE '" . $cont[0]['nome']. "'";
-		$idChapa = Yii::app()->db->createCommand($sqlChapa)->queryAll()[0]['id'];
 
 		$sqlChapaUser = "SELECT id_chapa FROM usuario WHERE usuario.login = '" . Yii::app()->user->name . "'";
 		$idChapaUser = Yii::app()->db->createCommand($sqlChapaUser)->queryAll()[0]['id_chapa'];
 
-		if ($idChapa == $idChapaUser) {
-			return true;
+		$sqlAtleta = "SELECT id_curso FROM atleta WHERE cpf = '" . $cpf. "'";
+		$cont = Yii::app()->db->createCommand($sqlAtleta)->queryAll();
+
+		$sqlChapa = "SELECT id FROM chapa_curso WHERE id_curso LIKE '" . $cont[0]['id_curso']. "'";
+		$idChapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
+
+		foreach ($idChapa as $key => $value) {
+			if ($value["id"] == $idChapaUser) {
+				return true;
+			}
 		}
 
 		return false;
@@ -212,16 +215,16 @@ class InscricaoController extends Controller {
 		
 		if (isset ($_POST)) {
 			
-			$sqlChapa = "SELECT chapa.nome FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
+			$sqlChapa = "SELECT chapa.id as id FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
 			$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
 
 			foreach ($chapa as $key => $chapaz) {			
-				$sqlCurso = "SELECT id FROM curso WHERE nome LIKE '%" . $chapaz["nome"] . "%'";
+				$sqlCurso = "SELECT id FROM chapa_curso WHERE id_chapa = " . $chapaz["id"] . "";
 				//echo $sqlCurso; exit;
 				$cursos = Yii::app()->db->createCommand($sqlCurso)->queryAll();
 				
 				foreach ($cursos as $key => $curso) {			
-					$id_curso = $curso["id"];
+					$id_chapa = $curso["id"];
 				}				
 			}
 
@@ -236,7 +239,7 @@ class InscricaoController extends Controller {
 
 				for ($i = 0; $i < $countOldTeams; $i++) { 
 
-					$sqlTime = "SELECT id FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%" . $id_curso . "%'";
+					$sqlTime = "SELECT id FROM time WHERE id_modalidade = " . $modalidade . " AND id_chapa = " . $id_chapa . "";
 
 					$teams = Yii::app()->db->createCommand($sqlTime)->queryAll();
 
@@ -245,7 +248,7 @@ class InscricaoController extends Controller {
 						$command = Yii::app()->db->createCommand($sqlTime)->execute();
 					}
 
-					$sqlTime = "DELETE FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE '%" . $id_curso . "%'";
+					$sqlTime = "DELETE FROM time WHERE id_modalidade = " . $modalidade . " AND id_chapa = " . $id_chapa . "";
 					$command = Yii::app()->db->createCommand($sqlTime)->execute();
 				}
 			}
@@ -268,7 +271,7 @@ class InscricaoController extends Controller {
 
     			$time->id = NULL;
 			    $time->id_modalidade = $modalidade;
-			    $time->id_curso = $id_curso;
+			    $time->id_chapa = $id_chapa;
 			    $time->tecnico = $tecnico[($i - 1)];
 			    $time->auxiliar = $auxiliar[($i - 1)];
 
@@ -290,7 +293,7 @@ class InscricaoController extends Controller {
 			}
 
 			foreach ($array_times as $key => $value) {
-				$sqlTime = "INSERT INTO time (id, id_modalidade, id_curso, tecnico, auxiliar) VALUES (NULL, " . $value->id_modalidade . ", \"" . $value->id_curso . "\"" . ", \"" . $value->tecnico . "\"" . ", \"" . $value->auxiliar . "\");";
+				$sqlTime = "INSERT INTO time (id, id_modalidade, id_chapa, tecnico, auxiliar) VALUES (NULL, " . $value->id_modalidade . ", \"" . $value->id_chapa . "\"" . ", \"" . $value->tecnico . "\"" . ", \"" . $value->auxiliar . "\");";
 
 				$command = Yii::app()->db->createCommand($sqlTime)->execute();
 
@@ -334,11 +337,12 @@ class InscricaoController extends Controller {
 		
 		if (isset ($_GET)) {
 			$modalidade = $_GET["modalidade"];
-			$curso = $_GET["curso"];
+			$chapa = $_GET["chapa"];
 
 			$time_json = array();
 
-			$sqlTime = "SELECT * FROM time WHERE id_modalidade = " . $modalidade . " AND id_curso LIKE \"%" . $curso . "%\"";
+
+			$sqlTime = "SELECT * FROM time WHERE id_modalidade = " . $modalidade . " AND id_chapa = " . $chapa;
 
 			$teams = Yii::app()->db->createCommand($sqlTime)->queryAll();
 
@@ -364,6 +368,30 @@ class InscricaoController extends Controller {
 			Yii::app()->end(); 
 		}	
 	}
+
+	public function actionViewmodalidades() {
+		ini_set ('display_errors', 1);
+		ini_set ('display_startup_erros', 1);
+		error_reporting ( E_ALL );
+		
+		if (isset ($_GET)) {
+			$modalidade = $_GET["modalidade"];
+
+			$sqlTime = "SELECT min_inscr as min, max_inscr as max, max_time as times FROM modalidade WHERE id = " . $modalidade;
+
+			$teams = Yii::app()->db->createCommand($sqlTime)->queryAll();
+
+			foreach ($teams as $key => $team) {			
+				$times = array('min_inscritos' => $team["min"], 'max_inscritos' => $team["max"], 'max_times' => $team["times"]);
+			}
+
+			$this->layout=false;
+			header('Content-type: application/json');
+			echo CJavaScript::jsonEncode($times);
+			Yii::app()->end(); 
+		}	
+	}
+
 
 	/*
 	private function isParamsValid($params) {
