@@ -8413,3 +8413,406 @@ Stack trace:
 REQUEST_URI=/juufam/index.php/representante/admin
 HTTP_REFERER=http://localhost/juufam/index.php/evento/index
 ---
+2015/02/26 14:22:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('instituto/creat...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/instituto/create
+HTTP_REFERER=http://localhost/juufam/index.php/instituto/admin
+---
+2015/02/26 14:22:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('instituto/creat...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/instituto/create
+HTTP_REFERER=http://localhost/juufam/index.php/instituto/admin
+---
+2015/02/26 14:24:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_chapa' in 'where clause'. The SQL statement executed was: SELECT * FROM time WHERE id_modalidade = 1 AND id_chapa = 1.
+2015/02/26 14:24:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_chapa' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/InscricaoController.php(347): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): InscricaoController->actionView()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Inscricao/view')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/Inscricao/view?modalidade=1&chapa=1
+HTTP_REFERER=http://localhost/juufam/index.php/inscricao/index
+---
+2015/02/26 14:24:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('regulamento/cre...')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/regulamento/create
+HTTP_REFERER=http://localhost/juufam/index.php/inscricao/index
+---
+2015/02/26 16:18:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'juufam.usuario' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `usuario`.
+2015/02/26 16:18:17 [error] [exception.CDbException] exception 'CDbException' with message 'The table "usuario" for active record class "Usuario" cannot be found in the database.' in /var/www/html/yii/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Usuario))
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1501): CActiveRecord->getTableSchema()
+#3 /var/www/html/juufam/protected/controllers/UsuarioController.php(11): CActiveRecord->findAllByPk(Array)
+#4 /var/www/html/juufam/protected/components/UserIdentity.php(23): UsuarioController->loginIsValid('admin', 'admin')
+#5 /var/www/html/juufam/protected/models/LoginForm.php(54): UserIdentity->authenticate('admin', 'admin')
+#6 /var/www/html/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#7 /var/www/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#9 /var/www/html/juufam/protected/controllers/SiteController.php(92): CModel->validate()
+#10 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/juufam/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/juufam/index.php/site/login
+HTTP_REFERER=http://localhost/juufam/index.php/site/login
+---
+2015/02/27 08:07:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'juufam.usuario' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `usuario`.
+2015/02/27 08:07:44 [error] [exception.CDbException] exception 'CDbException' with message 'The table "usuario" for active record class "Usuario" cannot be found in the database.' in /var/www/html/yii/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Usuario))
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1501): CActiveRecord->getTableSchema()
+#3 /var/www/html/juufam/protected/controllers/UsuarioController.php(11): CActiveRecord->findAllByPk(Array)
+#4 /var/www/html/juufam/protected/components/UserIdentity.php(23): UsuarioController->loginIsValid('admin', 'admin')
+#5 /var/www/html/juufam/protected/models/LoginForm.php(54): UserIdentity->authenticate('admin', 'admin')
+#6 /var/www/html/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#7 /var/www/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#9 /var/www/html/juufam/protected/controllers/SiteController.php(92): CModel->validate()
+#10 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/juufam/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/juufam/index.php/site/login
+HTTP_REFERER=http://localhost/juufam/index.php/site/login
+---
+2015/02/27 08:52:32 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_curso != time.id_curso.
+2015/02/27 08:52:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 08:55:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'IN/ALL/ANY subquery'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_chapa IN (SELECT id_chapa FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_curso != time.id_curso.
+2015/02/27 08:55:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'IN/ALL/ANY subquery'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 08:55:41 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_curso != time.id_curso.
+2015/02/27 08:55:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 08:56:12 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_chapa != time.id_chapa.
+2015/02/27 08:56:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 08:56:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_chapa != time.id_chapa.
+2015/02/27 08:56:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'atleta.id_chapa' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 08:56:21 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'. The SQL statement executed was: SELECT COUNT(*) FROM `time_atletas` `t` JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id WHERE atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = 1) AND atleta.id_curso != time.id_chapa.
+2015/02/27 08:56:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/juufam/protected/views/evaluateExternalRegistration/index.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /var/www/html/juufam/protected/controllers/EvaluateExternalRegistrationController.php(16): CController->render('index', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): EvaluateExternalRegistrationController->actionIndex()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('evaluateExterna...')
+#22 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /var/www/html/juufam/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/juufam/index.php/evaluateExternalRegistration/index
+HTTP_REFERER=http://localhost/juufam/index.php
+---
+2015/02/27 09:04:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'. The SQL statement executed was: SELECT modalidade.nome AS modalidade, time.id, curso.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN curso ON curso.id = time.id_curso.
+2015/02/27 09:04:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/RelatorioController.php(92): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionPrint()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/print')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?modalidade=0&curso=0&r=relatorio%2Fprint&submit-relatorio=
+HTTP_REFERER=http://localhost/juufam/index.php/relatorio/index
+---
+2015/02/27 09:06:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'. The SQL statement executed was: SELECT modalidade.nome AS modalidade, time.id, curso.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN curso ON curso.id = time.id_curso.
+2015/02/27 09:06:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time.id_curso' in 'on clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/RelatorioController.php(92): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionPrint()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/print')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?modalidade=0&curso=0&r=relatorio%2Fprint&submit-relatorio=
+HTTP_REFERER=http://localhost/juufam/index.php/relatorio/index
+---
+2015/02/27 09:07:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'. The SQL statement executed was: SELECT modalidade.nome AS modalidade, time.id, chapa.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN chapa ON chapa.id = time.id_chapa WHERE id_curso LIKE 'ICC015' AND id_modalidade LIKE '2'.
+2015/02/27 09:07:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/RelatorioController.php(92): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionPrint()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/print')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?modalidade=2&curso=ICC015&r=relatorio%2Fprint&submit-relatorio=
+HTTP_REFERER=http://localhost/juufam/index.php/relatorio/index
+---
+2015/02/27 09:08:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'. The SQL statement executed was: SELECT modalidade.nome AS modalidade, time.id, chapa.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN chapa ON chapa.id = time.id_chapa WHERE id_curso LIKE 'ICC015' AND id_modalidade LIKE '2'.
+2015/02/27 09:08:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/RelatorioController.php(92): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionPrint()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/print')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?modalidade=2&curso=ICC015&r=relatorio%2Fprint&submit-relatorio=
+HTTP_REFERER=http://localhost/juufam/index.php/relatorio/index
+---
+2015/02/27 09:09:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'. The SQL statement executed was: SELECT modalidade.nome AS modalidade, time.id, chapa.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN chapa ON chapa.id = time.id_chapa WHERE id_curso LIKE 'ICC015'.
+2015/02/27 09:09:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_curso' in 'where clause'' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/juufam/protected/controllers/RelatorioController.php(92): CDbCommand->queryAll()
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionPrint()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/print')
+#8 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/html/juufam/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/juufam/index.php/relatorio/print?modalidade=0&curso=ICC015&r=relatorio%2Fprint&submit-relatorio=
+HTTP_REFERER=http://localhost/juufam/index.php/relatorio/index
+---
+2015/02/27 09:10:23 [error] [exception.CException] exception 'CException' with message 'ChapaController and its behaviors do not have a method or closure named "getAllCursos".' in /var/www/html/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/html/juufam/protected/views/relatorio/index.php(41): CComponent->__call('getAllCursos', Array)
+#1 /var/www/html/juufam/protected/views/relatorio/index.php(41): ChapaController->getAllCursos()
+#2 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/j...')
+#3 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/j...', NULL, true)
+#4 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/j...', NULL, true)
+#5 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#6 /var/www/html/juufam/protected/controllers/RelatorioController.php(10): CController->render('index')
+#7 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RelatorioController->actionIndex()
+#8 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('relatorio/index')
+#13 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/html/juufam/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/juufam/index.php/relatorio/index
+HTTP_REFERER=http://localhost/juufam/index.php/atleta/admin
+---
+2015/02/27 09:29:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('unidade/create')
+#3 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/juufam/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/juufam/index.php/unidade/create
+HTTP_REFERER=http://localhost/juufam/index.php/unidade/admin
+---

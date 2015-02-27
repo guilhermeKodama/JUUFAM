@@ -145,9 +145,9 @@ class TimeAtletas extends CActiveRecord{
 		/* SELECT */
 		$criteria->select = "t.id,t.id_atleta,t.id_time,t.id_repr,t.status";
 		/* JOIN */
-		$criteria->join = "JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN curso ON time.id_curso = curso.id";
+		$criteria->join = "JOIN atleta as atleta ON t.id_atleta = atleta.cpf JOIN time ON t.id_time = time.id JOIN chapa ON time.id_chapa = chapa.id";
 		/* WHERE */
-		$criteria->condition = "atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = " . $model->id_chapa . ") AND atleta.id_curso != time.id_curso";
+		$criteria->condition = "atleta.id_curso IN (SELECT id_curso FROM chapa_curso WHERE id_chapa = " . $model->id_chapa . ") AND atleta.id_curso NOT IN  (SELECT id_curso FROM chapa_curso WHERE id_chapa = time.id_chapa)";
 		$criteria->together = true;
 		
 		return new CActiveDataProvider ( $this, array (

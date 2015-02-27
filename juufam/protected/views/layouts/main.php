@@ -90,18 +90,6 @@ label.error {
 				$itemsEventOn = array (
 						'items' => array (
 								array (
-										'label' => 'Principal',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
-										'label' => 'Cadastro',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
 										'label' => 'Gerenciar Modalidades',
 										'url' => array (
 												'/modalidade/admin' 
@@ -122,7 +110,13 @@ label.error {
 								array (
 										'label' => 'Gerenciar Institutos',
 										'url' => array (
-												'/instituto/admin' 
+												'/instituto/admin'
+										)
+								),
+								array (
+										'label' => 'Gerenciar Campus',
+										'url' => array (
+												'/unidade/admin' 
 										) 
 								)/*,
 								array (
@@ -198,19 +192,6 @@ label.error {
 										) 
 								),
 								array (
-										'label' => 'Sobre',
-										'url' => array (
-												'/site/page',
-												'view' => 'about' 
-										) 
-								),
-								array (
-										'label' => 'Contato',
-										'url' => array (
-												'/site/contact' 
-										) 
-								),
-								array (
 										'label' => 'Login',
 										'url' => array (
 												'/site/login' 
@@ -230,18 +211,6 @@ label.error {
 				// Acesso do usuário quando ele é administrador
 				$itemsIsAdmin = array (
 						'items' => array (
-								array (
-										'label' => 'Principal',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
-										'label' => 'Cadastro',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
 								array (
 										'label' => 'Criar Evento',
 										'url' => array (
@@ -269,7 +238,13 @@ label.error {
 								array (
 										'label' => 'Gerenciar Institutos',
 										'url' => array (
-												'/instituto/admin' 
+												'/instituto/admin'
+										)
+								),
+								array (
+										'label' => 'Gerenciar Campus',
+										'url' => array (
+												'/unidade/admin' 
 										) 
 								)/*,
 								array (
@@ -285,7 +260,7 @@ label.error {
 										) 
 								),
 								array (
-										'label' => 'Gerenciar Chapas',
+										'label' => 'Gerenciar Unidades',
 										'url' => array (
 												'/chapa/admin' 
 										) 
@@ -334,18 +309,6 @@ label.error {
 				$itemsIsRepresentante = array (
 						'items' => array (
 								array (
-										'label' => 'Principal',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
-										'label' => 'Cadastro',
-										'url' => array (
-												'/site/index' 
-										) 
-								),
-								array (
 										'label' => 'Gerenciar Atletas',
 										'url' => array (
 												'/atleta/admin' 
@@ -361,12 +324,6 @@ label.error {
 										'label' => 'Relatorios',
 										'url' => array (
 												'/relatorio/index' 
-										) 
-								),
-								array (
-										'label' => 'Certificados',
-										'url' => array (
-												'/site/index' 
 										) 
 								),
 								array (

@@ -3,13 +3,13 @@
 /* @var $model Chapa */
 
 $this->breadcrumbs=array(
-	'Chapas'=>array('index'),
-	'Gerenciar',
+		'Unidades'=>array('index'),
+		'Gerenciar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Chapas', 'url'=>array('index')),
-	array('label'=>'Criar Chapa', 'url'=>array('create')),
+	array('label'=>'Listar Unidades', 'url'=>array('index')),
+	array('label'=>'Criar Unidades', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gerenciar Chapas</h1>
+<h1>Gerenciar Unidades</h1>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">

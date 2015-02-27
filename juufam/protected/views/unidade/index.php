@@ -3,12 +3,12 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Unidades',
+	'Campus',
 );
 
 $this->menu=array(
-	array('label'=>'Criar Unidade', 'url'=>array('create')),
-	array('label'=>'Gerenciar Unidades', 'url'=>array('admin')),
+	array('label'=>'Criar Campus', 'url'=>array('create')),
+	array('label'=>'Gerenciar Campus', 'url'=>array('admin')),
 );
 ?>
 

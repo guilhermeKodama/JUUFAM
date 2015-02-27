@@ -3,13 +3,13 @@
 /* @var $model Unidade */
 
 $this->breadcrumbs=array(
-	'Unidades'=>array('index'),
+	'Campus'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Unidades', 'url'=>array('index')),
-	array('label'=>'Criar Unidade', 'url'=>array('create')),
+	array('label'=>'Listar Campus', 'url'=>array('index')),
+	array('label'=>'Criar Campus', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Unidades</b></h1></div>
+</br><div class="infoblock shadow"><h1 style="color:#4682B4;"><b>Gerenciar Campus</b></h1></div>
 <hr>
 
 

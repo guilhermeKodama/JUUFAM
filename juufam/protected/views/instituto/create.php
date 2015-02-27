@@ -3,7 +3,7 @@
 /* @var $model Instituto */
 
 $this->breadcrumbs=array(
-	'Institutos'=>array('index'),
+	'Campus'=>array('index'),
 	'Criar',
 );
 

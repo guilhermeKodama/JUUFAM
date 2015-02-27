@@ -60,7 +60,7 @@ class UnidadeController extends Controller
 	 * Criars a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCriar()
+	public function actionCreate()
 	{
 		$model=new Unidade;
 

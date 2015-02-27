@@ -37,8 +37,8 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
         <select name="curso">
             <option value="0">Todos</option>
             <?php
-                $cursoModal = new CursoController('curso');
-                $cursos = $cursoModal->getAllCursos();
+                $cursoModal = new ChapaController('curso');
+                $cursos = $cursoModal->getAllChapas();
 
                 foreach($cursos as $curso){
                    echo '<option value="' . $curso->id . '">' . $curso->nome . '</option>';

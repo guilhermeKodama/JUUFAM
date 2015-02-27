@@ -3,16 +3,16 @@
 /* @var $model Chapa */
 
 $this->breadcrumbs=array(
-	'Chapas'=>array('index'),
+	'Unidades'=>array('index'),
 	'Criar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Chapas', 'url'=>array('index')),
-	array('label'=>'Gerenciar Chapas', 'url'=>array('admin')),
+	array('label'=>'Listar Unidades', 'url'=>array('index')),
+	array('label'=>'Gerenciar Unidades', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Criar Chapa</h1>
+<h1>Criar Unidades</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'relations'=>$relations)); ?>

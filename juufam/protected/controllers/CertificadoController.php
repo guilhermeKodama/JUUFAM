@@ -18,9 +18,8 @@ class CertificadoController extends Controller
                
            $nameInscrito = $_GET["name"]; 
            $tipoParticipacao = $_GET["tipo"];
-	   
-	    
-           
+          
+            
             function converte($string){
 	        return iconv("UTF-8", "ISO-8859-1", $string);
 	    }
@@ -29,15 +28,15 @@ class CertificadoController extends Controller
             $pdf = new FPDF("L", "pt", "A4");
 	    $pdf->AddPage();
 	    $pdf->Ln(3);
+	  
 	    
-	    
-	    $pdf->Image(Yii::app()->basePath . '/modelo_certificado/modelo.png', 0,0);
+	    $pdf->Image(Yii::app()->basePath . '/modelo_certificado/modelo-oficial.png', -15,0);
 	    
 	    $pdf->SetFont("arial", "I", 26);
-            $pdf->Cell(1000,283,"",100,1,"C");
+            $pdf->Cell(1000,294,"",100,1,"C");
             $pdf->Cell(1000,0,converte("" . $nameInscrito),100,100,"C");
             
-            
+         
             
             $pdf->Cell(700,60,converte("" . $tipoParticipacao),100,100,"R");
             
@@ -80,3 +79,4 @@ class CertificadoController extends Controller
 }
 
 }
+?>

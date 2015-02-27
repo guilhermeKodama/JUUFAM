@@ -15,7 +15,7 @@ class RelatorioController extends Controller
 	    $id_modalidade = $_GET["modalidade"];
 	    $id_curso = $_GET["curso"];
 	    
-	    $sql = "SELECT modalidade.nome AS modalidade, time.id, curso.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN curso ON curso.id = time.id_curso";
+	    $sql = "SELECT modalidade.nome AS modalidade, time.id, chapa.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN chapa ON chapa.id = time.id_chapa";
 	    
 	    if ($id_curso != "0" || $id_modalidade != "0") {
 	        $sql .= " WHERE ";    
@@ -24,7 +24,7 @@ class RelatorioController extends Controller
 	    $flagAnt = 0;
 	    
 	    if ($id_curso != "0") {
-	        $sql .= "id_curso LIKE '" . $id_curso . "'";   
+	        $sql .= "id_chapa LIKE '" . $id_curso . "'";   
 	        $flagAnt = 1;
 	    }
 	    
@@ -45,17 +45,32 @@ class RelatorioController extends Controller
 	    
 	    $pdf->Image(Yii::app()->basePath . '/images/braso.png', 10, 7);
 	    $pdf->Image(Yii::app()->basePath . '/images/ufam.png', 500,15);
-	    
+            
+            
+            
 	    $pdf->SetFont("arial", "B", 12);
 	    $pdf->Cell(0,5,"PODER EXECUTIVO", 0,1,"C");
 	    $pdf->SetFont("arial", "B", 10);
 	    $pdf->Cell(0,25,converte("MINISTÉRIO DA EDUCAÇÃO"), 0,1,"C");
 	    $pdf->Cell(0,5,"UNIVERSIDADE FEDERAL DO AMAZONAS", 0,1,"C");
 	    $pdf->Ln(30);
-	    $pdf->Cell(0,10,converte("PRÓ-REITORIA PARA ASSUNTOS COMUNITÁRIOS"), 0,1,"C");
-	    $pdf->Line(10,114,580,114);	
+	    $pdf->Cell(0,50,converte("PRÓ-REITORIA PARA ASSUNTOS COMUNITÁRIOS"), 0,1,"C");
+	    $pdf->Line(10,140,580,140);
+            
+            $data=date("d/m/Y");
+            $conteudo="Data: ".$data;
+            $hora=date(" H:i:s");
+            $conteudo1="Hora: ".$hora;
+        
+            $pdf->Cell(69,-70,$conteudo,0,1,'R');
+            $pdf->Cell(63,90,$conteudo1,0,1,'R');
+            
+            $usuario = $id=Yii::app()->user->id;
+            $imprime = "Usuário: ".$usuario;
+            $pdf->Cell(64,-70,converte($imprime),0,1,'R');
 	    
 	    $pdf->SetFont("arial", "B", 12);
+            
 	    $titulo = "RELATÓRIO";
 	    
 	    if ($id_curso == "0" && $id_modalidade == "0") {
@@ -70,9 +85,9 @@ class RelatorioController extends Controller
 	         $titulo .= " INSCRITOS POR MODALIDADE";    
 	    }
 
-	    $pdf->Cell(0,50,converte($titulo),0,1,"C");
+	    $pdf->Cell(0,120,converte($titulo),0,1,"C");
 	    
-	    $pdf->Ln(10);
+	   
 
 		$curso = Yii::app()->db->createCommand($sql)->queryAll();
 
@@ -102,8 +117,11 @@ class RelatorioController extends Controller
 	            $pdf->Cell(200, 20, $linha2["curso"],1 ,0, "L");
 	            $pdf->Ln(20);
 	        }
-	    }
+	    
+                }
+          
 
+            
 		$this->layout=false;
 		header('Content-type: application/pdf');
 		$pdf->Output("inscritoscurso.pdf", "I");		

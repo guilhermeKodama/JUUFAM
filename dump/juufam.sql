@@ -10,6 +10,10 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+DROP DATABASE IF EXISTS `juufam`;
+CREATE DATABASE IF NOT EXISTS `juufam`;
+USE `juufam`;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -250,21 +254,16 @@ CREATE TABLE IF NOT EXISTS `time` (
   `auxiliar` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_modalidade_time` (`id_modalidade`),
-  KEY `id_chapa_time` (`id_chapa`),
-  CONSTRAINT `id_chapa_time` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `id_chapa_time` (`id_chapa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Extraindo dados da tabela `time`
 --
-
-LOCK TABLES `time` WRITE;
-/*!40000 ALTER TABLE `time` DISABLE KEYS */;
-INSERT INTO `time` VALUES (5,1, 1,'00844105236','00427275296');
-/*!40000 ALTER TABLE `time` ENABLE KEYS */;
-UNLOCK TABLES;
+/*ALTER TABLE `time`
+  ADD CONSTRAINT `id_chapa_time` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;*/
 
 --
 -- Estrutura da tabela `time_atletas`
@@ -282,11 +281,6 @@ CREATE TABLE IF NOT EXISTS `time_atletas` (
 -- Extraindo dados da tabela `time_atletas`
 --
 
-LOCK TABLES `time_atletas` WRITE;
-/*!40000 ALTER TABLE `time_atletas` DISABLE KEYS */;
-INSERT INTO `time_atletas` VALUES (6,'00844105236',5,'representante','aprovado'),(8,'00427275296',5,'representante','em analise');
-/*!40000 ALTER TABLE `time_atletas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Estrutura da tabela `unidade`
@@ -319,10 +313,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id_tipo_usuario` enum('representante','admin') NOT NULL,
   `id_chapa` int(11) NOT NULL,
   PRIMARY KEY (`login`),
-  KEY `id_chapa_idx` (`id_chapa`),
-  CONSTRAINT `id_chapa` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `id_chapa_idx` (`id_chapa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*ALTER TABLE `usuario`
+    ADD CONSTRAINT `id_chapa` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;*/
 --
 -- Extraindo dados da tabela `usuario`
 --
@@ -400,8 +395,8 @@ ALTER TABLE `repr_atleta`
 --
 -- Indexes for table `time`
 --
-ALTER TABLE `time`
- ADD PRIMARY KEY (`id`), ADD KEY `id_modalidade_time` (`id_modalidade`), ADD KEY `id_curso_time` (`id_curso`);
+/*ALTER TABLE `time`
+ ADD PRIMARY KEY (`id`), ADD KEY `id_modalidade_time` (`id_modalidade`), ADD KEY `id_curso_time` (`id_curso`);*/
 
 --
 -- Indexes for table `time_atletas`
@@ -418,8 +413,8 @@ ALTER TABLE `unidade`
 --
 -- Indexes for table `usuario`
 --
-ALTER TABLE `usuario`
- ADD PRIMARY KEY (`login`), ADD KEY `id_chapa_idx` (`id_chapa`);
+/*ALTER TABLE `usuario`
+ ADD PRIMARY KEY (`login`), ADD KEY `id_chapa_idx` (`id_chapa`);*/
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -520,8 +515,8 @@ ADD CONSTRAINT `fk_id_representante` FOREIGN KEY (`id_repr`) REFERENCES `usuario
 -- Limitadores para a tabela `time`
 --
 ALTER TABLE `time`
-ADD CONSTRAINT `id_curso_time` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `id_chapa_time` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_modalidade_time` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `time_atletas`
