@@ -118,6 +118,9 @@ $this->breadcrumbs = array (
 		<input type="submit" id="submit-ins" value="Inscrever" />
 	</div>
 </form>
+<div style="text-align: center;">
+	<button id="print-inscricao">Imprimir</button>
+</div>
 
 <script type="text/javascript">
     var quantAtleta = 0,
@@ -233,6 +236,14 @@ $(function(){
   	$(".team .add-team").click(function(){
         return false;
     });        
+
+  	$("#print-inscricao").click(function(){
+		var modalidade = $("#modalidades").val(),
+			chapa = "<?php echo $this->id_chapa; ?>",
+			url = "<?php echo Yii::app()->getBaseUrl(true).'/index.php/relatorio/print'; ?>" + "?modalidade=" + modalidade + '&curso=' + chapa + "&r=relatorio%2Fprint";
+
+  		window.location.replace(url);
+    });         
 
   	$("#modalidades").change(function(){
   		getTeams($(this).val());

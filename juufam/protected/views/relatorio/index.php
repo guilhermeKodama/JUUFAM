@@ -32,7 +32,7 @@ $cs->registerScriptFile ( $baseUrl . '/css/bootstrap.min.css');
     
     <hr align="center" width="400" size="1">
     <span style="padding-left:20px"></span>
-    <center><p><b><h5>Escolha um curso:</h5></b></p></center>
+    <center><p><b><h5>Escolha uma unidade:</h5></b></p></center>
     <div class="escolha-modalidade">
         <select name="curso">
             <option value="0">Todos</option>

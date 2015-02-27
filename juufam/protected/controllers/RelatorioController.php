@@ -7,6 +7,18 @@ class RelatorioController extends Controller
 {
 	public function actionIndex()
 	{
+		$sqlChapa = "SELECT chapa.id as id FROM usuario JOIN chapa on usuario.id_chapa = chapa.id WHERE usuario.login = '" . Yii::app()->user->name . "'";
+		$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
+
+		foreach ($chapa as $key => $chapaz) {			
+			$sqlCurso = "SELECT id FROM chapa_curso WHERE id_chapa = " . $chapaz["id"] . "";
+			$cursos = Yii::app()->db->createCommand($sqlCurso)->queryAll();
+		
+			foreach ($cursos as $key => $curso) {			
+				$this->id_chapa = $curso["id"];
+			}				
+		}
+
     	$this->render('index');
 	}
 
@@ -14,7 +26,7 @@ class RelatorioController extends Controller
 	{
 	    $id_modalidade = $_GET["modalidade"];
 	    $id_curso = $_GET["curso"];
-	    
+
 	    $sql = "SELECT modalidade.nome AS modalidade, time.id, chapa.nome AS curso FROM time JOIN modalidade ON time.id_modalidade = modalidade.id JOIN chapa ON chapa.id = time.id_chapa";
 	    
 	    if ($id_curso != "0" || $id_modalidade != "0") {
@@ -46,8 +58,6 @@ class RelatorioController extends Controller
 	    $pdf->Image(Yii::app()->basePath . '/images/braso.png', 10, 7);
 	    $pdf->Image(Yii::app()->basePath . '/images/ufam.png', 500,15);
             
-            
-            
 	    $pdf->SetFont("arial", "B", 12);
 	    $pdf->Cell(0,5,"PODER EXECUTIVO", 0,1,"C");
 	    $pdf->SetFont("arial", "B", 10);
@@ -64,10 +74,20 @@ class RelatorioController extends Controller
         
             $pdf->Cell(69,-70,$conteudo,0,1,'R');
             $pdf->Cell(63,90,$conteudo1,0,1,'R');
-            
-            $usuario = $id=Yii::app()->user->id;
-            $imprime = "Usuário: ".$usuario;
-            $pdf->Cell(64,-70,converte($imprime),0,1,'R');
+
+			$sqlChapa = "SELECT nome FROM usuario WHERE usuario.login = '" . Yii::app()->user->name . "'";
+			
+			$chapa = Yii::app()->db->createCommand($sqlChapa)->queryAll();
+
+			$usuario = "Usuário convidado";
+
+			foreach ($chapa as $key => $chapaz) {	
+				$usuario = $chapaz["nome"];
+			}		
+		
+            $id = Yii::app()->user->id;
+            $imprime = "Usuário: " . $usuario;
+            $pdf->Cell(127,-70,converte($imprime),0,1,'R');
 	    
 	    $pdf->SetFont("arial", "B", 12);
             
@@ -118,7 +138,7 @@ class RelatorioController extends Controller
 	            $pdf->Ln(20);
 	        }
 	    
-                }
+        }
           
 
             
